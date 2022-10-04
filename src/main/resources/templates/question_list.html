@@ -1,0 +1,112 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+<!--layout:decorate 속성 : 템플릿의 레이아웃(부모템플릿)으로 사용할 템플릿을 설정-->
+
+
+<div layout:fragment="content">
+
+    <a th:href="@{/question/create}">질문등록하기</a>
+
+    <!--------------------검색창--------------------->
+    <input type="text" id="search_kw" th:value="${kw}">
+    <button type="button" id="btn_search">찾기</button>
+
+    <!--------------------질문리스트--------------------->
+    <table>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>카테고리</th>
+            <th>글쓴이</th>
+            <th>작성일시</th>
+            <th>조회수</th>
+        </tr>
+
+        <tr scope="row" th:each="question, loop : ${paging}">
+
+            <td th:text="${paging.getTotalElements - (paging.number * paging.size) - loop.index}"></td>
+
+            <td>
+                <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>
+
+                <!--해당질문에 달린답변개수 표시-->
+                <span   th:if="${#lists.size(question.answerList) > 0}"
+                        th:text="${#lists.size(question.answerList)}"></span>
+            </td>
+
+            <!--카테고리값 텍스트로출력-->
+            <td><span th:text="${question.category}"></span></td>
+
+            <!--작성자 닉네임-->
+            <td><span th:if="${question.author != null}" th:text="${question.author.nickname}"></span></td>
+
+            <!--날짜객체 날짜포맷에맞게 변환-->
+            <td th:text="${#dates.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+
+            <!--조회수-->
+            <td th:text="${question.countview}"></td>
+        </tr>
+    </table>
+
+    <!--------------------페이징처리--------------------->
+    <div th:if="${!paging.isEmpty()}"><!--paging.isEmpty:페이지존재여부(게시물있으면 false,없으면 true)-->
+        <ul>
+            <li th:classappend="${!paging.hasPrevious} ? 'disabled'">
+                <!-- !paging.hasPrevious - disabled : 이전페이지가 없으면 비활성화-->
+
+                <a class="page-link" href="javascript:void(0)" th:data-page="${paging.number-1}">
+                    <!--이전페이지 링크-->
+                    <span>이전</span>
+                </a>
+            </li>
+
+            <!--th:each :페이지 리스트 루프--> <!--#numbers.sequence(시작, 끝)-->
+            <li th:each="page: ${#numbers.sequence(0, paging.totalPages-1)}"
+
+                th:if="${page >= paging.number-5 and page <= paging.number+5}"
+
+                th:classappend="${page == paging.number} ? 'active'">
+                <!--page == paging.number : 현재페이지와 같으면 active 적용-->
+
+                <a th:text="${page}" class="page-link" href="javascript:void(0)" th:data-page="${page}"></a>
+            </li>
+
+            <li th:classappend="${!paging.hasNext} ? 'disabled'">
+                <!-- !paging.hasNext - disabled : 다음페이지 없으면 비활성화-->
+
+                <a class="page-link" href="javascript:void(0)" th:data-page="${paging.number+1}">
+                    <!--다음페이지 링크-->
+                    <span>다음</span>
+                </a>
+
+            </li>
+        </ul>
+    </div>
+
+
+    <!--------------------검색폼--------------------->
+    <form th:action="@{/question/list}" method="get" id="searchForm">
+        <input type="hidden" id="kw" name="kw" th:value="${kw}">
+        <input type="hidden" id="page" name="page" th:value="${paging.number}">
+    </form>
+</div>
+
+
+
+<script layout:fragment="script" type='text/javascript'>
+    const page_elements = document.getElementsByClassName("page-link");
+    Array.from(page_elements).forEach(function (element) {
+        element.addEventListener('click', function () {
+            document.getElementById('page').value = this.dataset.page;
+            document.getElementById('searchForm').submit();
+        });
+    });
+    const btn_search = document.getElementById("btn_search");
+    btn_search.addEventListener('click', function () {
+        document.getElementById('kw').value = document.getElementById('search_kw').value;
+        document.getElementById('page').value = 0;  // 검색버튼을 클릭할 경우 0페이지부터 조회한다.
+        document.getElementById('searchForm').submit();
+    });
+</script>
+
+</html>

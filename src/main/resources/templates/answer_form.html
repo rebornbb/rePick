@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+
+<div layout:fragment="content">
+    <h5>답변 수정</h5>
+    <form th:object="${answerForm}" method="post">
+
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <div th:replace="form_errors :: formErrorsFragment"></div>
+        <div>
+            <label for="content">내용</label>
+            <textarea th:field="*{content}" rows="10"></textarea>
+        </div>
+        <input type="submit" value="저장하기">
+
+    </form>
+</div>
+
+</html>
+

@@ -1,0 +1,34 @@
+package com.gosari.repick_project.user;
+
+import javax.persistence.*;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+public class SiteUser {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+
+    @Column(unique = true)
+    private String username;
+
+    @Column(unique = true)
+    private String nickname;
+
+    private String password;
+
+    @Column(unique = true)
+    private String email;
+
+    private String role;
+
+    @PrePersist
+    public void setting() {
+        this.role = "ROLE_USER";
+    }
+}

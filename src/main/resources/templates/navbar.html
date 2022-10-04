@@ -1,0 +1,37 @@
+<nav th:fragment="navbarFragment">
+
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <a href="/"><span id="Nav-Logo"></span></a>
+        </div>
+
+        <ul class="navbar_menu">
+            </li>
+            <li><a th:href="@{/introduce}">REPICK 소개</a></li>
+            <li><a th:href="@{/news}">EARTH NEWS</a></li>
+            <li><a th:href="@{/offlineshop/list}">착한 PICK</a></li>
+            <li>
+            <a sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+            </li>
+            <li>
+            <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+            </li>
+            <li>
+            <a sec:authorize="isAuthenticated()" th:href="@{/user/info}">나의정보</a>
+            </li>
+        </ul>
+
+        <div class="navbar_icons">
+            <a href="#">
+                <li><img src="https://cdn-icons-png.flaticon.com/512/2609/2609282.png" alt=""
+                         style="width:30px"></li>
+            </a>
+        </div>
+        <a href="#" class="navbar_toggleBtn">
+            <img src="https://cdn-icons-png.flaticon.com/512/7710/7710488.png" alt=""
+                 style="width:30px">
+        </a>
+
+    </nav>
+
+</nav>

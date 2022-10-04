@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>관리자 오프라인추천매장 등록페이지</h1>
+<!--<form  th:action="@{/offlineshop/create}" th:object="${offlineForm}" method="post">-->
+
+<form th:object="${offlineForm}" method="post">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+    <div th:replace="form_errors :: formErrorsFragment"></div>
+
+    <div >
+        <label for="ShopName" >Shop Name</label>
+        <input type="text" th:field="*{ShopName}">
+    </div>
+    <div >
+        <label for="ShopNumber" >Shop Contact</label>
+        <input type="text" th:field="*{ShopNumber}"></textarea>
+    </div>
+    <div >
+        <label for="ShopTime" >Open&Close Time</label>
+        <input type="text" th:field="*{ShopTime}"></textarea>
+    </div>
+    <div >
+        <label for="ShopName" >Shop Address</label>
+        <input type="text" th:field="*{ShopAddress}">
+    </div>
+    <div >
+        <label for="ShopContents" >Shop Introduction</label>
+        <textarea th:field="*{ShopContents}"></textarea>
+    </div>
+    <input type="submit" value="저장하기">
+</form>
+
+</body>
+</html>

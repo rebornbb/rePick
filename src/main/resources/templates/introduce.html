@@ -1,0 +1,273 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+<!--layout:decorate 속성 : 템플릿의 레이아웃(부모템플릿)으로 사용할 템플릿을 설정-->
+
+
+<div layout:fragment="content">
+    <article>
+
+        <div>
+
+        </div>
+        <!---------------------------------------- Let's RePick everyone! ---------------------------------------->
+        <div class="align-Colum">
+
+            <!--Intro body01 Title-->
+            <span class="Intro-Body01-TitleContainer">
+            <h1 class="Tmoney-fontsize-400 ">LET'S</h1>
+            <h1 class="Tmoney-fontsize-400" style="color: #5B86EF;">&nbsp; REPICK</h1>
+            <h1 class="Tmoney-fontsize-400">&nbsp; EVERYONE!</h1>
+            </span>
+
+            <!--자동 이미지 슬라이드 시작-->
+            <span class="slideshow-container">
+                 <div class="Slidesbackground">
+                    <div class="mySlides fade">
+                    <img src="/images/pollutionImg-1.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/images/pollutionImg-2.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/images/pollutionImg-3.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/images/pollutionImg-4.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/images/pollutionImg-5.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/images/pollutionImg-6.jpg" class="slideshow-image">
+                    </div>
+                </div>
+             </span>
+            <!--자동 이미지 슬라이드 끝-->
+
+            <p class="align-Center marginTop-5 marginLeftRight-10 text-center KOTRA-fontsize-120">
+                많은 기업들은 사회적 책임을 다하기 위한 일환으로 친환경적인 경영 내세우고 있으며,
+                친자연주의를 몸소 실천하고자 하는 그린슈머(green+consumer)들이 늘어난 지금,
+                친자연주의를 몸소 실천하고자 하는 그린슈머(green+consumer)들이 늘어난 지금,
+                소비자들이 원하는 여러 에코 프렌들리 업체들이나, 일상 생활에 실천 할 수 있는 많은 친환경적인 정보들을
+                한눈에 보며 소비하고 소통할 수있는 플랫폼이 많지 않다는 것을 알게 되었습니다.
+            </p>
+
+            <div class="BorderGreen-button-wrap align-Center">
+                <a th:href="@{/}" class="BorderGreen-button">Go RePick Home</a>
+            </div>
+        </div>
+
+        <hr class="marginTop-5">
+
+        <!---------------------------------------- What is Repick? ---------------------------------------->
+        <div class="align-Colum">
+        <span class="Intro-Body02-TitleContainer marginTop-5 marginBottom-3">
+        <h1 class="align-Center Tmoney-fontsize-400">WHAT IS</h1>
+            <span class="Intro-Body02-TitleContainer-sub">
+        <h1 class="align-Center Tmoney-fontsize-400" style="color: #5B86EF;">'REPICK'</h1>
+        <h1 class="align-Center Tmoney-fontsize-400">?</h1>
+            </span>
+        </span>
+
+            <!--플립 카드 시작-->
+            <div class="align-Center-row">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/images/people.png" class="Introduce-Card-Img" alt="introduce-repick-icon">
+                            <h1 class="flip-card-Title">Earth Keeper</h1>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1 class="flip-card-BackTitle">지구를 지키는 사람들</h1>
+                            <p class="flip-card-BackText">Repick은 자연을 아끼는
+                                <br>모든 이들을 위한 사이트입니다.
+                                <br>개인의 이익만이 아닌
+                                <br>더 나아가 공공의 미래를 위한
+                                <br>아름다운 여러분들의 선행들을
+                                <br>Repick은 도우며 함께합니다!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/images/earth-care.png" class="Introduce-Card-Img" alt="introduce-repick-icon">
+                            <h1 class=" flip-card-Title">Eco-Friendly</h1>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1 class="flip-card-BackTitle">지구를 지키는 사람들</h1>
+                            <p class="flip-card-BackText">Repick은 자연을 아끼는
+                                <br>모든 이들을 위한 사이트입니다.
+                                <br>개인의 이익만이 아닌
+                                <br>더 나아가 공공의 미래를 위한
+                                <br>아름다운 여러분들의 선행들을
+                                <br>Repick은 도우며 함께합니다!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/images/global-web.png" class="Introduce-Card-Img" alt="introduce-repick-icon">
+                            <h1 class="flip-card-Title-Infor">Information</h1>
+                        </div>
+                        <div class="flip-card-back">
+                            <h1 class="flip-card-BackTitle">지구를 지키는 사람들</h1>
+                            <p class="flip-card-BackText">Repick은 자연을 아끼는
+                                <br>모든 이들을 위한 사이트입니다.
+                                <br>개인의 이익만이 아닌
+                                <br>더 나아가 공공의 미래를 위한
+                                <br>아름다운 여러분들의 선행들을
+                                <br>Repick은 도우며 함께합니다!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="align-Center marginTop-200px marginBottom-5 marginLeftRight-10 text-center KOTRA-fontsize-120">
+                최근 심각하게 대두되는 환경오염에 대해 경각심을 가지게 되었습니다.
+                여러 비영리 단체에서 환경 개선 운동을 목적으로 활동하고,
+                많은 기업들은 사회적 책임을 다하기 위한 일환으로 친환경적인 경영 내세우고 있으며,
+                친자연주의를 몸소 실천하고자 하는 그린슈머(green+consumer)들이 늘어난 지금,
+                소비자들이 원하는 여러 에코 프렌들리 업체들이나, 일상 생활에 실천 할 수 있는 많은 친환경적인 정보들을
+                한눈에 보며 소비하고 소통할 수있는 플랫폼이 많지 않다는 것을 알게 되었습니다.
+
+                이런 고객들의 니즈를 충족 시키면서 동시에 긍정적인 뜻을
+                함께 선도해가는 웹사이트를 만들면 어떨까?라는 생각으로 프로젝트를 구상했습니다
+            </p>
+
+        </div>
+
+        <hr>
+
+        <!---------------------------------------- INTRODUCE OUR TEAM ---------------------------------------->
+        <span class="align-Center align-Colum marginTop-5">
+            <img src="/images/gosari_logo_green.svg" class="Intro_TeamLogo" alt="">
+        <h1 class="Tmoney-fontsize-400 align-Center text-center">INTRODUCE OUR TEAM</h1>
+        </span>
+        <!--자동 카드 슬라이드 시작-->
+        <div class="FlipCardcontainer">
+            <div class="slider-container">
+                <span class="slider-leftBtn sliderBtn"></span>
+                <div class="card-container" id="slider">
+                    <div class="card">
+                        <img class="TeamPic" src="/images/hyo.jpg" alt="TeamPicture">
+                        <a href="https://small-sandal-990.notion.site/Kim-HyoGyeong-b3817ff988074853855e1667030899b5"
+                           class="Green-button">KIM HYOKYUNG</a>
+                    </div>
+                    <div class="card">
+                        <img class="TeamPic" src="/images/park.jpg" alt="TeamPicture">
+                        <a href="https://miso-record.tistory.com/" class="Green-button">PARK MISO</a>
+                    </div>
+
+                    <div class="card">
+                        <img class="TeamPic" src="/images/bong.jpg" alt="TeamPicture">
+                        <a href="https://rebornbb.tistory.com/" class="Green-button">BONG NARYE</a>
+                    </div>
+
+                    <div class="card">
+                        <img class="TeamPic" src="/images/ha.jpg" alt="TeamPicture">
+                        <a href="https://marah.tistory.com/" class="Green-button">KIM HARAM</a>
+                    </div>
+
+                    <div class="card">
+                        <img class="TeamPic" src="/images/hong.jpg" alt="TeamPicture">
+                        <a href="https://pebble-twine-b24.notion.site/a571eb1fb7934471bb815c8a0eba05e8"
+                           class="Green-button">HONG YOUNGJEA</a>
+                    </div>
+
+                    <div class="card">
+                        <img class="TeamPic" src="/images/shin.jpg" alt="TeamPicture">
+                        <a href="https://zmzmaaw.tistory.com/" class="Green-button">SHIN JEAHO</a>
+                    </div>
+
+                </div>
+                <span class="slider-rightBtn sliderBtn"></span>
+            </div>
+        </div>
+        <!--자동 카드 슬라이드 끝-->
+
+    </article>
+</div>
+
+</div>
+
+
+<script layout:fragment="script">
+    /*------------자동슬라이더-------------*/
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+    /*------------팀원-자동슬라이더-------------*/
+    let leftBtn = [...document.getElementsByClassName("slider-leftBtn")]
+    let rightBtn = [...document.getElementsByClassName("slider-rightBtn")]
+    let slider = [...document.querySelectorAll(".card-container")]
+    let sliderDimension = document.querySelector(".card-container")
+
+
+    slider.forEach((item, i) => {
+        let containerDimension = item.getBoundingClientRect().width;
+        if ((item.childElementCount * 350) < (containerDimension + 100)) {
+            rightBtn[i].style.display = 'none';
+            leftBtn[i].style.display = 'none';
+            item.style.justifyContent = 'space-around';
+        }
+        leftBtn[i].style.display = "none"
+        rightBtn[i].addEventListener('click', () => {
+            item.scrollLeft += containerDimension;
+            leftBtn[i].style.display = 'block';
+        })
+        leftBtn[i].addEventListener('click', () => {
+            item.scrollLeft -= containerDimension;
+            rightBtn[i].style.display = 'block';
+        })
+        item.addEventListener('scroll', () => {
+            if (item.offsetWidth + item.scrollLeft >= (item.scrollWidth - 100)) {
+                rightBtn[i].style.display = 'none';
+                leftBtn[i].style.display = 'block';
+            } else if (item.scrollLeft == 0) {
+                leftBtn[i].style.display = 'none';
+                rightBtn[i].style.display = 'block';
+            } else if (item.scrollLeft > 0) {
+                leftBtn[i].style.display = 'block';
+            }
+            if (item.offsetWidth + item.scrollLeft < (item.scrollWidth - 50)) {
+                rightBtn[i].style.display = 'block';
+            }
+        })
+
+        const slidingFunction = () => {
+            if (item.offsetWidth + item.scrollLeft >= (item.scrollWidth - 100)) {
+                // item.style.scrollBehavior = "auto";
+                item.scrollLeft = 0;
+            }
+            if (item.offsetWidth + item.scrollLeft < (item.scrollWidth - 50)) {
+                // item.style.scrollBehavior = "smooth";
+                item.scrollLeft += containerDimension;
+            }
+        }
+
+        setInterval(() => slidingFunction(), 5000)
+    })
+</script>
+
+</html>

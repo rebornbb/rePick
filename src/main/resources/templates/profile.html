@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+
+<div layout:fragment="content">
+
+    <h4>회원정보</h4>
+
+    <form th:action="@{/user/info}" th:object="${userModifyForm}" method="post">
+        <div th:replace="form_errors :: formErrorsFragment"></div>
+        <div>
+            <label for="username">사용자ID</label>
+            <input type="text" th:field="${siteUser.username}" readonly>
+        </div>
+        <div>
+            <label for="nickname">닉네임</label>
+            <input type="text" th:field="${siteUser.nickname}">
+        </div>
+        <div>
+            <label for="email">이메일</label>
+            <input type="email" th:field="${siteUser.email}" id="email">
+        </div>
+        <a th:href="@{/}">홈으로 돌아가기</a>
+        <button type="submit" onclick="alert('수정되었습니다.')">수정하기</button>
+    </form>
+</div>
+</html>

@@ -1,0 +1,434 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+<!--layout:decorate 속성 : 템플릿의 레이아웃(부모템플릿)으로 사용할 템플릿을 설정-->
+
+
+<div layout:fragment="content">
+
+
+<div class="align-Center">
+<div class="grid-container">
+
+    <div class="Weather">
+        <div class="Weather-slideshow-container">
+            <div>
+                <a class="Weather-prev" onclick='WeatherPlusSlides(-1)'>&#10094;</a>
+            </div>
+
+            <div class="align-Colum align-Center">
+                <div class="WeatherdayText Tmoney-fontsize-150">
+                    <span class="nowtime"></span>
+                    <span class="marginLeft-5">현재날씨</span>
+                </div>
+
+                <div class="Weather-Slides Weather-fade">
+                    <div class="Weather-Contents-align">
+                        <div class="Tmoney-fontsize-200  ">강원도</div>
+                        <div class="paddingAll-6">
+                        <div class="ChuncheonIcon"></div>
+                        </div>
+                        <h1 class="ChuncheonNowtemp KOTRA-fontsize-120">현재기온  • • •  </h1>
+                        <h1 class="ChuncheonLowtemp KOTRA-fontsize-120">현재기온  • • •  </h1>
+                        <h1 class="ChuncheonHightemp KOTRA-fontsize-120">현재기온  • • •  </h1>
+                    </div>
+                </div>
+
+                <div class="Weather-Slides Weather-fade">
+                    <div class="Weather-Contents-align">
+                        <div class="Tmoney-fontsize-200  ">경기도</div>
+                        <div class="paddingAll-6">
+                        <div class="SeoulIcon"></div>
+                        </div>
+                        <h1 class="SeoulNowtemp KOTRA-fontsize-120">현재기온  • • •  </h1>
+                        <h1 class="SeoulLowtemp KOTRA-fontsize-120">최저기온  • • •  </h1>
+                        <h1 class="SeoulHightemp KOTRA-fontsize-120">최대기온  • • •  </h1>
+                    </div>
+                </div>
+
+                <div class="Weather-Slides Weather-fade">
+                    <div class="Weather-Contents-align">
+                        <div class="Tmoney-fontsize-200  ">충청북도</div>
+                        <div class="paddingAll-6">
+                        <div class="ChungjuIcon"></div>
+                        </div>
+                        <h1 class="ChungjuNowtemp KOTRA-fontsize-120">현재기온  • • •  </h1>
+                        <h1 class="ChungjuLowtemp KOTRA-fontsize-120">최저기온  • • •  </h1>
+                        <h1 class="ChungjuHightemp KOTRA-fontsize-120">최대기온  • • •  </h1>
+                    </div>
+                </div>
+
+                <div class="Weather-Slides Weather-fade">
+                    <div class="Weather-Contents-align">
+                        <div class="Tmoney-fontsize-200  ">충청남도</div>
+                        <div class="paddingAll-6">
+                        <div class="DaejeonIcon"></div>
+                        </div>
+                        <h1 class="DaejeonNowtemp KOTRA-fontsize-120">현재기온  • • •  </h1>
+                        <h1 class="DaejeonLowtemp KOTRA-fontsize-120">최저기온  • • •  </h1>
+                        <h1 class="DaejeonHightemp KOTRA-fontsize-120">최대기온  • • •  </h1>
+                    </div>
+                </div>
+
+                <div class="Weather-Slides Weather-fade">
+                    <div class="Weather-Contents-align">
+                        <div class="Tmoney-fontsize-200  ">전라북도</div>
+                        <div class="paddingAll-6">
+                        <div class="JeonjuIcon"></div>
+                        </div>
+                        <h1 class="JeonjuNowtemp KOTRA-fontsize-120">현재기온  • • •  </h1>
+                        <h1 class="JeonjuLowtemp KOTRA-fontsize-120">최저기온  • • •  </h1>
+                        <h1 class="JeonjuHightemp KOTRA-fontsize-120">최대기온  • • •  </h1>
+                    </div>
+                </div>
+
+                <div class="Weather-Slides Weather-fade">
+                    <div class="Weather-Contents-align">
+                        <div class="Tmoney-fontsize-200  ">전라남도</div>
+                        <div class="paddingAll-6">
+                        <div class="GwangjuIcon"></div>
+                        </div>
+                        <h1 class="GwangjuNowtemp KOTRA-fontsize-120">현재기온  • • •  </h1>
+                        <h1 class="GwangjuLowtemp KOTRA-fontsize-120">최저기온  • • •  </h1>
+                        <h1 class="GwangjuHightemp KOTRA-fontsize-120">최대기온  • • •  </h1>
+                    </div>
+                </div>
+
+                <div class="Weather-Slides Weather-fade">
+                    <div class="Weather-Contents-align">
+                        <div class="Tmoney-fontsize-200  ">경상북도</div>
+                        <div class="paddingAll-6">
+                        <div class="DaeguIcon"></div>
+                        </div>
+                        <h1 class="DaeguNowtemp KOTRA-fontsize-120">현재기온  • • •  </h1>
+                        <h1 class="DaeguLowtemp KOTRA-fontsize-120">최저기온  • • •  </h1>
+                        <h1 class="DaeguHightemp KOTRA-fontsize-120">최대기온  • • •  </h1>
+                    </div>
+                </div>
+
+                <div class="Weather-Slides Weather-fade">
+                    <div class="Weather-Contents-align">
+
+                        <div class="Tmoney-fontsize-200  ">경상남도</div>
+                        <div class="paddingAll-6">
+                        <div class="BusanIcon"></div>
+                        </div>
+                        <h1 class="BusanNowtemp KOTRA-fontsize-120">현재기온  • • •  </h1>
+                        <h1 class="BusanLowtemp KOTRA-fontsize-120">최저기온  • • •  </h1>
+                        <h1 class="BusanHightemp KOTRA-fontsize-120">최대기온  • • •  </h1>
+                    </div>
+                </div>
+
+                <div class="Weather-Slides Weather-fade">
+                    <div class="Weather-Contents-align">
+                        <div class="Tmoney-fontsize-200  ">제주</div>
+                        <div class="paddingAll-6">
+                        <div class="JejuIcon"></div>
+                        </div>
+                        <h1 class="JejuNowtemp KOTRA-fontsize-120">현재기온  • • •  </h1>
+                        <h1 class="JejuLowtemp KOTRA-fontsize-120">최저기온  • • •  </h1>
+                        <h1 class="JejuHightemp KOTRA-fontsize-120">최대기온  • • •  </h1>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <a class="Weather-next" onclick='WeatherPlusSlides(1)'>&#10095;</a>
+            </div>
+
+        </div>
+        <br>
+        <div style='text-align: center;'>
+            <span class="Weather-dot" onclick='WeatherCurrentSlide(1)'></span>
+            <span class="Weather-dot" onclick='WeatherCurrentSlide(2)'></span>
+            <span class="Weather-dot" onclick='WeatherCurrentSlide(3)'></span>
+            <span class="Weather-dot" onclick='WeatherCurrentSlide(4)'></span>
+            <span class="Weather-dot" onclick='WeatherCurrentSlide(5)'></span>
+            <span class="Weather-dot" onclick='WeatherCurrentSlide(6)'></span>
+            <span class="Weather-dot" onclick='WeatherCurrentSlide(7)'></span>
+            <span class="Weather-dot" onclick='WeatherCurrentSlide(8)'></span>
+            <span class="Weather-dot" onclick='WeatherCurrentSlide(9)'></span>
+        </div>
+    </div>
+
+
+    <div th:each="news : ${news}">
+        <div class="grid-item align-Colum-center">
+                <a th:href="${news.url}" target="_blank">
+                    <img th:src="${news.image}" class="newsImage"onerror=this.src="./images/newslogo.png">
+                </a>
+
+                <a th:href="${news.url}" class="newsText" target="_blank">
+                    <span th:text="${news.subject}" >
+                    </span>
+                </a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+</div>
+
+
+<script layout:fragment="script">
+    //----------------------------------날씨 API
+    $(document).ready(function () {
+
+        function convertTime() {
+            var now = new Date();
+
+
+            var month = now.getMonth() + 1;
+            var date = now.getDate();
+
+            return month + '월' + date + '일';
+        }
+
+        var currentTime = convertTime();
+        $('.nowtime').append(currentTime);
+    });
+
+    <!--제이쿼리사용-->
+    // 서울
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?q=Seoul,kr&appid=46b55a9f61cc588200575a3dda8e3069&units=metric',
+        function (WeatherResult) {
+            //기온출력
+            $('.SeoulNowtemp').append(WeatherResult.main.temp);
+            $('.SeoulLowtemp').append(WeatherResult.main.temp_min);
+            $('.SeoulHightemp').append(WeatherResult.main.temp_max);
+
+            //날씨아이콘출력
+            //WeatherResult.weater[0].icon
+            var weathericonUrl =
+                '<img src= "http://openweathermap.org/img/wn/'
+                + WeatherResult.weather[0].icon +
+                '.png" alt="' + WeatherResult.weather[0].description + '"/>'
+
+            $('.SeoulIcon').html(weathericonUrl);
+        });
+
+
+    //대전
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?q=Daejeon,kr&appid=46b55a9f61cc588200575a3dda8e3069&units=metric',
+        function (WeatherResult) {
+            //기온출력
+            $('.DaejeonNowtemp').append(WeatherResult.main.temp);
+            $('.DaejeonLowtemp').append(WeatherResult.main.temp_min);
+            $('.DaejeonHightemp').append(WeatherResult.main.temp_max);
+
+            //날씨아이콘출력
+            var weathericonUrl =
+                '<img src= "http://openweathermap.org/img/wn/'
+                + WeatherResult.weather[0].icon +
+                '.png" alt="' + WeatherResult.weather[0].description + '"/>'
+
+            $('.DaejeonIcon').html(weathericonUrl);
+        });
+
+
+    //충주
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?q=Chungju,kr&appid=46b55a9f61cc588200575a3dda8e3069&units=metric',
+        function (WeatherResult) {
+            //기온출력
+            $('.ChungjuNowtemp').append(WeatherResult.main.temp);
+            $('.ChungjuLowtemp').append(WeatherResult.main.temp_min);
+            $('.ChungjuHightemp').append(WeatherResult.main.temp_max);
+
+            //날씨아이콘출력
+            var weathericonUrl =
+                '<img src= "http://openweathermap.org/img/wn/'
+                + WeatherResult.weather[0].icon +
+                '.png" alt="' + WeatherResult.weather[0].description + '"/>'
+
+            $('.ChungjuIcon').html(weathericonUrl);
+        });
+
+    //춘천
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?q=Chuncheon,kr&appid=46b55a9f61cc588200575a3dda8e3069&units=metric',
+        function (WeatherResult) {
+            //기온출력
+            $('.ChuncheonNowtemp').append(WeatherResult.main.temp);
+            $('.ChuncheonLowtemp').append(WeatherResult.main.temp_min);
+            $('.ChuncheonHightemp').append(WeatherResult.main.temp_max);
+
+            //날씨아이콘출력
+            var weathericonUrl =
+                '<img src= "http://openweathermap.org/img/wn/'
+                + WeatherResult.weather[0].icon +
+                '.png" alt="' + WeatherResult.weather[0].description + '"/>'
+
+            $('.ChuncheonIcon').html(weathericonUrl);
+        });
+
+    //광주
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?q=Gwangju,kr&appid=46b55a9f61cc588200575a3dda8e3069&units=metric',
+        function (WeatherResult) {
+            //기온출력
+            $('.GwangjuNowtemp').append(WeatherResult.main.temp);
+            $('.GwangjuLowtemp').append(WeatherResult.main.temp_min);
+            $('.GwangjuHightemp').append(WeatherResult.main.temp_max);
+
+            //날씨아이콘출력
+            var weathericonUrl =
+                '<img src= "http://openweathermap.org/img/wn/'
+                + WeatherResult.weather[0].icon +
+                '.png" alt="' + WeatherResult.weather[0].description + '"/>'
+
+            $('.GwangjuIcon').html(weathericonUrl);
+        });
+
+    //전주
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?q=Jeonju,kr&appid=46b55a9f61cc588200575a3dda8e3069&units=metric',
+        function (WeatherResult) {
+            //기온출력
+            $('.JeonjuNowtemp').append(WeatherResult.main.temp);
+            $('.JeonjuLowtemp').append(WeatherResult.main.temp_min);
+            $('.JeonjuHightemp').append(WeatherResult.main.temp_max);
+
+            //날씨아이콘출력
+            var weathericonUrl =
+                '<img src= "http://openweathermap.org/img/wn/'
+                + WeatherResult.weather[0].icon +
+                '.png" alt="' + WeatherResult.weather[0].description + '"/>'
+
+            $('.JeonjuIcon').html(weathericonUrl);
+        });
+
+    //부산
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?q=Busan,kr&appid=46b55a9f61cc588200575a3dda8e3069&units=metric',
+        function (WeatherResult) {
+            //기온출력
+            $('.BusanNowtemp').append(WeatherResult.main.temp);
+            $('.BusanLowtemp').append(WeatherResult.main.temp_min);
+            $('.BusanHightemp').append(WeatherResult.main.temp_max);
+
+            //날씨아이콘출력
+            var weathericonUrl =
+                '<img src= "http://openweathermap.org/img/wn/'
+                + WeatherResult.weather[0].icon +
+                '.png" alt="' + WeatherResult.weather[0].description + '"/>'
+
+            $('.BusanIcon').html(weathericonUrl);
+        });
+
+    //대구
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?q=Daegu,kr&appid=46b55a9f61cc588200575a3dda8e3069&units=metric',
+        function (WeatherResult) {
+            //기온출력
+            $('.DaeguNowtemp').append(WeatherResult.main.temp);
+            $('.DaeguLowtemp').append(WeatherResult.main.temp_min);
+            $('.DaeguHightemp').append(WeatherResult.main.temp_max);
+
+            //날씨아이콘출력
+            var weathericonUrl =
+                '<img src= "http://openweathermap.org/img/wn/'
+                + WeatherResult.weather[0].icon +
+                '.png" alt="' + WeatherResult.weather[0].description + '"/>'
+
+            $('.DaeguIcon').html(weathericonUrl);
+        });
+
+    //제주
+    $.getJSON('https://api.openweathermap.org/data/2.5/weather?q=Jeju City,kr&appid=46b55a9f61cc588200575a3dda8e3069&units=metric',
+        function (WeatherResult) {
+            //기온출력
+            $('.JejuNowtemp').append(WeatherResult.main.temp);
+            $('.JejuLowtemp').append(WeatherResult.main.temp_min);
+            $('.JejuHightemp').append(WeatherResult.main.temp_max);
+
+            //날씨아이콘출력
+            var weathericonUrl =
+                '<img src= "http://openweathermap.org/img/wn/'
+                + WeatherResult.weather[0].icon +
+                '.png" alt="' + WeatherResult.weather[0].description + '"/>'
+
+            $('.JejuIcon').html(weathericonUrl);
+        });
+
+    //------------------날씨카드슬라이드------------------------------
+    var WeatherslideIndex = 1;
+
+    var WeatherSlideTimer;
+
+    var slideshowContainer;
+
+    window.addEventListener("load", function () {
+        WeathershowSlides(WeatherslideIndex);
+        WeatherSlideTimer = setInterval(function () {
+            WeatherPlusSlides(1)
+        }, 2000);
+
+        //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+        slideshowContainer = document.getElementsByClassName('Weather-slideshow-inner')[0];
+
+        //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+        // slideshowContainer = document.getElementsByClassName('Weather-slideshow-container')[0];
+
+        slideshowContainer.addEventListener('mouseenter', pause)
+        slideshowContainer.addEventListener('mouseleave', resume)
+    })
+
+    // Weather-next AND Weather-prevIOUS CONTROL
+    function WeatherPlusSlides(n) {
+        clearInterval(WeatherSlideTimer);
+        if (n < 0) {
+            WeathershowSlides(WeatherslideIndex -= 1);
+        } else {
+            WeathershowSlides(WeatherslideIndex += 1);
+        }
+
+        //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+
+        if (n === -1) {
+            WeatherSlideTimer = setInterval(function () {
+                WeatherPlusSlides(n + 2)
+            }, 2000);
+        } else {
+            WeatherSlideTimer = setInterval(function () {
+                WeatherPlusSlides(n + 1)
+            }, 2000);
+        }
+    }
+
+    //Controls the current slide and resets interval if needed
+    function WeatherCurrentSlide(n) {
+        clearInterval(WeatherSlideTimer);
+        WeatherSlideTimer = setInterval(function () {
+            WeatherPlusSlides(n + 1)
+        }, 2000);
+        WeathershowSlides(WeatherslideIndex = n);
+    }
+
+    function WeathershowSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("Weather-Slides");
+        var Weatherdots = document.getElementsByClassName("Weather-dot");
+        if (n > slides.length) {
+            WeatherslideIndex = 1
+        }
+        if (n < 1) {
+            WeatherslideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < Weatherdots.length; i++) {
+            Weatherdots[i].className = Weatherdots[i].className.replace(" active", "");
+        }
+        slides[WeatherslideIndex - 1].style.display = "block";
+        Weatherdots[WeatherslideIndex - 1].className += " active";
+    }
+
+    pause = () => {
+        clearInterval(WeatherSlideTimer);
+    }
+
+    resume = () => {
+        clearInterval(WeatherSlideTimer);
+        WeatherSlideTimer = setInterval(function () {
+            WeatherPlusSlides(WeatherslideIndex)
+        }, 2000);
+    }
+</script>
+
+</html>

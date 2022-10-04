@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:layout="">
+<head>
+    <!--Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="/style.css">
+    <title>RePick</title>
+
+    <!--마크다운에디터-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+</head>
+
+
+
+<body>
+<!--네비게이션바-->
+<nav th:replace="navbar :: navbarFragment"></nav>
+<script>
+    const toggleBtn = document.querySelector('.navbar_toggleBtn');
+    const menu = document.querySelector('.navbar_menu');
+    const icons = document.querySelector('.navbar_icons');
+
+    toggleBtn.addEventListener('click' , ()=>{
+        menu.classList.toggle('menuActive');
+        icons.classList.toggle('menuActive');
+    });
+</script>
+
+<!--기본 템플릿 안에 삽입될 내용-->
+<th:block layout:fragment="content"></th:block>
+
+<!--카카오지도api-->
+<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=809a0a893dd1c539e481dcd3fc03f1c0&libraries=services"></script>
+
+<!--제이쿼리-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
+</script>
+
+<!--마크다운에디터-->
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
+<!--자바스크립트 start-->
+<th:block layout:fragment="script"></th:block>
+
+</body>
+</html>

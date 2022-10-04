@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+
+<div layout:fragment="content">
+    <div class="align-Colum">
+        <div class="paddingAll-4 align-Colum-center">
+            <button class="Go-btn">
+                <a th:href="@{/offlineshop/list}">오프라인추천매장 보러가기</a>
+            </button>
+        </div>
+
+    <div class="align-Center">
+        <div class="grid-container-Onlineshop">
+            <div th:each="items : ${itemDtos}">
+                <div class="grid-item-Onlineshop align-Colum-center">
+                    <a th:href="${items.link}" target="_blank">
+                        <img th:src="${items.image}" class="OnlineshopImage" alt="">
+                    </a>
+                    <a th:href="${items.link}" target="_blank" class="OnlineshopText">
+                        <span th:utext="${items.title}"></span>
+                    </a>
+
+                    <div class="align-Center-row OnlineshopPrice">
+                        <span> PRICE : ₩ </span>
+                        <span th:text="${items.lprice}"> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+</div>
+
+
+<script layout:fragment="script">
+
+</script>
+
+</html>

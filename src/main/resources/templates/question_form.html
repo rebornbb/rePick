@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+
+<div layout:fragment="content">
+
+    <h5>질문등록</h5>
+
+    <!--파일 업로드-->
+    <form th:object="${questionForm}" method="post" enctype="multipart/form-data">
+        <!--수정-->
+
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+        <div th:replace="form_errors :: formErrorsFragment"></div>
+        <!--th:replace - 공통템플릿을 템플릿내에 삽입가능-->
+        <!--div엘리먼트를 form_errors.html파일의 th:fragment속성명이 formErrorsFragment인 엘리먼트로 교체-->
+
+        <!--제목입력-->
+        <div >
+            <label for="subject" >제목</label>
+            <input type="text" th:field="*{subject}" >
+        </div>
+        <!--내용입력-->
+        <div >
+            <label for="content" >내용</label>
+            <textarea id="markdownid" th:field="*{content}" rows="10"></textarea>
+        </div>
+
+        <!--파일업로드버튼-->
+        <input type="file" name="file">
+
+        <!--카테고리선택-->
+        <div>
+            <select th:field="*{category}">
+                <option value="">카테고리를선택해주세요</option>
+                <option value="제로웨이스트">제로웨이스트</option>
+                <option value="리사이클링">리사이클링</option>
+                <option value="동물식물">동물·식물</option>
+                <option value="친환경정책">친환경정책</option>
+                <option value="자유게시판">자유게시판</option>
+            </select>
+        </div>
+
+        <input type="submit" value="저장하기" >
+
+    </form>
+</div>
+
+<script layout:fragment="script">
+    var simplemde = new SimpleMDE({ element: document.getElementById("markdownid") });
+</script>
+
+</html>
