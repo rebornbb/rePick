@@ -1173,6 +1173,7 @@ hr {
     height: 20vw;
     border-radius: 3% 3% 0 0;
     object-fit: cover;
+    /*object-fit: cover;*/
 }
 .OnlineshopText{
     color: black;
