@@ -1,41 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
 
-<h1>관리자 오프라인추천매장 등록페이지</h1>
+<div layout:fragment="content">
+
+<span class="Tmoney-fontsize-180 align-Center">관리자 오프라인추천매장 등록페이지</span>
 <!--<form  th:action="@{/offlineshop/create}" th:object="${offlineForm}" method="post">-->
 
 <form th:object="${offlineForm}" method="post">
     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 
     <div th:replace="form_errors :: formErrorsFragment"></div>
-
-    <div >
+    <div class="Shop-form">
+    <div class="Shop-form-div3">
+        <div class="align-shopform-item">
+        <img class="Offlineshop-Detail-icon" src="/images/home.png" alt="집">
         <label for="ShopName" >Shop Name</label>
-        <input type="text" th:field="*{ShopName}">
+        </div>
+        <input type="text" th:field="*{ShopName}" class="Shop-form-control">
+
     </div>
-    <div >
+    <div class="Shop-form-div3">
+        <div class="align-shopform-item">
+        <img class="Offlineshop-Detail-icon" src="/images/call.png" alt="전화">
         <label for="ShopNumber" >Shop Contact</label>
-        <input type="text" th:field="*{ShopNumber}"></textarea>
+        </div>
+        <input type="text" th:field="*{ShopNumber}" class="Shop-form-control"></textarea>
     </div>
-    <div >
+
+    <div class="Shop-form-div3">
+        <div class="align-shopform-item">
+        <img class="Offlineshop-Detail-icon" src="/images/clock.png" alt="시간">
         <label for="ShopTime" >Open&Close Time</label>
-        <input type="text" th:field="*{ShopTime}"></textarea>
+        </div>
+        <input type="text" th:field="*{ShopTime}" class="Shop-form-control"></textarea>
     </div>
-    <div >
+    <div class="Shop-form-div3">
+        <div class="align-shopform-item">
+        <img class="Offlineshop-Detail-icon" src="/images/location.png" alt="주소">
         <label for="ShopName" >Shop Address</label>
-        <input type="text" th:field="*{ShopAddress}">
+        </div>
+        <input type="text" th:field="*{ShopAddress}" class="Shop-form-control">
     </div>
-    <div >
+    <div class="Shop-form-div3">
+        <div class="align-shopform-item">
+        <img class="Offlineshop-Detail-icon" src="/images/paper.png" alt="설명">
         <label for="ShopContents" >Shop Introduction</label>
-        <textarea th:field="*{ShopContents}"></textarea>
+        </div>
+        <textarea th:field="*{ShopContents}" class="Shop-form-control" rows="10"></textarea>
     </div>
-    <input type="submit" value="저장하기">
+
+        <button type="submit" class="btn-1 custom-btn btn-primary">저장하기</button>
+    </div>
 </form>
 
-</body>
-</html>
+
+</div>
+<script layout:fragment="script">
+
+</script>

@@ -758,131 +758,288 @@ hr {
 
 /*----------------------------------뉴스페이지 news.html 시작------------------------------------------*/
 /*----------뉴스 리스트 grid---------- */
-.grid-container {
-    display: grid;
-    gap: 1%;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
-    width:100%;
-}
+@media screen and (min-width:830px) {
+    .grid-container {
+        display: grid;
+        gap: 1%;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+        width: 100%;
+    }
 
-.grid-item {
-    /*box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);*/
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-    text-decoration: none;
+    .grid-item {
+        /*box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);*/
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        text-decoration: none;
 
-}
-.newsImage{
-    width: 25vw;
-    height: 23vw;
-    border-radius: 3% 3% 0 0;
-    object-fit: cover;
-}
-.newsText{
-    font-weight: bold;
-    color: #5B86EF;
-    margin-top: -10px;
-    padding: 3% 0 3% 0;
-    width: 25vw;
-    font-family: KOTRA_GOTHIC;
-    font-size: 60%;
-    text-decoration: none;
-    /* word-break: break-word; */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border: #5B86EF solid;
-    border-width: 4px 0 2px 0;
-}
+    }
 
-/*----------날씨카드슬라이드---------- */
-.Weather {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5%;
-}
+    .newsImage {
+        width: 25vw;
+        height: 23vw;
+        border-radius: 3% 3% 0 0;
+        object-fit: cover;
+    }
 
-.Weather-slideshow-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+    .newsText {
+        font-weight: bold;
+        color: #5B86EF;
+        margin-top: -10px;
+        padding: 3% 0 3% 0;
+        width: 25vw;
+        font-family: KOTRA_GOTHIC;
+        font-size: 60%;
+        text-decoration: none;
+        /* word-break: break-word; */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: #5B86EF solid;
+        border-width: 4px 0 2px 0;
+    }
 
-.Weather-Slides {
-    border-radius: 5%;
-    display: flex;
-    justify-content: center;
-    width: 20vw;
-    height: 20vw;
-    box-shadow: 0px 5px 10px rgb(0 0 0 / 30%);
-}
+    /*----------날씨카드슬라이드---------- */
+    .Weathercard-Date{
+        font-family: TmoneyRoundWindExtraBold;
+        font-size: 150%;
+    }
+    .Weathercard-Location{
+        font-family: TmoneyRoundWindExtraBold;
+        font-size: 200%;
+    }
+    .Weathercard-Temp{
+        font-family: KOTRA_GOTHIC;
+        font-size: 130%;
+    }
+    .Weather {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5%;
+    }
 
-.Weather-prev,
-.Weather-next {
-    display: flex;
-    align-content: center;
-    cursor: pointer;
-    width: auto;
-    margin-top: 150%;
-    padding: 20px;
-    color: #5B86EF;
-    font-weight: bold;
-    font-size: 30px;
-    transition: .6s ease;
-    border-radius: 0 3px 3px 0
-}
+    .Weather-slideshow-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 
-.Weather-next {
-    border-radius: 3px 3px 3px 3px
-}
+    .Weather-Slides {
+        border-radius: 5%;
+        display: flex;
+        justify-content: center;
+        width: 20vw;
+        height: 20vw;
+        box-shadow: 0px 5px 10px rgb(0 0 0 / 30%);
+    }
 
-.Weather-prev {
-    border-radius: 3px 3px 3px 3px
-}
+    .Weather-prev,
+    .Weather-next {
+        display: flex;
+        align-content: center;
+        cursor: pointer;
+        width: auto;
+        margin-top: 150%;
+        padding: 20px;
+        color: #5B86EF;
+        font-weight: bold;
+        font-size: 30px;
+        transition: .6s ease;
+        border-radius: 0 3px 3px 0
+    }
 
-.Weather-prev:hover,
-.Weather-next:hover {
-    color: black;
-}
+    .Weather-next {
+        border-radius: 3px 3px 3px 3px
+    }
 
-.Weather-dot {
-    cursor: pointer;
-    height: 5px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #5B86EF;
-    display: inline-block;
-    transition: background-color .6s ease
-}
+    .Weather-prev {
+        border-radius: 3px 3px 3px 3px
+    }
 
-.Weather-dot:hover {
-    background-color: black;
-}
+    .Weather-prev:hover,
+    .Weather-next:hover {
+        color: black;
+    }
 
-.WeatherdayText {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 20vw;
-    height: 20px;
-    padding: 5%;
-    margin: 5%;
-    align-items: center;
-    color: #5B86EF;
-}
-.Weather-Contents-align{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    padding-top: 8%;
-}
+    .Weather-dot {
+        cursor: pointer;
+        height: 5px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #5B86EF;
+        display: inline-block;
+        transition: background-color .6s ease;
+    }
 
+    .Weather-dot:hover {
+        background-color: black;
+    }
+
+    .WeatherdayText {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 20vw;
+        height: 20px;
+        padding: 5%;
+        margin: 5%;
+        align-items: center;
+        color: #5B86EF;
+    }
+
+    .Weather-Contents-align {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        padding-top: 8%;
+    }
+}
+@media screen and (max-width:830px) {
+    .grid-container {
+        display: grid;
+        /*gap: 1%;*/
+        grid-template-columns: auto auto;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .grid-item {
+        /*box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);*/
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        text-decoration: none;
+
+    }
+
+    .newsImage {
+        width: 40vw;
+        height: 40vw;
+        border-radius: 3% 3% 0 0;
+        object-fit: cover;
+    }
+
+    .newsText {
+        font-weight: bold;
+        color: #5B86EF;
+        margin-top: -10px;
+        padding: 3% 0 3% 0;
+        width: 40vw;
+        font-family: KOTRA_GOTHIC;
+        font-size: 50%;
+        text-decoration: none;
+        /* word-break: break-word; */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: #5B86EF solid;
+        border-width: 4px 0 2px 0;
+    }
+
+    /*----------날씨카드슬라이드---------- */
+    .Weathercard-Date{
+        font-family: TmoneyRoundWindExtraBold;
+        font-size: 100%;
+    }
+    .Weathercard-Location{
+        font-family: TmoneyRoundWindExtraBold;
+        font-size: 100%;
+    }
+    .Weathercard-Temp{
+        font-family: KOTRA_GOTHIC;
+        font-size: 100%;
+    }
+    .Weather {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10%;
+    }
+
+    .Weather-slideshow-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .Weather-Slides {
+        border-radius: 5%;
+        display: flex;
+        justify-content: center;
+        width: 35vw;
+        height: 33vw;
+        box-shadow: 0px 5px 10px rgb(0 0 0 / 30%);
+    }
+
+    .Weather-prev,
+    .Weather-next {
+        /* align-content: center; */
+        /* cursor: pointer; */
+        /* width: auto; */
+        /* margin-top: 150%; */
+        /* padding: 20px; */
+        /* color: #5B86EF; */
+        /* font-weight: bold; */
+        /* font-size: 30px; */
+        /* transition: .6s ease; */
+        /* border-radius: 0 3px 3px 0; */
+        visibility: hidden;
+    }
+
+    .Weather-next {
+        border-radius: 3px 3px 3px 3px
+    }
+
+    .Weather-prev {
+        border-radius: 3px 3px 3px 3px
+    }
+
+    .Weather-prev:hover,
+    .Weather-next:hover {
+        color: black;
+    }
+
+    .Weather-dot {
+        cursor: pointer;
+        height: 5px;
+        width: 10px;
+        margin: 0 2px;
+        background-color: #5B86EF;
+        display: inline-block;
+        transition: background-color .6s ease;
+    }
+
+    .Weather-dot:hover {
+        background-color: black;
+    }
+
+    .WeatherdayText {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 35vw;
+        height: 20px;
+        padding: 5%;
+        margin: 5%;
+        align-items: center;
+        color: #5B86EF;
+    }
+
+    .Weather-Contents-align {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5%;
+    }
+}
 /*----------------------------------쇼핑페이지 시작------------------------------------------*/
 /*----------지도 api---------- */
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
@@ -1156,7 +1313,7 @@ hr {
 
 .Go-btn {
     font-family: TmoneyRoundWindExtraBold;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 5px;
     border: none;
     text-align: center;
@@ -1201,7 +1358,7 @@ hr {
 
 .Admin-write-btn {
     font-family: TmoneyRoundWindExtraBold;
-    font-size: 20px;
+    font-size: 15px;
     border-radius: 5px;
     border: none;
     text-align: center;
@@ -1238,54 +1395,147 @@ hr {
         background-position: 200% center;
     }
 }
+/*----------오프라인샵 form디자인---------- */
+.align-shopform-item{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.Shop-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+}
+.Shop-form-div3 {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.Shop-form-div3 label{
+    font-family: TmoneyRoundWindExtraBold;
+    font-size: 130%;
+}
+
+.Shop-form-control {
+    margin-top: 1%;
+    font-family: KOTRA_GOTHIC;
+    display: flex;
+    width: 90vw;
+    padding: 1%;
+    font-size: 100%;
+    border: 2px solid #7BD6EA;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+/*    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);*/
+.Shop-form-control:hover {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+textarea {
+    resize: vertical;
+}
+
+
 
 /*----------------------------------onlineshop시작------------------------------------------*/
 /*----------온라인 샵 grid---------- */
-.grid-container-Onlineshop {
-    display: grid;
-    /*gap: 1%;*/
-    grid-template-columns: auto auto auto auto;
-    padding-top: 5%;
-    width: 95%;
+@media screen and (max-width:830px){
+    .grid-container-Onlineshop {
+        display: grid;
+        /* gap: 1%; */
+        grid-template-columns: auto auto;
+        padding-top: 5%;
+        width: 100%;
+    }
+
+    .grid-item-Onlineshop {
+        /*box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);*/
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        text-decoration: none;
+
+    }
+    .OnlineshopImage{
+        width: 40vw;
+        height: 40vw;
+        border-radius: 3% 3% 0 0;
+        object-fit: cover;
+        /*object-fit: cover;*/
+    }
+    .OnlineshopText{
+        color: black;
+        padding: 3% 0 3% 0;
+        width: 40vw;
+        font-family: KOTRA_GOTHIC;
+        font-size: 50%;
+        text-decoration: none;
+        /* word-break: break-word; */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: black solid;
+        border-width: 0 0 2px 0;
+    }
+    .OnlineshopPrice{
+        font-weight: bold;
+        color: black;
+        padding: 3% 0 3% 0;
+        width: 40vw;
+        font-family: KOTRA_GOTHIC;
+        font-size: 50%;
+    }
+}
+@media screen and (min-width:830px){
+    .grid-container-Onlineshop {
+        display: grid;
+        /*gap: 1%;*/
+        grid-template-columns: auto auto auto auto;
+        padding-top: 5%;
+        width: 95%;
+    }
+
+    .grid-item-Onlineshop {
+        /*box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);*/
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        text-decoration: none;
+
+    }
+    .OnlineshopImage{
+        width: 20vw;
+        height: 20vw;
+        border-radius: 3% 3% 0 0;
+        object-fit: cover;
+        /*object-fit: cover;*/
+    }
+    .OnlineshopText{
+        color: black;
+        padding: 3% 0 3% 0;
+        width: 20vw;
+        font-family: KOTRA_GOTHIC;
+        font-size: 50%;
+        text-decoration: none;
+        /* word-break: break-word; */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: black solid;
+        border-width: 0 0 2px 0;
+    }
+    .OnlineshopPrice{
+        font-weight: bold;
+        color: black;
+        padding: 3% 0 3% 0;
+        width: 20vw;
+        font-family: KOTRA_GOTHIC;
+        font-size: 50%;
+    }
 }
 
-.grid-item-Onlineshop {
-    /*box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);*/
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-    text-decoration: none;
-
-}
-.OnlineshopImage{
-    width: 20vw;
-    height: 20vw;
-    border-radius: 3% 3% 0 0;
-    object-fit: cover;
-    /*object-fit: cover;*/
-}
-.OnlineshopText{
-    color: black;
-    padding: 3% 0 3% 0;
-    width: 20vw;
-    font-family: KOTRA_GOTHIC;
-    font-size: 50%;
-    text-decoration: none;
-    /* word-break: break-word; */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border: black solid;
-    border-width: 0 0 2px 0;
-}
-.OnlineshopPrice{
-    font-weight: bold;
-    color: black;
-    padding: 3% 0 3% 0;
-    width: 20vw;
-    font-family: KOTRA_GOTHIC;
-    font-size: 50%;
-}
 
 /*------------------------------------회원가입-------------------------------*/
 .joinForm {

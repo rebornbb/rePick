@@ -58,6 +58,7 @@ public class OfflineController {
     public String offlineshopCreate(OfflineForm offlineForm) {
         return "offlineshop_form";
     }
+
     @PreAuthorize("isAuthenticated()")
     @PostMapping("/create")
     public String offlineshopCreate(@Valid OfflineForm offlineForm,

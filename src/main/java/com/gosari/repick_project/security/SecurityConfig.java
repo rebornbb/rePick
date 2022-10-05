@@ -30,7 +30,8 @@ public class SecurityConfig {
         /*스프링 시큐리티의 세부 설정은 SecurityFilterChain 빈을 생성하여 설정 가능*/
 
         /* 모든 인증되지 않은 요청을 허락한다는 의미 - 로그인하지않더라도 모든페이지에 접근가능*/
-        http.authorizeRequests().antMatchers("/**").permitAll()
+        http.authorizeRequests()
+                .antMatchers("/**").permitAll()
 
                 /*스프링 시큐리티의 로그인 설정을 담당하는 부분*/
                 .and()
@@ -44,6 +45,7 @@ public class SecurityConfig {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
                 .logoutSuccessUrl("/")
                 .invalidateHttpSession(true)
+
         ;
         return http.build();
     }
