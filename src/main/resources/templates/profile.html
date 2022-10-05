@@ -2,25 +2,33 @@
       layout:decorate="~{layout}">
 
 <div layout:fragment="content">
+    <div class="profile_main_box">
+        <div class="profileBox">
+            <form th:action='@{/user/info}' th:object='${userUpdateForm}' method='post' enctype='multipart/form-data'>
+                <div>
+                    <div class="profile_name"  th:text='${siteUser.nickname}'></div>
+                    <img class="profile_img" th:src='@{${siteUser.getProfileImage()}}'>
+                    <input class="profile_file" type='file' name='file'>
+                </div>
+                <br />
+                <div class="pofile_user">
+                    <label for="username" class="form-label">사용자ID</label><br>
+                    <input type="text" th:field="${siteUser.username}" readonly>
+                </div>
+                <div class="pofile_user">
+                    <label for="nickname" class="form-label">닉네임</label><br>
+                    <input type="text" th:field="${siteUser.nickname}">
+                </div>
+                <div class="pofile_user">
+                    <label for="email" class="form-label">이메일</label><br>
+                    <input type="email" th:field="${siteUser.email}" id="email" readonly>
+                </div>
 
-    <h4>회원정보</h4>
 
-    <form th:action="@{/user/info}" th:object="${userModifyForm}" method="post">
-        <div th:replace="form_errors :: formErrorsFragment"></div>
-        <div>
-            <label for="username">사용자ID</label>
-            <input type="text" th:field="${siteUser.username}" readonly>
+                <button type="submit" class="btn-1 custom-btn btn-primary">수정하기</button>
+
+            </form>
         </div>
-        <div>
-            <label for="nickname">닉네임</label>
-            <input type="text" th:field="${siteUser.nickname}">
-        </div>
-        <div>
-            <label for="email">이메일</label>
-            <input type="email" th:field="${siteUser.email}" id="email">
-        </div>
-        <a th:href="@{/}">홈으로 돌아가기</a>
-        <button type="submit" onclick="alert('수정되었습니다.')">수정하기</button>
-    </form>
+    </div>
 </div>
 </html>

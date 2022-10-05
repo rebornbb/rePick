@@ -31,4 +31,8 @@ public class SiteUser {
     public void setting() {
         this.role = "ROLE_USER";
     }
+
+    private String profileImage;
+
+    private String ImageName;
 }

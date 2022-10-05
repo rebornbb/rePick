@@ -185,6 +185,13 @@ hr {
     /*align-items center추가*/
 }
 
+.align-Center-row-Evenly{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 /*---------------버튼모음---------------*/
 /*누르면 들어가면서 초록색으로 변하는 테두리 버튼*/
 .BorderGreen-button-wrap {
@@ -955,7 +962,7 @@ hr {
 }
 
 .rwd-table td:before {
-    content: attr(data-th) ": ";
+    /*content: attr(data-th) ": ";*/
     font-weight: bold;
     width: 120px;
     display: inline-block;
@@ -1015,11 +1022,14 @@ hr {
 }
 /*--------글상세--------*/
 .Offlineshop-Detail-shopName{
+    color: #5B86EF;
+    margin-top: 5%;
+    margin-bottom: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: TmoneyRoundWindExtraBold;
-    font-size: 250%;
+    font-size: 200%;
 }
 .Offlineshop-Detail-shopDetail{
     margin-top: 2%;
@@ -1027,15 +1037,93 @@ hr {
     justify-content: center;
     align-items: center;
     font-family: KOTRA_GOTHIC;
-    font-size: 150%;
+    font-size: 100%;
 }
 .Offlineshop-Detail-icon{
     margin-top: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    margin-right: 30px;
+    width: 20px;
+    margin-right: 10px;
+}
+.Offlineshop-Detail-WriteInfo{
+    padding: 10px;
+    font-family: KOTRA_GOTHIC;
+    margin: auto;
+    text-align: center;
+    width: 65%;
+    margin-top: 5%;
+    border: black solid;
+    border-width: 1px 0 0 0;
+    align-items: center;
+}
+.Offlineshop-Detail-WriteInfo div{
+    margin-right: 3%;
+}
+.Offlineshop-Detail-WriteInfo div>span:first-child{
+    font-weight: bold;
+}
+/*---오프라인추천매장버튼----*/
+.Green-button-Offline-update {
+    width: 50px;
+    letter-spacing: 2px;
+    margin-left: 5%;
+    font-family: 'TmoneyRoundWindExtraBold';
+    text-align: center;
+    line-height: 15px;
+    text-decoration: none;
+    background: #83F4B4;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    color: black;
+    height: 15px;
+    padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Green-button-Offline-update:active {
+    box-shadow: inset #71d3c3 -10px 5px 8px -1px, #d6d6d6 1px 0 2px;
+    position: relative;
+    top: 3px
+}
+
+.Green-button-Offline-update:hover {
+    background: #83F4B4;
+    color: white;
+}
+
+
+.Green-button-Offline-delete {
+    width: 50px;
+    letter-spacing: 2px;
+    margin-left: 1%;
+    font-family: 'TmoneyRoundWindExtraBold';
+    text-align: center;
+    line-height: 15px;
+    text-decoration: none;
+    background:  #71d3c3;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    color: white;
+    height: 15px;
+    padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Green-button-Offline-delete:active {
+    box-shadow: inset #83F4B4 -10px 5px 8px -1px, #d6d6d6 1px 0 2px;
+    position: relative;
+    top: 3px
+}
+
+.Green-button-Offline-delete:hover {
+    background: #83F4B4;
+    color: black;
 }
 /*----------pagination---------- */
 .pagenation {
@@ -1167,6 +1255,7 @@ hr {
     font-size: 30px;
     text-align: center;
     text-decoration: none;
+
 }
 .OnlineshopImage{
     width: 20vw;
@@ -1196,4 +1285,165 @@ hr {
     width: 20vw;
     font-family: KOTRA_GOTHIC;
     font-size: 50%;
+}
+
+/*------------------------------------회원가입-------------------------------*/
+.joinForm {
+    height: 130vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.sign_logo {
+    position: relative;
+    left: 38px;
+    flex-direction: column;
+    padding: 0 0 40px 0;
+}
+
+.signup_box {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+}
+
+.signup_box > h4 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.singup_form {
+    border-radius: 2px;
+    padding: 20px 10px;
+
+}
+
+.singup_form input {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    border: solid 1px black;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background: transparent;
+}
+
+.custom-btn {
+    margin: 20px;
+    outline: none;
+    border-radius: 5px;
+
+    width: 130px;
+    height: 40px;
+    padding: 10px 25px;
+    border: 2px solid #000;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+/* 회원가입 버튼1---------------------------------- */
+.btn-1 {
+    transition: all 0.3s ease;
+}
+.btn-1:hover {
+    box-shadow:
+            -7px -7px 20px 0px #fff9,
+            -4px -4px 5px 0px #fff9,
+            7px 7px 20px 0px #0002,
+            4px 4px 5px 0px #0001;
+}
+
+.singup_image {
+    left: 20px;
+}
+
+/*--------------------------로그인-----------------*/
+.login-form{
+    text-align: center;
+    border-radius: 2px;
+    padding: 20px 10px;
+}
+
+.login-form input {
+    width: 500px;
+    height: 40px;
+    font-size: 15px;
+    border: solid 1px black;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background: transparent;
+}
+
+.login-home {
+    height: 130vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/*------------------------프로필-----------------------------*/
+.profile_main_box {
+    width: 50%;
+    margin: auto;
+}
+
+.profile_img {
+    width: 200px;
+    position: relative;
+    left: 169px;
+}
+
+.profileBox {
+    width: 600px;
+    height: 700px;
+    background: lightblue;
+    border-radius: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.profile_name {
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.pofile_user {
+    border-radius: 2px;
+    padding: 20px 10px;
+}
+
+.pofile_user input {
+    width: 500px;
+    height: 40px;
+    font-size: 15px;
+    border: solid 1px black;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: white;
+}
+
+.profile_file {
+    position: relative;
+    top: 30px;
+}
+
+.form-label {
+    padding-bottom: 10px;
+    text-align: left;
 }

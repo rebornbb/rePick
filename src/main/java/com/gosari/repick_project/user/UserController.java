@@ -16,6 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.dao.DataIntegrityViolationException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
@@ -34,7 +35,7 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public String signup(@Valid UserCreateForm userCreateForm, BindingResult bindingResult) {
+    public String signup(@Valid UserCreateForm userCreateForm, BindingResult bindingResult, MultipartFile file) {
         if (bindingResult.hasErrors()) {
             return "signup_form";
         }
@@ -48,7 +49,7 @@ public class UserController {
         /*중복회원가입막기*/
         try {
             userService.create(userCreateForm.getUsername(),
-                    userCreateForm.getEmail(), userCreateForm.getPassword1(), userCreateForm.getNickname());
+                    userCreateForm.getEmail(), userCreateForm.getPassword1(), userCreateForm.getNickname(), file);
         }catch(DataIntegrityViolationException e) {
             e.printStackTrace();
             bindingResult.reject("signupFailed", "이미 등록된 사용자입니다.");
@@ -81,10 +82,10 @@ public class UserController {
     //로그인되어있는회원정보 수정
     @PreAuthorize("isAuthenticated()")
     @PostMapping("/info")
-    public String usermodify(UserModifyForm userModifyForm, Principal principal) {
+    public String usermodify(UserModifyForm userModifyForm, Principal principal, @RequestParam(value = "file", required = false) MultipartFile file)throws Exception {
         SiteUser siteUser = this.userService.getUser(principal.getName());
 
-        this.userService.modify(siteUser, userModifyForm.getNickname(), userModifyForm.getEmail());
+        this.userService.modify(siteUser, userModifyForm.getNickname(), userModifyForm.getEmail(),file);
         return "redirect:/user/info";
     }
 }

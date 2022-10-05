@@ -12,7 +12,7 @@
     <div id="map" style="width:100%;height:350px;"></div>
 
 
-    <div class="Offlineshop-Detail-shopName" th:text="${offlineShop.shopName}"></div>
+    <div id="shopName" class="Offlineshop-Detail-shopName" th:text="${offlineShop.shopName}"></div>
     <div class="align-Center-row">
         <img class="Offlineshop-Detail-icon" src="/images/call.png" alt="전화">
         <span class="Offlineshop-Detail-shopDetail" th:text="${offlineShop.shopNumber}"></span>
@@ -23,47 +23,53 @@
     </div>
     <div class="align-Center-row">
         <img class="Offlineshop-Detail-icon" src="/images/location.png" alt="주소">
-        <span class="Offlineshop-Detail-shopDetail" th:text="${offlineShop.shopAddress}"></span>
+        <span id="shopAddress" class="Offlineshop-Detail-shopDetail" th:text="${offlineShop.shopAddress}"></span>
     </div>
     <div class="align-Center-row">
+        <img class="Offlineshop-Detail-icon" src="/images/paper.png" alt="설명">
         <span class="Offlineshop-Detail-shopDetail" th:text="${offlineShop.shopContents}"></span>
     </div>
-    <div>
+
+    <div class="Offlineshop-Detail-WriteInfo align-Center-row">
         <div>
-        <span>작성 담당자 :</span>
-        <span th:if="${offlineShop.author != null}" th:text="${offlineShop.author.nickname}"></span>
+            <span>작성 담당자 :</span>
+            <span th:if="${offlineShop.author != null}" th:text="${offlineShop.author.nickname}"></span>
         </div>
         <div>
-        <span>작성 일시:</span>
-        <span th:text="${#dates.format(offlineShop.createDate, 'yyyy-MM-dd HH:mm')}"></span>
+            <span>작성 일시:</span>
+            <span th:text="${#dates.format(offlineShop.createDate, 'yyyy-MM-dd HH:mm')}"></span>
         </div>
-        <div></div>
-        <span>수정 일시:</span>
-        <div th:if="${offlineShop.modifyDate != null}">
-            <span th:text="${#dates.format(offlineShop.modifyDate, 'yyyy-MM-dd HH:mm')}"></span>
+        <div>
+            <span>수정 일시:</span>
+            <span th:if="${offlineShop.modifyDate != null}" th:text="${#dates.format(offlineShop.modifyDate, 'yyyy-MM-dd HH:mm')}">
+            </span>
         </div>
+
+            <a th:href="@{|/offlineshop/modify/${offlineShop.id}|}"
+               sec:authorize="isAuthenticated()" class="Green-button-Offline-update"
+               th:if="${offlineShop.author != null and #authentication.getPrincipal().getUsername() == offlineShop.author.username}"
+               th:text="수정"></a>
+
+
+            <a href="javascript:void(0);" th:data-uri="@{|/offlineshop/delete/${offlineShop.id}|}"
+               sec:authorize="isAuthenticated()" class="delete Green-button-Offline-delete"
+               th:if="${offlineShop.author != null and #authentication.getPrincipal().getUsername() == offlineShop.author.username}"
+               th:text="삭제"></a>
+
     </div>
+
+
     <!--수정-->
     <!--  <div>-->
     <!--    <h1 sec:authorize="hasRole('ROLE_USER')">Has user Role</h1>-->
     <!--    <h1 sec:authorize="hasRole('ROLE_ADMIN')">Has admin Role</h1>-->
     <!--  </div>-->
 
-    <div>
-        <a th:href="@{|/offlineshop/modify/${offlineShop.id}|}"
-           sec:authorize="isAuthenticated()"
-           th:if="${offlineShop.author != null and #authentication.getPrincipal().getUsername() == offlineShop.author.username}"
-           th:text="수정"></a>
 
-        <a href="javascript:void(0);" th:data-uri="@{|/offlineshop/delete/${offlineShop.id}|}"
-           sec:authorize="isAuthenticated()" class="delete"
-           th:if="${offlineShop.author != null and #authentication.getPrincipal().getUsername() == offlineShop.author.username}"
-           th:text="삭제"></a>
-    </div>
+
 </div>
 
 <script layout:fragment="script" type="text/javascript">
-    // let getshopname = document.getElementsByClassName("Offlineshop-Detail-shopName");
 
     const delete_elements = document.getElementsByClassName("delete");
     Array.from(delete_elements).forEach(function (element) {
@@ -73,9 +79,7 @@
             }
         });
     });
-    function getInnerHtmlName(){
-        const element = document.getElementById()
-    }
+
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {
             center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -88,8 +92,13 @@
     // 주소-좌표 변환 객체를 생성합니다
     var geocoder = new kakao.maps.services.Geocoder();
 
+    //주소값 입력받아 변수에담기
+    let address = document.getElementById('shopAddress').innerText;
+
     // 주소로 좌표를 검색합니다
-    geocoder.addressSearch('제주특별자치도 제주시 첨단로 242', function(result, status) {
+    geocoder.addressSearch(address, function(result, status) {
+
+
 
         // 정상적으로 검색이 완료됐으면
         if (status === kakao.maps.services.Status.OK) {
@@ -102,10 +111,15 @@
                 position: coords
             });
 
+
             // 인포윈도우로 장소에 대한 설명을 표시합니다
             var infowindow = new kakao.maps.InfoWindow({
-                content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
+                content: '<div id="shopmarker" style="width:150px;text-align:center;padding:6px 0;' +
+                    'border-radius: 5px; font-family: TmoneyRoundWindExtraBold ">YOUR PICK!</div>'
             });
+
+
+
             infowindow.open(map, marker);
 
             // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다

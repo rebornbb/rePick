@@ -6,23 +6,20 @@
         </div>
 
         <ul class="navbar_menu">
-            </li>
             <li><a th:href="@{/introduce}">REPICK 소개</a></li>
             <li><a th:href="@{/news}">EARTH NEWS</a></li>
             <li><a th:href="@{/offlineshop/list}">착한 PICK</a></li>
+            <li><a th:href="@{/question/list}">게시판</a></li>
+            <li><a th:href="@{/user/signup}">회원가입</a></li>
             <li>
             <a sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
-            </li>
-            <li>
             <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
             </li>
-            <li>
-            <a sec:authorize="isAuthenticated()" th:href="@{/user/info}">나의정보</a>
-            </li>
+
         </ul>
 
         <div class="navbar_icons">
-            <a href="#">
+            <a sec:authorize="isAuthenticated()" th:href="@{/user/info}">
                 <li><img src="https://cdn-icons-png.flaticon.com/512/2609/2609282.png" alt=""
                          style="width:30px"></li>
             </a>

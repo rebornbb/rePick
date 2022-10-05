@@ -17,4 +17,8 @@ public class UserModifyForm {
     @NotEmpty(message = "수정할 이메일을 입력해주세요.")
     @Email
     private String email;
+
+    private String profileImage;
+
+    private String ImageName;
 }

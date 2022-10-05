@@ -2,30 +2,43 @@
       layout:decorate="~{layout}">
 
 <div layout:fragment="content">
-    <h4>회원가입</h4>
-    <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+
+<!--    <div>-->
+<!--        <img src='/image/repick_logo_blue.svg' width='75%' class="sign_logo">-->
+<!--    </div>-->
+    <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post" enctype='multipart/form-data' class="sign_up_join">
         <div th:replace="form_errors :: formErrorsFragment"></div>
-        <div class="mb-3">
-            <label for="username">사용자ID</label>
-            <input type="text" th:field="*{username}">
+        <div class="signup_box">
+            <h4>회원가입</h4>
+            <div class="singup_form">
+                <label for="username" class="form-label">사용자ID</label><br>
+                <input type="text" th:field="*{username}">
+            </div>
+            <div class="singup_form">
+                <label for="nickname" class="form-label">닉네임</label><br>
+                <input type="text" th:field="*{nickname}">
+            </div>
+            <div class="singup_form">
+                <label for="password" class="form-label">비밀번호</label><br>
+                <input type="password" th:field="*{password1}">
+            </div>
+            <div class="singup_form">
+                <label for="password" class="form-label">비밀번호 확인</label><br>
+                <input type="password" th:field="*{password2}">
+            </div>
+            <div class="singup_form">
+                <label for="email" class="form-label">이메일</label><br>
+                <input type="email" th:field="*{email}">
+            </div>
+            <div class='singup_image'>
+                <label for="profileImage" class="form-label">프로필 이미지</label>
+                <input type="file" th:filed="*{profileImage}" name="file">
+            </div>
+            <div class='singup_form'>
+                <button type="submit" class="btn-1 custom-btn btn-primary">회원가입</button>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="nickname">닉네임</label>
-            <input type="text" th:field="*{nickname}">
-        </div>
-        <div class="mb-3">
-            <label for="password">비밀번호</label>
-            <input type="password" th:field="*{password1}">
-        </div>
-        <div class="mb-3">
-            <label for="password">비밀번호 확인</label>
-            <input type="password" th:field="*{password2}">
-        </div>
-        <div class="mb-3">
-            <label for="email">이메일</label>
-            <input type="email" th:field="*{email}">
-        </div>
-        <button type="submit">회원가입</button>
     </form>
+
 </div>
 </html>
