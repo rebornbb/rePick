@@ -795,30 +795,6 @@ hr {
     }
 }
 
-@media screen and (max-width:830px) {
-    .Weather {
-        display: none;
-        position: fixed;
-        visibility: hidden;
-        right: 0;
-        bottom: 30px;
-    }
-    .Weathercard-Date{
-        display: none;
-        visibility: hidden;
-    }
-}
-@media screen and (min-width:830px) {
-    .Weather {
-        /*display: block;*/
-        visibility: visible;
-    }
-    .Weathercard-Date{
-        /*display: block;*/
-        visibility: visible;
-    }
-}
-
 
 /*----------뉴스 리스트 grid 클때---------- */
 @media screen and (min-width:830px) {
@@ -866,38 +842,46 @@ hr {
 @media screen and (min-width:830px) {
     /*----------날씨카드슬라이드 클때---------- */
     .Weathercard-Date {
+        display: flex;
+        visibility: visible;
         font-family: TmoneyRoundWindExtraBold;
         font-size: 2.0vw;
     }
 
     .Weathercard-Location {
+        display: flex;
+        visibility: visible;
         font-family: TmoneyRoundWindExtraBold;
         font-size: 3.0vw;
     }
 
     .Weathercard-Temp {
+        display: flex;
+        visibility: visible;
         font-family: KOTRA_GOTHIC;
         font-size: 1.5vw;
     }
-
     .Weather {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-bottom: 5%;
+        visibility: visible;
     }
 
     .Weather-slideshow-container {
         display: flex;
+        visibility: visible;
         flex-direction: row;
         align-items: center;
     }
 
     .Weather-Slides {
+        display: flex;
+        visibility: visible;
         background: white;
         border-radius: 5%;
-        display: flex;
         justify-content: center;
         width: 20vw;
         height: 20vw;
@@ -907,6 +891,7 @@ hr {
     .Weather-prev,
     .Weather-next {
         display: flex;
+        visibility: visible;
         align-content: center;
         cursor: pointer;
         width: auto;
@@ -933,6 +918,7 @@ hr {
     }
 
     .Weather-dot {
+        visibility: visible;
         cursor: pointer;
         height: 5px;
         width: 15px;
@@ -964,7 +950,7 @@ hr {
         align-content: center;
         justify-content: center;
         align-items: center;
-        padding-top: 8%;
+        padding-top: 9%;
     }
 }
 
@@ -1014,6 +1000,8 @@ hr {
 @media screen and (max-width:830px) {
     /*----------날씨카드슬라이드 작을때---------- */
     .Weathercard-Date {
+        display: none;
+        visibility: hidden;
         font-family: TmoneyRoundWindExtraBold;
         font-size: 3.3vw;
     }
@@ -1029,11 +1017,16 @@ hr {
     }
 
     .Weather {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10%;
+        /*display: flex;*/
+        /*flex-direction: column;*/
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        /*margin-bottom: 10%;*/
+        /*display: none;*/
+        position: fixed;
+        visibility: visible;
+        right: 0;
+        bottom: 30px;
     }
 
     .Weather-slideshow-container {

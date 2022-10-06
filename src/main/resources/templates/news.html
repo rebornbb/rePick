@@ -433,13 +433,12 @@
         }, 2000);
     }
 
-    //--------날씨카드 보이기
+    //<!---------------------------날씨작을때---------------------------------->
+
+    const Show = document.getElementById('Showweather');
+    const ShowBtn = document.getElementById('WeatherBtn');
+
     function WeatherShowToggle() {
-
-
-        const Show = document.getElementById('Showweather');
-        const ShowBtn = document.getElementById('WeatherBtn');
-
 
         if(Show.style.visibility !== 'hidden') {
             Show.style.visibility = 'hidden';
@@ -448,13 +447,20 @@
         }
 
     }
-
-
-    // if($('#WeatherBtn').is(':hidden')){
-    //     $('#Showweather').css({display:'block'});
-    // } else {
-    //     $('#Showweather').css({display:'none'});
+    // if(ShowBtn.style.visibility == 'hidden') {
+    //     Show.style.visibility = 'visible';
+    //     Show.style.display = 'flex';
+    // }else {
+    //     Show.style.visibility = 'hidden';
+    //     Show.style.display = 'none';
     // }
+
+
+    if( window.innerWidth >= 830) {
+        Show.style.visibility = 'visible';
+    }else {
+        Show.style.visibility = 'hidden';
+    }
 
 </script>
 
