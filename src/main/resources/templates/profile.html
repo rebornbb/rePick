@@ -6,21 +6,21 @@
         <div class="profileBox">
             <form th:action='@{/user/info}' th:object='${userUpdateForm}' method='post' enctype='multipart/form-data'>
                 <div>
-                    <div class="profile_name"  th:text='${siteUser.nickname}'></div>
+                    <div class="profile_name Tmoney-fontsize-130"  th:text='${siteUser.nickname}' ></div>
                     <img class="profile_img" th:src='@{${siteUser.getProfileImage()}}'>
                     <input class="profile_file" type='file' name='file'>
                 </div>
                 <br />
                 <div class="pofile_user">
-                    <label for="username" class="form-label">사용자ID</label><br>
+                    <label for="username" class="form-label KOTRA-fontsize-100">사용자ID</label><br>
                     <input type="text" th:field="${siteUser.username}" readonly>
                 </div>
                 <div class="pofile_user">
-                    <label for="nickname" class="form-label">닉네임</label><br>
+                    <label for="nickname" class="form-label KOTRA-fontsize-100">닉네임</label><br>
                     <input type="text" th:field="${siteUser.nickname}">
                 </div>
                 <div class="pofile_user">
-                    <label for="email" class="form-label">이메일</label><br>
+                    <label for="email" class="form-label KOTRA-fontsize-100">이메일</label><br>
                     <input type="email" th:field="${siteUser.email}" id="email" readonly>
                 </div>
 

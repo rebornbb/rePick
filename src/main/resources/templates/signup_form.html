@@ -9,29 +9,29 @@
     <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post" enctype='multipart/form-data' class="sign_up_join">
         <div th:replace="form_errors :: formErrorsFragment"></div>
         <div class="signup_box">
-            <h4>회원가입</h4>
+            <h4 class="Tmoney-fontsize-130">회원가입</h4>
             <div class="singup_form">
-                <label for="username" class="form-label">사용자ID</label><br>
+                <label for="username" class="form-label KOTRA-fontsize-100">사용자ID</label><br>
                 <input type="text" th:field="*{username}">
             </div>
             <div class="singup_form">
-                <label for="nickname" class="form-label">닉네임</label><br>
+                <label for="nickname" class="form-label KOTRA-fontsize-100">닉네임</label><br>
                 <input type="text" th:field="*{nickname}">
             </div>
             <div class="singup_form">
-                <label for="password" class="form-label">비밀번호</label><br>
+                <label for="password" class="form-label KOTRA-fontsize-100">비밀번호</label><br>
                 <input type="password" th:field="*{password1}">
             </div>
             <div class="singup_form">
-                <label for="password" class="form-label">비밀번호 확인</label><br>
+                <label for="password" class="form-label KOTRA-fontsize-100">비밀번호 확인</label><br>
                 <input type="password" th:field="*{password2}">
             </div>
             <div class="singup_form">
-                <label for="email" class="form-label">이메일</label><br>
+                <label for="email" class="form-label KOTRA-fontsize-100">이메일</label><br>
                 <input type="email" th:field="*{email}">
             </div>
             <div class='singup_image'>
-                <label for="profileImage" class="form-label">프로필 이미지</label>
+                <label for="profileImage" class="form-label KOTRA-fontsize-80">프로필 이미지</label>
                 <input type="file" th:filed="*{profileImage}" name="file">
             </div>
             <div class='singup_form'>

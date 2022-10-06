@@ -767,6 +767,7 @@ hr {
 /*----------------------------------뉴스페이지 news.html 시작------------------------------------------*/
 @media screen and (min-width:830px) {
     #WeatherBtn {
+        display: none;
         visibility: hidden;
         position: fixed;
         right: 0px;
@@ -786,7 +787,6 @@ hr {
         font-family: TmoneyRoundWindExtraBold;
         background: white;
         cursor: pointer;
-
         display: block;
         position: fixed;
         right: 0px;
@@ -797,21 +797,24 @@ hr {
 
 @media screen and (max-width:830px) {
     .Weather {
-        /*display: none;*/
+        display: none;
         position: fixed;
         visibility: hidden;
         right: 0;
         bottom: 30px;
     }
     .Weathercard-Date{
+        display: none;
         visibility: hidden;
     }
 }
 @media screen and (min-width:830px) {
     .Weather {
+        /*display: block;*/
         visibility: visible;
     }
     .Weathercard-Date{
+        /*display: block;*/
         visibility: visible;
     }
 }
@@ -1711,8 +1714,8 @@ textarea {
     width: 100%;
     height: 40px;
     font-size: 15px;
-    border: solid 1px black;
-    border-radius: 15px;
+    border: solid 2px black;
+    border-radius: 30px;
     outline: none;
     padding-left: 10px;
     background: transparent;
@@ -1738,6 +1741,7 @@ textarea {
 
 /* 회원가입 버튼1---------------------------------- */
 .btn-1 {
+    font-family: 'TmoneyRoundWindExtraBold';
     transition: all 0.3s ease;
 }
 .btn-1:hover {
@@ -1792,13 +1796,15 @@ textarea {
 }
 
 .profileBox {
+    padding-top: 20px;
     width: 600px;
-    height: 700px;
+    height: 730px;
     background: lightblue;
     border-radius: 20px;
     position: absolute;
     display: flex;
     justify-content: center;
+    box-shadow: 0px 5px 10px rgb(0 0 0 / 20%);
 }
 
 .profile_name {
@@ -1816,8 +1822,8 @@ textarea {
     width: 500px;
     height: 40px;
     font-size: 15px;
-    border: solid 1px black;
-    border-radius: 15px;
+    border: solid 2px black;
+    border-radius: 30px;
     outline: none;
     padding-left: 10px;
     background-color: white;
