@@ -9,7 +9,7 @@
 <div class="align-Center">
 <div class="grid-container">
 
-    <div class="Weather">
+    <div class="Weather" id="Showweather">
         <div class="Weather-slideshow-container">
             <div>
                 <a class="Weather-prev" onclick='WeatherPlusSlides(-1)'>&#10094;</a>
@@ -150,6 +150,7 @@
         </div>
     </div>
 
+    <button id="WeatherBtn" onclick="WeatherShowToggle()">날씨버튼</button>
 
     <div th:each="news : ${news}">
         <div class="grid-item align-Colum-center">
@@ -171,6 +172,23 @@
 
 
 <script layout:fragment="script">
+
+    function WeatherShowToggle() {
+
+        // 토글 할 버튼 선택
+        const Show = document.getElementById('Showweather');
+
+        // btn 숨기기 (display: none)
+        if(Show.style.visibility !== 'hidden') {
+           Show.style.visibility = 'hidden';
+        }
+        // btn 보이기 (display: block)
+        else {
+            Show.style.visibility = 'visible';
+        }
+
+    }
+
     //----------------------------------날씨 API
     $(document).ready(function () {
 

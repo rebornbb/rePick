@@ -55,6 +55,11 @@
                th:if="${offlineShop.author != null and #authentication.getPrincipal().getUsername() == offlineShop.author.username}"
                th:text="삭제"></a>
 
+            <a th:href="@{/offlineshop/create}"
+               sec:authorize="isAuthenticated()" class="Green-button-Offline-create"
+               th:if="${offlineShop.author != null and #authentication.getPrincipal().getUsername() == offlineShop.author.username}"
+               th:text="추가작성"></a>
+
     </div>
 
 

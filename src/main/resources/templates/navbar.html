@@ -10,23 +10,23 @@
             <li><a th:href="@{/news}">EARTH NEWS</a></li>
             <li><a th:href="@{/offlineshop/list}">착한 PICK</a></li>
             <li><a th:href="@{/question/list}">RIPICKER 게시판</a></li>
-            <li><a th:href="@{/user/signup}">회원가입</a></li>
+            <li><a th:href="@{/user/signup}" id="join">회원가입</a></li>
             <li>
-            <a sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
-            <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+            <a sec:authorize="isAnonymous()" th:href="@{/user/login}" id="login">로그인</a>
+            <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}" id="logout">로그아웃</a>
             </li>
 
         </ul>
 
         <div class="navbar_icons">
             <a sec:authorize="isAuthenticated()" th:href="@{/user/info}">
-                <li><img src="https://cdn-icons-png.flaticon.com/512/2609/2609282.png" alt=""
-                         style="width:30px"></li>
+                <li><img src="/images/rePick_symbol_blue.svg" alt=""
+                         style="width:50px"></li>
             </a>
         </div>
         <a href="#" class="navbar_toggleBtn">
-            <img src="https://cdn-icons-png.flaticon.com/512/7710/7710488.png" alt=""
-                 style="width:30px">
+            <img src="/images/togle.png" alt=""
+                 style="width:40px">
         </a>
 
     </nav>

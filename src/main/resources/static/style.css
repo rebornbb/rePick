@@ -293,6 +293,9 @@ hr {
 
 
 /*-----------------------------------네비게이션-------------------------------------------*/
+#join,#login,#logout{
+    color: #5B86EF;
+}
 .navbar{
     font-family: 'TmoneyRoundWindExtraBold';
     display: flex;
@@ -316,8 +319,8 @@ hr {
     padding: 8px 12px;
 }
 .navbar_menu li:hover{
-    background-color: #71d3c3;
-    border-radius: 4px;
+    background-color: rgba(123, 214, 234, 0.2);
+    border-radius: 50px;
 }
 .navbar_icons{
     list-style: none;
@@ -370,9 +373,9 @@ hr {
 
 #Nav-Logo {
     display: inline-flex;
-    height: 40px;
-    width: 140px;
-    background-image: url("/images/basic_logo.svg");
+    height: 50px;
+    width: 200px;
+    background-image: url("/images/rePick_logo-basic.svg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
@@ -422,6 +425,7 @@ hr {
         justify-content: center;
         text-align: center;
         padding: 3%;
+        align-items: center;
     }
 }
 /*------------- 이미지 자동 슬라이드------------- */
@@ -746,6 +750,10 @@ hr {
 }
 
 /*-----------------------------------소개페이지 introduce.html 끝-------------------------------------------*/
+.Intro-Logo{
+    width: 400px;
+    padding: 0 2% 0 2%;
+}
 /*----------페이징 버튼 효과---------- */
 .active {
     background-color: #5B86EF;
@@ -757,6 +765,41 @@ hr {
 }
 
 /*----------------------------------뉴스페이지 news.html 시작------------------------------------------*/
+@media screen and (min-width:830px) {
+    #WeatherBtn {
+        visibility: hidden;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        padding: 10px;
+    }
+}
+@media screen and (max-width:830px) {
+    #WeatherBtn {
+        display: block;
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:830px) {
+    .Weather {
+        /*display: none;*/
+        position: fixed;
+        visibility: hidden;
+        right: 30px;
+        bottom: 30px;
+    }
+}
+@media screen and (min-width:830px) {
+    .Weather {
+        visibility: visible;
+    }
+}
+
+
 /*----------뉴스 리스트 grid---------- */
 @media screen and (min-width:830px) {
     .grid-container {
@@ -828,6 +871,7 @@ hr {
     }
 
     .Weather-Slides {
+        background: white;
         border-radius: 5%;
         display: flex;
         justify-content: center;
@@ -944,6 +988,7 @@ hr {
     /*----------날씨카드슬라이드---------- */
     .Weathercard-Date{
         font-family: TmoneyRoundWindExtraBold;
+        margin-top: 30%;
         font-size: 100%;
     }
     .Weathercard-Location{
@@ -969,6 +1014,7 @@ hr {
     }
 
     .Weather-Slides {
+        background: white;
         border-radius: 5%;
         display: flex;
         justify-content: center;
@@ -1006,6 +1052,7 @@ hr {
     }
 
     .Weather-dot {
+        visibility: hidden;
         cursor: pointer;
         height: 5px;
         width: 10px;
@@ -1252,6 +1299,67 @@ hr {
     color: white;
 }
 
+.Green-button-Offline-create {
+    width: 80px;
+    letter-spacing: 2px;
+    margin-left: 1%;
+    font-family: 'TmoneyRoundWindExtraBold';
+    text-align: center;
+    line-height: 15px;
+    text-decoration: none;
+    background:  #71d3c3;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    color: black;
+    height: 15px;
+    padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Green-button-Offline-create:active {
+    box-shadow: inset #83F4B4 -10px 5px 8px -1px, #d6d6d6 1px 0 2px;
+    position: relative;
+    top: 3px
+}
+
+.Green-button-Offline-create:hover {
+    background:  #71d3c3;
+    color: white;
+}
+
+.Green-button-Offline-create {
+    width: 80px;
+    letter-spacing: 2px;
+    margin-left: 1%;
+    font-family: 'TmoneyRoundWindExtraBold';
+    text-align: center;
+    line-height: 15px;
+    text-decoration: none;
+    background: #83F4B4;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    color: black;
+    height: 15px;
+    padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Green-button-Offline-delete:active {
+    box-shadow: inset #71d3c3 -10px 5px 8px -1px, #d6d6d6 1px 0 2px;
+    position: relative;
+    top: 3px
+}
+
+.Green-button-Offline-delete:hover {
+    background:  #71d3c3;
+    color: white;
+}
+
+
 
 .Green-button-Offline-delete {
     width: 50px;
@@ -1357,6 +1465,7 @@ hr {
 /*----------admin 글쓰기버튼---------- */
 
 .Admin-write-btn {
+    text-decoration: none;
     font-family: TmoneyRoundWindExtraBold;
     font-size: 15px;
     border-radius: 5px;
@@ -1696,4 +1805,20 @@ textarea {
 .form-label {
     padding-bottom: 10px;
     text-align: left;
+}
+
+/*------------------------인덱스페이지-----------------------------*/
+
+.index-video{
+    width: 712px;
+    height: 401px;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }

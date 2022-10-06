@@ -2,25 +2,17 @@ package com.gosari.repick_project.user;
 
 import javax.validation.Valid;
 
-import com.gosari.repick_project.answer.Answer;
-import com.gosari.repick_project.answer.AnswerForm;
-import com.gosari.repick_project.question.QuestionForm;
-import org.apache.catalina.User;
+
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.dao.DataIntegrityViolationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.server.ResponseStatusException;
-
 import java.security.Principal;
-import java.util.List;
+
 
 @RequiredArgsConstructor
 @Controller
@@ -28,14 +20,13 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
-
     @GetMapping("/signup")
     public String signup(UserCreateForm userCreateForm) {
         return "signup_form";
     }
 
     @PostMapping("/signup")
-    public String signup(@Valid UserCreateForm userCreateForm, BindingResult bindingResult, MultipartFile file) {
+    public String signup(@Valid UserCreateForm userCreateForm, BindingResult bindingResult, MultipartFile file)throws Exception {
         if (bindingResult.hasErrors()) {
             return "signup_form";
         }

@@ -10,9 +10,8 @@
             </button>
         </div>
 
-    <!--<a th:href="@{/offlineshop/create}" class="Admin-write-btn" >오프라인추천매장 등록하기</a>-->
-
         <a sec:authorize="hasRole('ADMIN')" class="Admin-write-btn" th:href="@{/offlineshop/create}">오프라인추천매장 등록하기</a>
+
     </div>
 
     <div class="map_wrap">

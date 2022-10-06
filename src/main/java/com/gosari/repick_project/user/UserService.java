@@ -1,22 +1,22 @@
 package com.gosari.repick_project.user;
+
 import com.gosari.repick_project.exception.DataNotFoundException;
-import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.File;
 import java.util.Optional;
 import java.util.UUID;
+
 
 @RequiredArgsConstructor
 @Service
 public class UserService {
 
-    public Object modify;
-    SiteUser user = new SiteUser();
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+
 
     public SiteUser create(String username, String email, String password, String nickname, MultipartFile file)throws Exception {
         String profileImage = System.getProperty("user.dir") + "\\\\src\\\\main\\\\resources\\\\static\\\\photo";
@@ -25,7 +25,9 @@ public class UserService {
         File saveFile = new File(profileImage, ImageName);
         file.transferTo(saveFile);
 
-        user.getId();
+        SiteUser user = new SiteUser();
+
+//        user.getId();
         user.setUsername(username);
         user.setNickname(nickname);
         user.setEmail(email);
@@ -40,7 +42,7 @@ public class UserService {
 
     /*SiteUser를 조회할수있는 getUser메서드*/
     public SiteUser getUser(String username){
-        Optional<SiteUser> siteUser = this.userRepository.findByusername(username);
+        Optional<SiteUser> siteUser = this.userRepository.findByUsername(username);
         if(siteUser.isPresent()){
             return siteUser.get();
         }else{
@@ -62,7 +64,8 @@ public class UserService {
 
         siteUser.setNickname(nickname);
         siteUser.setEmail(email);
-        this.userRepository.save(user);
+
+        this.userRepository.save(siteUser);
         return siteUser;
     }
 }

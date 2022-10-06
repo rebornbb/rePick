@@ -12,7 +12,7 @@ public class SiteUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    private Integer id;
 
     @Column(unique = true)
     private String username;
@@ -28,7 +28,7 @@ public class SiteUser {
     private String role;
 
     @PrePersist
-    public void setting() {
+    public void setting(){
         this.role = "ROLE_USER";
     }
 
