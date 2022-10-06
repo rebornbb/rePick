@@ -150,7 +150,6 @@
         </div>
     </div>
 
-    <button id="WeatherBtn" onclick="WeatherShowToggle()">날씨버튼</button>
 
     <div th:each="news : ${news}">
         <div class="grid-item align-Colum-center">
@@ -167,27 +166,13 @@
 </div>
 </div>
 
+<!---------------------------날씨작을때---------------------------------->
+    <button id="WeatherBtn" onclick="WeatherShowToggle()">오늘날씨</button>
 
 </div>
 
 
 <script layout:fragment="script">
-
-    function WeatherShowToggle() {
-
-        // 토글 할 버튼 선택
-        const Show = document.getElementById('Showweather');
-
-        // btn 숨기기 (display: none)
-        if(Show.style.visibility !== 'hidden') {
-           Show.style.visibility = 'hidden';
-        }
-        // btn 보이기 (display: block)
-        else {
-            Show.style.visibility = 'visible';
-        }
-
-    }
 
     //----------------------------------날씨 API
     $(document).ready(function () {
@@ -447,6 +432,27 @@
             WeatherPlusSlides(WeatherslideIndex)
         }, 2000);
     }
+
+    //--------날씨카드 보이기
+    function WeatherShowToggle() {
+
+
+        const Show = document.getElementById('Showweather');
+        const ShowBtn = document.getElementById('WeatherBtn');
+
+
+        if(Show.style.visibility !== 'hidden') {
+            Show.style.visibility = 'hidden';
+        }else {
+            Show.style.visibility = 'visible';
+        }
+
+        if(ShowBtn.style.visibility == 'hidden'){
+            Show.style.visibility = 'visible';
+        }
+
+    }
+
 </script>
 
 </html>

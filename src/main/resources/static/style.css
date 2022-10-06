@@ -776,6 +776,17 @@ hr {
 }
 @media screen and (max-width:830px) {
     #WeatherBtn {
+        margin: 20px;
+        outline: none;
+        border-radius: 5px;
+        width: 130px;
+        height: 40px;
+        border: 2px solid black;
+        font-weight: 500;
+        font-family: TmoneyRoundWindExtraBold;
+        background: white;
+        cursor: pointer;
+
         display: block;
         position: fixed;
         right: 0px;
@@ -789,18 +800,24 @@ hr {
         /*display: none;*/
         position: fixed;
         visibility: hidden;
-        right: 30px;
+        right: 0;
         bottom: 30px;
+    }
+    .Weathercard-Date{
+        visibility: hidden;
     }
 }
 @media screen and (min-width:830px) {
     .Weather {
         visibility: visible;
     }
+    .Weathercard-Date{
+        visibility: visible;
+    }
 }
 
 
-/*----------뉴스 리스트 grid---------- */
+/*----------뉴스 리스트 grid 클때---------- */
 @media screen and (min-width:830px) {
     .grid-container {
         display: grid;
@@ -842,20 +859,24 @@ hr {
         border: #5B86EF solid;
         border-width: 4px 0 2px 0;
     }
+}
+@media screen and (min-width:830px) {
+    /*----------날씨카드슬라이드 클때---------- */
+    .Weathercard-Date {
+        font-family: TmoneyRoundWindExtraBold;
+        font-size: 2.0vw;
+    }
 
-    /*----------날씨카드슬라이드---------- */
-    .Weathercard-Date{
+    .Weathercard-Location {
         font-family: TmoneyRoundWindExtraBold;
-        font-size: 150%;
+        font-size: 3.0vw;
     }
-    .Weathercard-Location{
-        font-family: TmoneyRoundWindExtraBold;
-        font-size: 200%;
-    }
-    .Weathercard-Temp{
+
+    .Weathercard-Temp {
         font-family: KOTRA_GOTHIC;
-        font-size: 130%;
+        font-size: 1.5vw;
     }
+
     .Weather {
         display: flex;
         flex-direction: column;
@@ -943,7 +964,9 @@ hr {
         padding-top: 8%;
     }
 }
+
 @media screen and (max-width:830px) {
+    /*----------그리드 작을때---------- */
     .grid-container {
         display: grid;
         /*gap: 1%;*/
@@ -984,21 +1007,24 @@ hr {
         border: #5B86EF solid;
         border-width: 4px 0 2px 0;
     }
+}
+@media screen and (max-width:830px) {
+    /*----------날씨카드슬라이드 작을때---------- */
+    .Weathercard-Date {
+        font-family: TmoneyRoundWindExtraBold;
+        font-size: 3.3vw;
+    }
 
-    /*----------날씨카드슬라이드---------- */
-    .Weathercard-Date{
+    .Weathercard-Location {
         font-family: TmoneyRoundWindExtraBold;
-        margin-top: 30%;
-        font-size: 100%;
+        font-size: 3.3vw;
     }
-    .Weathercard-Location{
-        font-family: TmoneyRoundWindExtraBold;
-        font-size: 100%;
-    }
-    .Weathercard-Temp{
+
+    .Weathercard-Temp {
         font-family: KOTRA_GOTHIC;
-        font-size: 100%;
+        font-size: 3vw;
     }
+
     .Weather {
         display: flex;
         flex-direction: column;
