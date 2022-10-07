@@ -304,7 +304,7 @@ hr {
     border: black solid;
     border-width: 0 0 2px 0;
     padding: 8px 30px;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
 }
 .navbar a{
     text-decoration: none;
@@ -750,9 +750,18 @@ hr {
 }
 
 /*-----------------------------------소개페이지 introduce.html 끝-------------------------------------------*/
-.Intro-Logo{
-    width: 400px;
-    padding: 0 2% 0 2%;
+@media screen and (max-width:830px) {
+    .Intro-Logo {
+        margin: auto;
+        width: 400px;
+        padding: 0 2% 0 2%;
+    }
+}
+@media screen and (min-width:830px) {
+    .Intro-Logo {
+        width: 400px;
+        padding: 0 2% 0 2%;
+    }
 }
 /*----------페이징 버튼 효과---------- */
 .active {
@@ -1833,12 +1842,74 @@ textarea {
 }
 
 /*------------------------인덱스페이지-----------------------------*/
-
+.Index-Intro{
+    width: 100vw;
+    height: 40vw;
+    background-image: url("/images/SaveEarth.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.Index-Intro-Padding{
+    padding: 8% 3% 0 3%;
+}
+.Index-Intro h1{
+    color: white;
+    font-size: 250%;
+    font-family: 'TmoneyRoundWindExtraBold';
+    padding-bottom: 15px;
+}
+.Index-Intro h1:nth-child(3){
+    margin-bottom: 3%;
+  }
+.Index-LogoSymbol{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.Index-LogoSymbol img:nth-child(1){
+    width: 15vw;
+}
+.Index-LogoSymbol img:nth-child(2){
+    width: 4vw;
+}
+.Index-3Icon{
+    margin-right: 3%;
+    margin-top: 3%;
+    /* display: inline-block; */
+    /* float: right; */
+    /* right: 57px; */
+    /* left: 10px; */
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.Index-3Icon>img{
+    float: right;
+    display: inline-block;
+    width: 10%;
+    bottom: 200px;
+}
+.Index-3Icon img:nth-child(1){
+    display: inline-block;
+    position: relative;
+}
+.Index-3Icon img:nth-child(2){
+    display: inline-block;
+    position: relative;
+    bottom: 350px;
+}
+.Index-3Icon img:nth-child(3){
+    display: inline-block;
+    position: relative;
+}
 .index-video{
-    width: 712px;
-    height: 401px;
-    /*width: 100%;*/
-    /*height: 100%;*/
+    /*width: 712px;*/
+    /*height: 401px;*/
+    width: 88.9vw;
+    height: 50vw;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -1846,4 +1917,55 @@ textarea {
     justify-content: center;
     align-items: center;
     margin: auto;
+}
+
+/*-------로고애니메이션-----*/
+.background{
+    z-index: 1;
+    width: 100vw;
+    height: 100%;
+    top: 0px;
+    opacity: 100%;
+    position: fixed;
+}
+.index-logo-2 {
+    width: 80%;
+    z-index: 2;
+    top: 200px;
+    position: fixed;
+}
+
+.index-ani {
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 100%;
+}
+
+.index-ani {
+    z-index: 2;
+    bottom: 50px;
+    position: fixed;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    font-family: 'TmoneyRoundWindExtraBold';
+    text-align: center;
+    line-height: 15px;
+    text-decoration: none;
+    background: transparent;
+    /* border-radius: 50px; */
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    color: white;
+    border: none;
+    width: 200px;
+    height: 50px;
+    padding: 10px;}
+/* box-shadow: 10px 10px 10px rgb(0 0 0 / 50%);}
+
+.index-ani:hover {
+background-color: #83F4B4;
+box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+color: black;
+transform: translateY(3px);
 }
