@@ -109,7 +109,7 @@
         <ul>
             <li th:classappend="${!paging.hasPrevious} ? 'disabled'">
                 <a th:href="@{|?page=${paging.number-1}|}">
-                   <span>이전답변</span>
+                    <span>이전답변</span>
                 </a>
             </li>
 
@@ -146,17 +146,15 @@
     </form>
 
     <!------------------------질문 이전글 다음글------------------------------>
-        <span>이전글</span>
-        <span><a th:href="@{|/question/detail/${prevID}|}"
-                 th:text="*{prevSub}"></a></span>
+    <span>이전글</span>
+    <span><a th:href="@{|/question/detail/${prevID}|}"
+             th:text="*{prevSub}"></a></span>
     <hr>
-        <span>다음글</span>
-        <span><a th:href="@{|/question/detail/${nextID}|}"
-                 th:text="*{nextSub}"></a></span>
+    <span>다음글</span>
+    <span><a th:href="@{|/question/detail/${nextID}|}"
+             th:text="*{nextSub}"></a></span>
 
 </div>
-
-
 
 
 <script layout:fragment="script" type="text/javascript">
@@ -179,10 +177,8 @@
             }
         })
     })
-</script>
 
-<script layout:fragment="script">
-    var simplemde = new SimpleMDE({ element: document.getElementById("markdownid") });
+
 </script>
 
 </html>

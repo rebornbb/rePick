@@ -5,52 +5,162 @@
 
 <div layout:fragment="content">
 
-        <div class="Index-Intro">
-            <div class="Index-Intro-Padding">
+    <div class="Index-Intro">
+        <div class="Index-Intro-Padding">
 
-                <h1>비움으로 시작하는</h1>
-                <h1>나눔으로 자라나는</h1>
-                <h1>우리들의 REPICK</h1>
-                <div class="Index-LogoSymbol">
+            <h1 id="h1one">비움으로 시작하는</h1>
+            <h1 id="h1two">나눔으로 자라나는</h1>
+            <h1 id="h1three">우리들의 REPICK</h1>
+            <div class="Index-LogoSymbol" id="symbol">
                 <img src="/images/rePick_logo-white.svg" alt="리픽로고">
-                <img src="/images/rePick_symbol_blue.svg" alt="리픽심볼">
+                <img src="/images/rePick_symbol_blue.svg" alt="리픽심볼" >
+            </div>
+        </div>
+        <div class="Index-3Icon">
+            <img src="/images/world-earth.png" alt="지구아이콘" id="earth">
+            <img src="/images/recycle.png" alt="재활용아이콘" id="recycle">
+            <img src="/images/social-media.png" alt="소셜아이콘" id="social">
+        </div>
+
+    </div>
+
+    <div class="Index-introduce-box">
+        <h1>깨끗한 지구를 위한 활동 더 이상 어렵지 않아요!</h1>
+        <h1>다양한 환경 정보를 편리하게 얻고 공유할 수 있는</h1>
+        <h1>리픽과 함께 우리 다 같이 친환경 실천해 볼까요?</h1>
+
+        <div class="BorderGreen-button-wrap align-Center">
+            <a th:href="@{/}" class="BorderGreen-button">REPICK 소개페이지</a>
+        </div>
+
+    </div>
+
+    <!--자동 이미지 슬라이드 시작-->
+    <span class="slideshow-container">
+                 <div class="Slidesbackground">
+                    <div class="mySlides fade">
+                    <img src="/images/pollutionImg-1.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/images/pollutionImg-2.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/images/pollutionImg-3.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/images/pollutionImg-4.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/images/pollutionImg-5.jpg" class="slideshow-image">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="/images/pollutionImg-6.jpg" class="slideshow-image">
+                    </div>
                 </div>
+             </span>
+    <!--자동 이미지 슬라이드 끝-->
+
+    <div class="Index-Slide-Text">
+        <h1 class="Tmoney-fontsize-200">바로 지금 지구는 우리의 도움이 필요합니다</h1>
+        <p class="KOTRA-fontsize-150">우리의 작은 행동 하나하나가 지구의 미래를 결정합니다</p>
+    </div>
+
+<!--    -->
+<!--    <div th:each="news : ${news}">-->
+<!--        <div class="grid-item align-Colum-center">-->
+<!--            <a th:href="${news.url}" target="_blank">-->
+<!--                <img th:src="${news.image}" class="newsImage"onerror=this.src="./images/newslogo.png">-->
+<!--            </a>-->
+
+<!--            <a th:href="${news.url}" class="newsText" target="_blank">-->
+<!--                    <span th:text="${news.subject}" >-->
+<!--                    </span>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <div class="Index-News-box" >
+        <div class="align-Colum">
+            <h1 class="Tmoney-fontsize-250">리픽이 전해드리는</h1>
+            <h1 class="Tmoney-fontsize-250">새로운 소식을 만나보세요</h1>
+        </div>
+
+        <div class="Index-Newsimgs-Align">
+            <div class="align-Colum-center">
+                <div class="Index-News-img1">
+                    <a th:href="@{/offlineshop/list}" class="Index-NewsTEXT">추천 쇼핑 페이지</a>
+                </div>
+                <a th:href="@{/offlineshop/list}" class="Index-Newstext">리픽이 선정한 추천 쇼핑 매장을 확인해 보세요!</a>
             </div>
-            <div class="Index-3Icon">
-                <img src="/images/world-earth.png" alt="지구아이콘">
-                <img src="/images/recycle.png" id="icon1" alt="재활용아이콘">
-                <img src="/images/social-media.png" alt="소셜아이콘">
+
+            <div class="align-Colum-center">
+                <div  class="Index-News-img2">
+                    <a th:href="@{/news}"  class="Index-NewsTEXT">환경 뉴스 페이지</a>
+                </div>
+                <a th:href="@{/news}" class="Index-Newstext">리픽에서 환경에 관련된 뉴스를 확인해 보세요! </a>
+            </div>
+
+            <div class="align-Colum-center">
+                <div  class="Index-News-img3">
+                    <a th:href="@{/question/list}"  class="Index-NewsTEXT">커뮤니티 페이지</a>
+                </div>
+                <a th:href="@{/question/list}" class="Index-Newstext">다른 환경지킴이들과 필요한 정보를 공유하세요!</a>
             </div>
 
         </div>
+    </div>
 
-
-        <img class="background" id="background" src="/images/back.jpg" alt="">
-
-        <div class="align-Colum-center">
-            <img id='ani-logo' class="index-logo-2" src="/images/rePick_logo-white.svg">
-            <button id="ani-text" class="index-ani">시작하기</button>
-        </div>
-
-
-
-<!--비디오-->
-<!--    <iframe class="index-video"-->
-<!--            src="https://www.youtube.com/embed/ibYD23-dtjo?autoplay=1&mute=1&loop=1&playlist=ibYD23-dtjo&controls=0"-->
-<!--            title="[PLANET OR PLASTIC] 내셔널지오그래픽 환경 보호 캠페인"-->
-<!--            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
-<!--            allowfullscreen></iframe>-->
+<!--            <div class="align-Colum-center">-->
+<!--                <img id='ani-logo' class="index-logo-2" src="/images/rePick_logo-white.svg">-->
+<!--                <button id="ani-text" class="index-ani">시작하기</button>-->
+<!--            </div>-->
 </div>
 
 <script layout:fragment="script">
     // -------------------------인덱스 사라지는 효과------------------------
-    $(document).ready(function() {
-        $("#ani-text").on("click",  function() {
-            $("#ani-logo").fadeTo(2000,0),
-                $("#ani-text").fadeTo(500,0),
-                $("#background").fadeTo(2000,0);
-        });
+    // $(document).ready(function() {
+    //     $("#ani-text").on("click",  function() {
+    //         $("#ani-logo").fadeTo(2000,0),
+    //             $("#ani-text").fadeTo(500,0),
+    //             $("#background").fadeTo(2000,0);
+    //     });
+    // });
+
+    //------------최상단 이미지 애니메이션 효과-----------
+    $(document).ready(function(){
+        $("#earth").animate({right: '0px',opacity: '100%'},1500);
+        $("#recycle").animate({right: '0px',opacity: '100%'},2000);
+        $("#social").animate({right: '0px',opacity: '100%'},2500);
     });
+
+    $(document).ready(function(){
+        $("#h1one").fadeIn(2500);
+        $("#h1two").fadeIn(2500);
+        $("#h1three").fadeIn(2500);
+        $("#symbol").fadeIn(2500);
+    });
+
+    /*------------자동슬라이더-------------*/
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+
+        setTimeout(showSlides, 3000);
+    }
+
 </script>
 
 </html>

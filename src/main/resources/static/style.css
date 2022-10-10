@@ -57,9 +57,14 @@ hr {
     font-size: 350%;
 }
 
-#Tmoney-fontsize-300 {
+.Tmoney-fontsize-300 {
     font-family: 'TmoneyRoundWindExtraBold';
     font-size: 300%;
+}
+
+.Tmoney-fontsize-250 {
+    font-family: 'TmoneyRoundWindExtraBold';
+    font-size: 250%;
 }
 
 .Tmoney-fontsize-200 {
@@ -381,32 +386,57 @@ hr {
     background-position: center;
 }
 
-/*.Nav-Search-Bar {*/
-/*    display: flex;*/
-/*    width: 700px;*/
-/*    height: auto;*/
-/*    justify-content: center;*/
-/*}*/
 
-/*.Nav-Search-Text {*/
-/*    width: 100%;*/
-/*    border-radius: 50px;*/
-/*    border: black solid 2px;*/
-/*}*/
 
-/*.Nav-Search-Icon {*/
-/*    border: none;*/
-/*    display: inline-flex;*/
-/*    margin-left: 15px;*/
-/*    height: 40px;*/
-/*    width: 40px;*/
-/*    background-image: url("/images/search.png");*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: 100%;*/
-/*}*/
+/*-----------------------------------footer푸터-------------------------------------------*/
+.footer_container{
+    background-color: #d1d4d9;
+    padding: 20px;
+}
+
+.footer_logo{
+    display: flex;
+    justify-content: center;
+}
+
+.footer_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+}
+
+.footer_icon {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 20px;
+}
+.footer_icon a i {
+    margin-left: 10px;
+}
 
 /*-----------------------------------소개페이지 introduce.html 시작-------------------------------------------*/
 /*----------------------Let's RePick everyone!----------------------*/
+.intro-video-frame{
+    background-color: transparent;
+}
+.intro-video{
+    /*width: 88.9vw;*/
+    /*height: 50vw;*/
+    width: 71.1vw;
+    height: 40vw;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+
 
 @media (max-width: 830px) {
     .Intro-Body01-TitleContainer {
@@ -426,96 +456,6 @@ hr {
         text-align: center;
         padding: 3%;
         align-items: center;
-    }
-}
-/*------------- 이미지 자동 슬라이드------------- */
-@media (max-width: 830px) {
-    .Slidesbackground {
-        margin: 0;
-
-    }
-
-    .slideshow-image {
-        border-radius: 3%;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .mySlides {
-        border-radius: 3%;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
-    }
-
-    .slideshow-container {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        margin: auto;
-    }
-
-    .fade {
-        animation-name: fade;
-        animation-duration: 1.5s;
-    }
-
-    @keyframes fade {
-        from {
-            opacity: .4
-        }
-        to {
-            opacity: 1
-        }
-    }
-}
-
-@media (min-width: 830px) {
-    .Slidesbackground {
-        margin: 0;
-
-    }
-
-    .slideshow-image {
-        border-radius: 3%;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .mySlides {
-        border-radius: 3%;
-        width: 950px;
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .slideshow-container {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        margin: auto;
-    }
-
-    .fade {
-        animation-name: fade;
-        animation-duration: 1.5s;
-    }
-
-    @keyframes fade {
-        from {
-            opacity: .4
-        }
-        to {
-            opacity: 1
-        }
     }
 }
 /*----------------------What is Repick?----------------------*/
@@ -764,14 +704,14 @@ hr {
     }
 }
 /*----------페이징 버튼 효과---------- */
-.active {
-    background-color: #5B86EF;
-    opacity: 100%;
-}
+/*.active {*/
+/*    background-color: #5B86EF;*/
+/*    opacity: 100%;*/
+/*}*/
 
-.disabled {
-    pointer-events: none;
-}
+/*.disabled {*/
+/*    pointer-events: none;*/
+/*}*/
 
 /*----------------------------------뉴스페이지 news.html 시작------------------------------------------*/
 @media screen and (min-width:830px) {
@@ -1854,8 +1794,9 @@ textarea {
     padding: 8% 3% 0 3%;
 }
 .Index-Intro h1{
+    display: none;
     color: white;
-    font-size: 250%;
+    font-size: 3vw;
     font-family: 'TmoneyRoundWindExtraBold';
     padding-bottom: 15px;
 }
@@ -1863,9 +1804,14 @@ textarea {
     margin-bottom: 3%;
   }
 .Index-LogoSymbol{
-    display: flex;
+    display: none;
+    /*display: flex;*/
     align-items: center;
     flex-direction: row;
+}
+.Index-LogoSymbol img:nth-child(2):hover{
+    transform: rotate(70deg);
+    transition: 0.2s linear;
 }
 .Index-LogoSymbol img:nth-child(1){
     width: 15vw;
@@ -1876,10 +1822,6 @@ textarea {
 .Index-3Icon{
     margin-right: 3%;
     margin-top: 3%;
-    /* display: inline-block; */
-    /* float: right; */
-    /* right: 57px; */
-    /* left: 10px; */
     display: flex;
     justify-content: flex-end;
     align-content: center;
@@ -1893,79 +1835,257 @@ textarea {
     bottom: 200px;
 }
 .Index-3Icon img:nth-child(1){
+    opacity: 0;
+    right: -500px;
     display: inline-block;
     position: relative;
 }
 .Index-3Icon img:nth-child(2){
+    opacity: 0;
+    right: -500px;
     display: inline-block;
     position: relative;
     bottom: 350px;
 }
 .Index-3Icon img:nth-child(3){
+    opacity: 0;
+    right: -500px;
     display: inline-block;
     position: relative;
 }
-.index-video{
-    /*width: 712px;*/
-    /*height: 401px;*/
-    width: 88.9vw;
-    height: 50vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+
+
+/*------------- 이미지 자동 슬라이드------------- */
+@media (max-width: 830px) {
+    .Slidesbackground {
+        margin: 0;
+
+    }
+
+    .slideshow-image {
+        /*border-radius: 3%;*/
+        width: 100%;
+        height: 100%;
+    }
+
+    .mySlides {
+        border-radius: 3%;
+        width: 100vw;
+        height: 40vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        /*box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);*/
+    }
+
+    .slideshow-container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
+    }
 }
 
-/*-------로고애니메이션-----*/
-.background{
-    z-index: 1;
-    width: 100vw;
-    height: 100%;
-    top: 0px;
-    opacity: 100%;
-    position: fixed;
-}
-.index-logo-2 {
-    width: 80%;
-    z-index: 2;
-    top: 200px;
-    position: fixed;
+@media (min-width: 830px) {
+    .Slidesbackground {
+        margin: 0;
+
+    }
+
+    .slideshow-image {
+        /*border-radius: 3%;*/
+        width: 100vw;
+        height: 40vw;
+        overflow: hidden;
+    }
+
+    .mySlides {
+        /*border-radius: 3%;*/
+        width: 100vw;
+        height: 40vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        /*box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);*/
+    }
+
+    .slideshow-container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .2
+        }
+        to {
+            opacity: 1
+        }
+    }
 }
 
-.index-ani {
-    margin-left: 2%;
-    margin-top: 2%;
-    height: 100%;
-}
-
-.index-ani {
-    z-index: 2;
-    bottom: 50px;
-    position: fixed;
-    letter-spacing: 2px;
-    margin-top: 15px;
-    font-family: 'TmoneyRoundWindExtraBold';
-    text-align: center;
-    line-height: 15px;
-    text-decoration: none;
-    background: transparent;
-    /* border-radius: 50px; */
-    text-align: center;
+.Index-Slide-Text{
     display: inline-block;
-    font-size: 16px;
+    position: relative;
+    bottom: 140px;
+    left: 3%;
     color: white;
-    border: none;
-    width: 200px;
-    height: 50px;
-    padding: 10px;}
-/* box-shadow: 10px 10px 10px rgb(0 0 0 / 50%);}
-
-.index-ani:hover {
-background-color: #83F4B4;
-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-color: black;
-transform: translateY(3px);
+    text-shadow: 3px 3px 3px rgb(0 0 0 / 50%);
 }
+.Index-Slide-Text h1{
+    margin-bottom: 15px;
+}
+/*!*-------로고애니메이션-----*!*/
+/*.background{*/
+/*    z-index: 1;*/
+/*    width: 100vw;*/
+/*    height: 100%;*/
+/*    top: 0px;*/
+/*    opacity: 100%;*/
+/*    position: fixed;*/
+/*}*/
+/*.index-logo-2 {*/
+/*    width: 80%;*/
+/*    z-index: 2;*/
+/*    top: 200px;*/
+/*    position: fixed;*/
+/*}*/
+
+/*.index-ani {*/
+/*    margin-left: 2%;*/
+/*    margin-top: 2%;*/
+/*    height: 100%;*/
+/*}*/
+
+/*.index-ani {*/
+/*    z-index: 2;*/
+/*    bottom: 50px;*/
+/*    position: fixed;*/
+/*    letter-spacing: 2px;*/
+/*    margin-top: 15px;*/
+/*    font-family: 'TmoneyRoundWindExtraBold';*/
+/*    text-align: center;*/
+/*    line-height: 15px;*/
+/*    text-decoration: none;*/
+/*    background: transparent;*/
+/*    !* border-radius: 50px; *!*/
+/*    text-align: center;*/
+/*    display: inline-block;*/
+/*    font-size: 16px;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    width: 200px;*/
+/*    height: 50px;*/
+/*    padding: 10px;}*/
+
+
+.Index-introduce-box{
+    font-family: KOTRA_GOTHIC;
+    display: flex;
+    margin: 10%;
+    flex-direction: column;
+    align-items: center;
+}
+.Index-News-box h1:first-child{
+    color: #5B86EF;
+}
+.Index-introduce-box h1{
+    font-weight: normal;
+    color: darkgrey;
+    margin-bottom: 10px;
+    font-size: 180%;
+}
+.Index-introduce-box h1:nth-child(3){
+    color: black;
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+.Index-News-box{
+    margin: 8% 10% 12% 10%;
+}
+.Index-Newsimgs-Align{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.Index-News-box h1:first-child{
+    margin-bottom: 5px;
+}
+.Index-News-box h1:last-child{
+    margin-bottom: 5%;
+}
+.Index-News-img1,.Index-News-img2,.Index-News-img3
+{
+    padding: 6vw;
+    background-color: lightgrey;
+}
+.Index-News-img1{
+    background-image: url("/images/store.jpg");
+    background-position: center;
+    background-size: 100%;
+    border-radius: 10px;
+}
+.Index-News-img2{
+    background-image: url("/images/newsImage.jpg");
+    background-position: center;
+    background-size: 200%;
+    border-radius: 10px;
+}
+.Index-News-img3{
+    background-image: url("/images/comunication.jpg");
+    background-position: center;
+    background-size: 100%;
+    border-radius: 10px;
+}
+.Index-News-img1:hover,
+.Index-News-img2:hover,
+.Index-News-img3:hover{
+    transition: all 0.2s linear;
+    transform: scale(1.1);
+}
+.Index-Newstext{
+    margin-top: 5%;
+    text-decoration: none;
+    font-family: KOTRA_GOTHIC;
+    font-weight: bold;
+    color: black;
+}
+.Index-NewsTEXT{
+    display: flex;
+    font-family: TmoneyRoundWindExtraBold;
+    font-size: 150%;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: rgba(0 0 0/ 50%);
+    border-radius: 80%;
+    -webkit-box-shadow: 0 0 20px 20px rgb(0 0 0 / 50%);
+    box-shadow: 0 0 20px 20px rgb(0 0 0 / 50%);
+}
+/*----------------------------- 게시판 ---------------------------------*/

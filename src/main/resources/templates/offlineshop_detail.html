@@ -24,12 +24,12 @@
         <img class="Offlineshop-Detail-icon" src="/images/location.png" alt="주소">
         <span id="shopAddress" class="Offlineshop-Detail-shopDetail" th:text="${offlineShop.shopAddress}"></span>
     </div>
-    <div class="align-Center-row">
+    <div class="align-Center-row marginBottom-5">
         <img class="Offlineshop-Detail-icon" src="/images/paper.png" alt="설명">
         <span class="Offlineshop-Detail-shopDetail" th:text="${offlineShop.shopContents}"></span>
     </div>
 
-    <div class="Offlineshop-Detail-WriteInfo align-Center-row">
+    <div  sec:authorize="hasRole('ADMIN')" class="Offlineshop-Detail-WriteInfo align-Center-row">
         <div>
             <span>작성 담당자 :</span>
             <span th:if="${offlineShop.author != null}" th:text="${offlineShop.author.nickname}"></span>
@@ -61,14 +61,6 @@
                th:text="추가작성"></a>
 
     </div>
-
-
-    <!--수정-->
-    <!--  <div>-->
-    <!--    <h1 sec:authorize="hasRole('ROLE_USER')">Has user Role</h1>-->
-    <!--    <h1 sec:authorize="hasRole('ROLE_ADMIN')">Has admin Role</h1>-->
-    <!--  </div>-->
-
 
 
 </div>

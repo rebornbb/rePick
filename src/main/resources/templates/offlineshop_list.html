@@ -56,7 +56,7 @@
         </tbody>
     </table>
     <!--페이징-->
-    <div class="align-Center-row marginTop-3">
+    <div class="align-Center-row marginTop-3 marginBottom-5">
     <th:div  class="pagenation" th:each= "page : ${#numbers.sequence(startPage, endPage)}">
         <a th:if="${page != nowPage}" th:href="@{/offlineshop/list(page = ${page -1})}" th:text="${page}"></a>
         <a th:if="${page == nowPage}" th:text="${page}" class="active"></a>

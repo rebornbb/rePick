@@ -23,7 +23,7 @@
         <!--내용입력-->
         <div >
             <label for="content" >내용</label>
-            <textarea id="markdownid" th:field="*{content}" rows="10"></textarea>
+            <textarea th:field="*{content}" rows="10"></textarea>
         </div>
 
         <!--파일업로드버튼-->
@@ -45,9 +45,5 @@
 
     </form>
 </div>
-
-<script layout:fragment="script">
-    var simplemde = new SimpleMDE({ element: document.getElementById("markdownid") });
-</script>
 
 </html>
