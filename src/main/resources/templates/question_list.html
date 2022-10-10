@@ -5,15 +5,25 @@
 
 <div layout:fragment="content">
 
-    <a th:href="@{/question/create}">질문등록하기</a>
+    <div class="align-Center-row">
+
+    <a th:href="@{/question/create}" class="btn-1-Q custom-btn-Q">글등록하기</a>
 
     <!--------------------검색창--------------------->
-    <input type="text" id="search_kw" th:value="${kw}">
-    <button type="button" id="btn_search">찾기</button>
+    <div class="search-bar">
+        <form class="search-container">
+            <input  type="text" id="search_kw" th:value="${kw}" placeholder="Let's enjoy Repick together!">
+            <a href="#"><img class="search-icon" id="btn_search" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+        </form>
+    </div>
+
+    </div>
+<!--    <input type="text" id="search_kw" th:value="${kw}">-->
+<!--    <button type="button" id="btn_search">찾기</button>-->
 
     <!--------------------질문리스트--------------------->
-    <table>
-        <tr>
+    <table  class="que-table" >
+        <tr class="Tmoney-fontsize-90">
             <th>번호</th>
             <th>제목</th>
             <th>카테고리</th>
@@ -22,7 +32,7 @@
             <th>조회수</th>
         </tr>
 
-        <tr scope="row" th:each="question, loop : ${paging}">
+        <tr scope="row" th:each="question, loop : ${paging}"  class="KOTRA-fontsize-80">
 
             <td th:text="${paging.getTotalElements - (paging.number * paging.size) - loop.index}"></td>
 
@@ -50,36 +60,36 @@
 
     <!--------------------페이징처리--------------------->
     <div th:if="${!paging.isEmpty()}"><!--paging.isEmpty:페이지존재여부(게시물있으면 false,없으면 true)-->
-        <ul>
-            <li th:classappend="${!paging.hasPrevious} ? 'disabled'">
+        <ul  class="pagenationQ marginBottom-5">
+            <div th:classappend="${!paging.hasPrevious} ? 'disabled'">
                 <!-- !paging.hasPrevious - disabled : 이전페이지가 없으면 비활성화-->
 
                 <a class="page-link" href="javascript:void(0)" th:data-page="${paging.number-1}">
                     <!--이전페이지 링크-->
-                    <span>이전</span>
+                    <span> < </span>
                 </a>
-            </li>
+            </div>
 
             <!--th:each :페이지 리스트 루프--> <!--#numbers.sequence(시작, 끝)-->
-            <li th:each="page: ${#numbers.sequence(0, paging.totalPages-1)}"
+            <div th:each="page: ${#numbers.sequence(0, paging.totalPages-1)}"
 
                 th:if="${page >= paging.number-5 and page <= paging.number+5}"
 
-                th:classappend="${page == paging.number} ? 'active'">
+                th:classappend="${page == paging.number} ? 'active'" >
                 <!--page == paging.number : 현재페이지와 같으면 active 적용-->
 
-                <a th:text="${page}" class="page-link" href="javascript:void(0)" th:data-page="${page}"></a>
-            </li>
+                <a th:text="${page}" class="page-link" href="javascript:void(0)" th:data-page="${page}" ></a>
+            </div>
 
-            <li th:classappend="${!paging.hasNext} ? 'disabled'">
+            <div th:classappend="${!paging.hasNext} ? 'disabled'">
                 <!-- !paging.hasNext - disabled : 다음페이지 없으면 비활성화-->
 
                 <a class="page-link" href="javascript:void(0)" th:data-page="${paging.number+1}">
                     <!--다음페이지 링크-->
-                    <span>다음</span>
+                    <span> > </span>
                 </a>
 
-            </li>
+            </div>
         </ul>
     </div>
 

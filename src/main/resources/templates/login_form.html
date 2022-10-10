@@ -6,7 +6,7 @@
     <form th:action="@{/user/login}" method="post">
 
         <div th:if="${param.error}">
-            <div>
+            <div class="error">
                 사용자ID 또는 비밀번호를 확인해 주세요.
             </div>
         </div>
@@ -16,11 +16,11 @@
 <!--                <img src='/image/repick_logo_blue.svg' width='75%' class="sign_logo">-->
 <!--            </div>-->
             <div class="login-form">
-                <label for="username" class="form-label">사용자ID</label><br>
+                <label for="username" class="form-label Tmoney-fontsize-130">사용자ID</label><br>
                 <input type="text" name="username" id="username" class="form-control">
             </div>
-            <div class="login-form">
-                <label for="password" class="form-label">비밀번호</label><br>
+            <div class="login-form marginBottom-5">
+                <label for="password" class="form-label Tmoney-fontsize-130">비밀번호</label><br>
                 <input type="password" name="password" id="password" class="form-control">
             </div>
             <button type="submit" class="btn-1 custom-btn btn-primary">로그인</button>

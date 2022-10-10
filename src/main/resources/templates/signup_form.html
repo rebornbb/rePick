@@ -7,7 +7,7 @@
 <!--        <img src='/image/repick_logo_blue.svg' width='75%' class="sign_logo">-->
 <!--    </div>-->
     <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post" enctype='multipart/form-data' class="sign_up_join">
-        <div th:replace="form_errors :: formErrorsFragment"></div>
+        <div th:replace="form_errors :: formErrorsFragment" ></div>
         <div class="signup_box">
             <h4 class="Tmoney-fontsize-130">회원가입</h4>
             <div class="singup_form">

@@ -425,6 +425,7 @@ hr {
     /*height: 50vw;*/
     width: 71.1vw;
     height: 40vw;
+    border-radius: 20px;
 
     display: flex;
     flex-direction: column;
@@ -1367,6 +1368,7 @@ hr {
     display: flex;
     justify-content: center;
     font-size:100%;
+    list-style: none;
 }
 
 .pagenation a{
@@ -1387,6 +1389,16 @@ hr {
     background: #71d3c3;
     color:#fff;
     border-radius:100px;
+}
+
+.pagenation li.active{
+    background: #71d3c3;
+    color:#fff;
+    border-radius:100px;
+}
+.pagenation li.disabled{
+    cursor: not-allowed;
+    pointer-events: none;
 }
 /*----------Go버튼---------- */
 
@@ -1662,7 +1674,7 @@ textarea {
     padding-left: 10px;
     background: transparent;
 }
-
+/* 회원가입 버튼1---------------------------------- */
 .custom-btn {
     margin: 20px;
     outline: none;
@@ -1681,7 +1693,6 @@ textarea {
     display: inline-block;
 }
 
-/* 회원가입 버튼1---------------------------------- */
 .btn-1 {
     font-family: 'TmoneyRoundWindExtraBold';
     transition: all 0.3s ease;
@@ -1702,10 +1713,11 @@ textarea {
 .login-form{
     text-align: center;
     border-radius: 2px;
-    padding: 20px 10px;
+    padding: 2vw;
 }
 
 .login-form input {
+    margin-top: 20px;
     width: 500px;
     height: 40px;
     font-size: 15px;
@@ -1717,6 +1729,7 @@ textarea {
 }
 
 .login-home {
+    margin: 5%;
     height: 130vh;
     display: flex;
     align-items: center;
@@ -1743,8 +1756,9 @@ textarea {
     height: 730px;
     background: lightblue;
     border-radius: 20px;
-    position: absolute;
+    /* position: absolute; */
     display: flex;
+    margin: 10%;
     justify-content: center;
     box-shadow: 0px 5px 10px rgb(0 0 0 / 20%);
 }
@@ -1815,17 +1829,18 @@ textarea {
         flex-direction: row;
     }
 
-    .Index-LogoSymbol img:nth-child(2):hover {
+    .Index-LogoSymbol img:nth-child(2):hover,
+    .navbarsymbol:active{
         transform: rotate(70deg);
-        transition: 0.2s linear;
     }
+
 
     .Index-LogoSymbol img:nth-child(1) {
         width: 15vw;
     }
 
     .Index-LogoSymbol img:nth-child(2) {
-        width: 4vw;
+        width: 5vw;
     }
 
     .Index-3Icon {
@@ -1900,9 +1915,9 @@ textarea {
         flex-direction: row;
     }
 
-    .Index-LogoSymbol img:nth-child(2):hover {
+    .Index-LogoSymbol img:nth-child(2):hover,
+    .navbarsymbol:active {
         transform: rotate(70deg);
-        transition: 0.2s linear;
     }
 
     .Index-LogoSymbol img:nth-child(1) {
@@ -2088,7 +2103,7 @@ textarea {
         font-weight: normal;
         color: darkgrey;
         margin-bottom: 10px;
-        font-size: 120%;
+        font-size: 180%;
     }
 
     .Index-introduce-box h1:nth-child(3) {
@@ -2347,5 +2362,244 @@ textarea {
 /*    height: 50px;*/
 /*    padding: 10px;}*/
 
-
+/*-------------에러메세지--------------------*/
+.error{
+    font-family: KOTRA_GOTHIC;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    width: 20%;
+    padding: 1%;
+    border: solid 1px red;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    word-break: keep-all;
+    text-align: center;
+}
+.alert-danger {
+    font-family: KOTRA_GOTHIC;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    width: 20%;
+    padding: 1%;
+    border: solid 1px red;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    word-break: keep-all;
+    text-align: center;
+}
 /*----------------------------- 게시판 ---------------------------------*/
+
+/*----------테이블디자인---------- */
+.que-table {
+    margin: auto;
+    width: 95%;
+    border-collapse: collapse;
+    margin-bottom:5%;
+}
+.que-table a{
+    text-decoration: none !important;
+}
+
+.que-table tr:first-child {
+    background: #5B86EF;
+    color: #fff;
+}
+
+.que-table tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+
+/*.que-table tr:nth-child(odd):not(:first-child) {*/
+/*    background-color: #ebf3f9;*/
+/*}*/
+
+.que-table th {
+    display: none;
+}
+
+.que-table td {
+    display: block;
+}
+
+.que-table td:first-child {
+    margin-top: .5em;
+}
+
+.que-table td:last-child {
+    margin-bottom: .5em;
+}
+
+.que-table td:before {
+    /*content: attr(data-th) ": ";*/
+    font-weight: bold;
+    width: 120px;
+    display: inline-block;
+    color: #000;
+}
+
+.que-table th,
+.que-table td {
+    text-align: left;
+}
+
+.que-table {
+    color: #333;
+    border-radius: .4em;
+    overflow: hidden;
+}
+
+.que-table tr {
+    border-color: #5B86EF;
+}
+
+.que-table th,
+.que-table td {
+    padding: .5em 1em;
+}
+@media screen and (max-width: 601px) {
+    .que-table tr:nth-child(2) {
+        border-top: none;
+    }
+}
+@media screen and (min-width: 600px) {
+    .que-table tr:hover:not(:first-child) {
+        background-color: rgba(131, 244, 180, 0.3);
+        /*background-color: #83F4B4;과 동일 opacity*/
+    }
+    .que-table td:before {
+        display: none;
+    }
+    .que-table th,
+    .que-table td {
+        display: table-cell;
+        padding: .25em .5em;
+    }
+    .que-table th:nth-child(2),
+    .que-table td:nth-child(2) {
+        font-weight : bold;
+        padding-left: 0;
+    }
+    .que-table th:last-child,
+    .que-table td:last-child {
+        padding-right: 0;
+    }
+    .que-table th,
+    .que-table td {
+        padding: 1em !important;
+    }
+}
+
+/*검색바 ---------------*/
+.search-bar{
+    padding-top: 75px;
+}
+
+.search-container{
+    width: 490px;
+    display: block;
+    margin: 0 auto;
+}
+
+input#search_kw{
+    margin: 0 auto;
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-icon{
+    position: relative;
+    float: right;
+    width: 75px;
+    height: 75px;
+    top: -62px;
+    right: -45px;
+}
+
+/*----------pagination게시판---------- */
+.pagenationQ {
+
+    font-family: 'TmoneyRoundWindExtraBold';
+    display: flex;
+    justify-content: center;
+    font-size:100%;
+    list-style: none;
+    text-decoration: none;
+}
+.pagenationQ a{
+    text-decoration:none;
+    color: black;
+}
+.pagenationQ div{
+    color:#000;
+    margin:0 10px;
+    padding:8px 13px;
+    transition-delay:500ms;
+    transition:500ms;
+    border-radius:100px;
+
+}
+.pagenationQ div:hover:not(.active) {
+    background:#d1d8e0;
+}
+
+.pagenationQ div.active{
+    background: #71d3c3;
+    color:#fff;
+    border-radius:100px;
+}
+.pagenationQ div.disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+/*--------글쓰기버튼*/
+.custom-btn-Q {
+    text-decoration: none;
+    margin: 50px;
+    color: black;
+    outline: none;
+    border-radius: 5px;
+    width: 80px;
+    height: 20px;
+    padding: 10px 25px;
+    border: 2px solid #000;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.btn-1-Q {
+    font-family: 'TmoneyRoundWindExtraBold';
+    transition: all 0.3s ease;
+}
+.btn-1-Q:hover {
+    box-shadow:
+            -7px -7px 20px 0px #fff9,
+            -4px -4px 5px 0px #fff9,
+            7px 7px 20px 0px #0002,
+            4px 4px 5px 0px #0001;
+}
