@@ -3,47 +3,79 @@
 
 <div layout:fragment="content">
 
-    <h5>질문등록</h5>
-
     <!--파일 업로드-->
     <form th:object="${questionForm}" method="post" enctype="multipart/form-data">
-        <!--수정-->
 
-        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 
         <div th:replace="form_errors :: formErrorsFragment"></div>
         <!--th:replace - 공통템플릿을 템플릿내에 삽입가능-->
         <!--div엘리먼트를 form_errors.html파일의 th:fragment속성명이 formErrorsFragment인 엘리먼트로 교체-->
 
-        <!--제목입력-->
-        <div >
-            <label for="subject" >제목</label>
-            <input type="text" th:field="*{subject}" >
+        <div class="align-Colum-center">
+            <h5 class="Tmoney-fontsize-180 align-Center marginTop-3 marginBottom-5 ">질문등록</h5>
+
+            <!--수정-->
+
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+            <!--제목입력-->
+            <div>
+                <label for="subject" class="Tmoney-fontsize-150">제목</label>
+                <input type="text" th:field="*{subject}" class="Shop-form-control marginBottom-3">
+            </div>
+            <!--내용입력-->
+            <div>
+            <label for="content" class="Tmoney-fontsize-150">내용</label>
+            <div class="marginBottom-3 Qcontent">
+                <div>
+                <textarea th:field="*{content}" rows="10" class="marginBottom-3"
+                id="markdown"></textarea>
+                </div>
+            </div>
+            </div>
+
+            <!--카테고리선택-->
+            <div class="align-Center-row-Evenly">
+
+                <select th:field="*{category}" class="selectbox">
+                    <option value="">카테고리를선택해주세요</option>
+                    <option value="제로웨이스트">제로웨이스트</option>
+                    <option value="리사이클링">리사이클링</option>
+                    <option value="동물식물">동물·식물</option>
+                    <option value="친환경정책">친환경정책</option>
+                    <option value="자유게시판">자유게시판</option>
+                </select>
+
+            <!--파일업로드버튼-->
+            <div class="marginBottom-3">
+            <div class="fileboxP align-Center-row">
+                <input class="upload-name" value="첨부파일" placeholder="첨부파일">
+                <label for="file">파일찾기</label>
+                <input type="file" name="file" id="file">
+            </div>
+            </div>
+
+            </div>
+
+            <div class="marginBottom-5 marginTop-3">
+            <button type="submit" class="btn-1 custom-btn btn-primary ">저장하기</button>
+            </div>
+
+
+
         </div>
-        <!--내용입력-->
-        <div >
-            <label for="content" >내용</label>
-            <textarea th:field="*{content}" rows="10"></textarea>
-        </div>
-
-        <!--파일업로드버튼-->
-        <input type="file" name="file">
-
-        <!--카테고리선택-->
-        <div>
-            <select th:field="*{category}">
-                <option value="">카테고리를선택해주세요</option>
-                <option value="제로웨이스트">제로웨이스트</option>
-                <option value="리사이클링">리사이클링</option>
-                <option value="동물식물">동물·식물</option>
-                <option value="친환경정책">친환경정책</option>
-                <option value="자유게시판">자유게시판</option>
-            </select>
-        </div>
-
-        <input type="submit" value="저장하기" >
-
     </form>
 </div>
+
+
+<script layout:fragment="script">
+
+    var simplemde = new SimpleMDE({ element: document.getElementById("markdown") });
+
+    $("#file").on('change',function(){
+        var fileName = $("#file").val();
+        $(".upload-name").val(fileName);
+    });
+</script>
 
 </html>

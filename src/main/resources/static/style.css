@@ -23,7 +23,6 @@ hr {
 .color-green {
     color: #71DBC2;
 }
-
 /*-------------폰트모음-------------*/
 /*본문용*/
 @font-face {
@@ -195,6 +194,12 @@ hr {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+}
+.align-left{
+    display: flex;
+}
+.align-right{
+    display: flex;
 }
 
 /*---------------버튼모음---------------*/
@@ -393,26 +398,53 @@ hr {
     background-color: #d1d4d9;
     padding: 20px;
 }
+@media screen and (min-width:500px) {
+    .footer_logo {
+        display: flex;
+        justify-content: flex-start;
+    }
 
-.footer_logo{
-    display: flex;
-    justify-content: center;
+    .footer_title {
+        display: flex;
+        align-items: flex-start;
+        font-size: 13px;
+        flex-direction: column;
+    }
+
+    .footer_icon {
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 20px;
+    }
 }
 
-.footer_title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 13px;
+@media screen and (max-width:500px) {
+    .footer_logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer_title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    .footer_icon {
+        display: flex;
+        flex-direction: row;
+        font-size: 15px;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-.footer_icon {
-    display: flex;
-    flex-direction: row-reverse;
-    font-size: 20px;
-}
+
+
 .footer_icon a i {
     margin-left: 10px;
+    color: black;
 }
 
 /*-----------------------------------소개페이지 introduce.html 시작-------------------------------------------*/
@@ -527,14 +559,14 @@ hr {
     .flip-card-BackTitle {
         width: 90%;
         font-family: 'TmoneyRoundWindExtraBold';
-        font-size: 130%;
+        font-size: 100%;
         padding-bottom: 10%;
     }
     .flip-card-BackText {
         width: 90%;
         font-family: 'KOTRA_GOTHIC';
-        font-size: 95%;
-        word-break: break-all;
+        font-size: 85%;
+        word-break:  break-word;
     }
 }
 
@@ -704,15 +736,6 @@ hr {
         padding: 0 2% 0 2%;
     }
 }
-/*----------페이징 버튼 효과---------- */
-/*.active {*/
-/*    background-color: #5B86EF;*/
-/*    opacity: 100%;*/
-/*}*/
-
-/*.disabled {*/
-/*    pointer-events: none;*/
-/*}*/
 
 /*----------------------------------뉴스페이지 news.html 시작------------------------------------------*/
 @media screen and (min-width:830px) {
@@ -1513,8 +1536,9 @@ hr {
     margin-top: 1%;
     font-family: KOTRA_GOTHIC;
     display: flex;
-    width: 90vw;
-    padding: 1%;
+    width: 88vw;
+    padding: 1vw;
+    /* margin: auto; */
     font-size: 100%;
     border: 2px solid #7BD6EA;
     border-radius: 10px;
@@ -1739,9 +1763,46 @@ textarea {
 }
 
 /*------------------------프로필-----------------------------*/
+@media (min-width: 768px) {
+    .progileimg-box {
+        display: flex;
+        width: 18vw;
+        height: 18vw;
+        overflow: hidden;
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        border-radius: 100vw;
+    }
+}
+@media (max-width: 768px) {
+    .progileimg-box {
+        display: flex;
+        width: 30vw;
+        height: 30vw;
+        overflow: hidden;
+        margin: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        border-radius: 100vw;
+    }
+}
+.profileimg {
+    display: flex;
+    width: 100%;
+}
+
 .profile_main_box {
-    width: 50%;
-    margin: auto;
+    width: 100%;
+    /*margin: auto;*/
+    display: flex;
+    height: 900px;
+    justify-content: center;
+
 }
 
 .profile_img {
@@ -1751,16 +1812,17 @@ textarea {
 }
 
 .profileBox {
-    padding-top: 20px;
+    /*padding-top: 20px;*/
     width: 600px;
     height: 730px;
     background: lightblue;
     border-radius: 20px;
-    /* position: absolute; */
+    position: relative;
     display: flex;
-    margin: 10%;
+    /*margin: 10%;*/
     justify-content: center;
     box-shadow: 0px 5px 10px rgb(0 0 0 / 20%);
+    top: 30px;
 }
 
 .profile_name {
@@ -1771,12 +1833,14 @@ textarea {
 
 .pofile_user {
     border-radius: 2px;
-    padding: 20px 10px;
+    padding: 10px 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
 }
 
 .pofile_user input {
     width: 500px;
-    height: 40px;
+    height: 35px;
     font-size: 15px;
     border: solid 2px black;
     border-radius: 30px;
@@ -1786,6 +1850,7 @@ textarea {
 }
 
 .profile_file {
+    margin: auto;
     position: relative;
     top: 30px;
 }
@@ -1795,6 +1860,42 @@ textarea {
     text-align: left;
 }
 
+
+
+.fileboxP .upload-name {
+    font-family: KOTRA_GOTHIC;
+    display: flex;
+    padding: 8px;
+    /* width: 100%; */
+    border: none;
+    border-radius: 10px;
+}
+.fileboxP .upload-name:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.fileboxP label {
+    display: flex;
+    font-family: 'TmoneyRoundWindExtraBold';
+    background-color: white;
+    cursor: pointer;
+    margin-left: 20px;
+    text-align: center;
+    width: 100px;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+}
+.fileboxP label:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.fileboxP input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
 /*------------------------인덱스페이지-----------------------------*/
 @media (min-width: 830px) {
     .Index-Intro {
@@ -2400,7 +2501,15 @@ textarea {
     text-align: center;
 }
 /*----------------------------- 게시판 ---------------------------------*/
-
+.A-color{
+    border-radius: 30px;
+    /* font-size: 120%; */
+    padding: 3px 8px 3px 8px;
+    color: white;
+    background: rgba(123 214 234 / .5);
+    /* background: rgba(72 122 180 / .2); */
+    margin-left: 10px;
+}
 /*----------테이블디자인---------- */
 .que-table {
     margin: auto;
@@ -2410,6 +2519,8 @@ textarea {
 }
 .que-table a{
     text-decoration: none !important;
+    font-weight: bold;
+    color: black;
 }
 
 .que-table tr:first-child {
@@ -2504,36 +2615,69 @@ textarea {
 }
 
 /*검색바 ---------------*/
-.search-bar{
-    padding-top: 75px;
-}
+@media screen and (min-width:500px) {
+    .search-bar {
+        padding-top: 3%;
+    }
 
-.search-container{
-    width: 490px;
-    display: block;
-    margin: 0 auto;
-}
+    .search-container {
+        width: 490px;
+        display: block;
+        margin: 0 auto;
+    }
 
-input#search_kw{
-    margin: 0 auto;
-    width: 100%;
-    height: 45px;
-    padding: 0 20px;
-    font-size: 1rem;
-    border: 1px solid black;
-    border-radius: 5px;
-    outline: none;
-}
+    input#search_kw {
+        margin: 0 auto;
+        width: 100%;
+        height: 40px;
+        padding: 0 20px;
+        font-size: 1rem;
+        border: 2px solid black;
+        border-radius: 5px;
+        outline: none;
+    }
 
-.search-icon{
-    position: relative;
-    float: right;
-    width: 75px;
-    height: 75px;
-    top: -62px;
-    right: -45px;
+    .search-icon {
+        position: relative;
+        float: right;
+        width: 75px;
+        height: 75px;
+        top: -62px;
+        right: -45px;
+    }
 }
+@media screen and (max-width:500px) {
+    .search-bar {
+        padding-top: 5%;
+    }
 
+    .search-container {
+        width: 490px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    input#search_kw {
+        margin: auto;
+        width: 80%;
+        height: 40px;
+        padding: 0 20px;
+        font-size: 1rem;
+        border: 2px solid black;
+        border-radius: 5px;
+        outline: none;
+        display: flex;
+    }
+
+    .search-icon {
+        position: relative;
+        float: right;
+        width: 75px;
+        height: 75px;
+        top: -62px;
+        right: 20px;
+    }
+}
 /*----------pagination게시판---------- */
 .pagenationQ {
 
@@ -2570,36 +2714,256 @@ input#search_kw{
     cursor: not-allowed;
     pointer-events: none;
 }
-
-
+/*----------정렬------*/
+    .align-Center-row-Q {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /*align-items center추가*/
+    }
 /*--------글쓰기버튼*/
-.custom-btn-Q {
-    text-decoration: none;
-    margin: 50px;
-    color: black;
-    outline: none;
-    border-radius: 5px;
-    width: 80px;
-    height: 20px;
-    padding: 10px 25px;
-    border: 2px solid #000;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
+    .custom-btn-Q {
+        margin: 5% 0 0 0;
+        text-decoration: none;
+        /*margin: 50px;*/
+        color: black;
+        outline: none;
+        border-radius: 5px;
+        width: 80px;
+        height: 20px;
+        padding: 10px 25px;
+        border: 2px solid #000;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+    }
+
+    .btn-1-Q {
+        font-family: 'TmoneyRoundWindExtraBold';
+        transition: all 0.3s ease;
+    }
+
+    .btn-1-Q:hover {
+        background: #71d3c3;
+        color: white;
+        box-shadow: -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+    }
+/*----------폼------------*/
+
+.Qcontent{
+    width: 90vw;
+    border: 2px solid #7BD6EA;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.Qcontent:hover{
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
-.btn-1-Q {
-    font-family: 'TmoneyRoundWindExtraBold';
-    transition: all 0.3s ease;
+.Acontent{
+    width: 90vw;
+    border: 2px solid #7BD6EA;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 2%;
 }
-.btn-1-Q:hover {
-    box-shadow:
-            -7px -7px 20px 0px #fff9,
-            -4px -4px 5px 0px #fff9,
-            7px 7px 20px 0px #0002,
-            4px 4px 5px 0px #0001;
+.Acontent:hover{
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.filebox .upload-name {
+    font-family: KOTRA_GOTHIC;
+    display: flex;
+    padding: 3%;
+    /* width: 100%; */
+    border: 2px solid #7BD6EA;;
+    border-radius: 10px;
+}
+.filebox .upload-name:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.filebox label {
+    display: flex;
+    font-family: 'TmoneyRoundWindExtraBold';
+    background-color: #7BD6EA;;
+    cursor: pointer;
+    margin-left: 20px;
+    text-align: center;
+    width: 100px;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+}
+.filebox label:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.filebox input[type="file"] {
+position: absolute;
+width: 0;
+height: 0;
+padding: 0;
+overflow: hidden;
+border: 0;
+}
+/*----------카테고리-----------*/
+.selectbox{
+    border: 2px solid #7BD6EA;;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'KOTRA_GOTHIC';
+    font-weight: bolder;
+    margin-right: 145%;
+}
+.selectbox:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+ }
+
+/*------------------------게시글 상세-----------------------------*/
+.detail-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.detail-info {
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: 1px solid #5B86EF!important;
+}
+
+.detail-info div, .detail-question, .detail-category, .detail-subject, .detail-img {
+    padding: 10px;
+}
+
+.detail-modifyDate {
+    color: #5B86EF;
+    font-family: KOTRA_GOTHIC;
+}
+
+.detail-views {
+    display: flex;
+    flex-direction: row;
+}
+
+.detail-subject {
+    border-bottom: 2px solid #5B86EF!important;
+}
+
+.detail-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.table-PreNext {
+    padding-top: 1.5rem;
+}
+
+.table-PreNext td {
+    padding: 0.5rem;
+}
+
+.table-PreNext a {
+    text-decoration-line: none;
+    color: black;
+}
+
+.answer-form {
+
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid #5B86EF;
+    -webkit-appearance: none;
+    border-radius: 30px;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.8rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    height: 100px;
+    width: -webkit-fill-available;
+}
+
+.answer-check {
+    padding: 10px;
+}
+
+.detail-pagination ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+    padding: 10px;
+}
+
+.detail-pagination a.page-link {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.detail-pagination a.page-item {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.detail-active {
+    background-color: #d1d4d9;
+}
+
+.answer-card {
+    border: 1px solid #d1d4d9;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.answer-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.answer-info div {
+    padding: 10px;
+}
+
+.detail-btn {
+    font-family: TmoneyRoundWindExtraBold;
+    background-color: #d1d4d9;
+    border: none;
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition: 0.3s;
+
+    text-decoration-line: none;
+    border-radius: 10%;
+}
+
+.detail-btn:hover {
+    font-family: TmoneyRoundWindExtraBold;
+    background-color: #7BD6EA;
+    color: white;
+}
+
+.detail-answer {
+    padding: 10px;
 }

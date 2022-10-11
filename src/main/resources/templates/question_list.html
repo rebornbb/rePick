@@ -5,7 +5,7 @@
 
 <div layout:fragment="content">
 
-    <div class="align-Center-row">
+    <div class="align-Center-row-Q">
 
     <a th:href="@{/question/create}" class="btn-1-Q custom-btn-Q">글등록하기</a>
 
@@ -40,8 +40,10 @@
                 <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>
 
                 <!--해당질문에 달린답변개수 표시-->
-                <span   th:if="${#lists.size(question.answerList) > 0}"
-                        th:text="${#lists.size(question.answerList)}"></span>
+                
+                <span class="A-color"  th:if="${#lists.size(question.answerList) > 0}"
+                        th:text="${#lists.size(question.answerList)}">
+                </span>
             </td>
 
             <!--카테고리값 텍스트로출력-->
@@ -60,7 +62,7 @@
 
     <!--------------------페이징처리--------------------->
     <div th:if="${!paging.isEmpty()}"><!--paging.isEmpty:페이지존재여부(게시물있으면 false,없으면 true)-->
-        <ul  class="pagenationQ marginBottom-5">
+        <div  class="pagenationQ marginBottom-5">
             <div th:classappend="${!paging.hasPrevious} ? 'disabled'">
                 <!-- !paging.hasPrevious - disabled : 이전페이지가 없으면 비활성화-->
 
@@ -90,7 +92,7 @@
                 </a>
 
             </div>
-        </ul>
+        </div>
     </div>
 
 

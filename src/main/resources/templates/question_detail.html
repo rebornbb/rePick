@@ -1,132 +1,128 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}">
+<!--------------------------질문 상세 내용-------------------------------->
+<div layout:fragment="content" class="detail-container">
 
-
-<div layout:fragment="content">
-
-    <!--------------------------질문 상세 내용-------------------------------->
-
-    <!--질문-->
-    <h2 th:text="${question.subject}"></h2>
-
+    
     <!--카테고리추가-->
-    <div th:text="${question.category}"></div>
-
-    <div>
-        <!--조회수-->
-        <div th:text="|조회수 : ${question.countview}|"></div>
-
-        <!--마크다운 적용-->
-        <div th:utext="${@commonUtil.markdown(question.content)}"></div>
-
-        <!--파일업로드-->
-        <img th:src="@{${question.filepath}}">
-
-        <!--질문 수정일시표시-->
-        <div th:if="${question.modifyDate != null}">
-            <span>modified at</span>
-            <div th:text="${#dates.format(question.modifyDate, 'yyyy-MM-dd HH:mm')}"></div>
-        </div>
-
-        <div>
-            <!--본문 글쓴닉네임-->
-            <span th:if="${question.author != null}" th:text="${question.author.nickname}"></span>
-            <!--질문 생성날짜-->
-            <div th:text="${#dates.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></div>
-        </div>
-
-
-        <div>
-            <!--질문추천-->
-            <a href="javascript:void(0)" ; class="recommend"
-               th:data-uri="@{|/question/vote/${question.id}|}">추천
-                <span th:text="${#lists.size(question.voter)}"></span></a>
-
-            <!--질문수정-->
-            <a th:href="@{|/question/modify/${question.id}|}"
-               sec:authorize="isAuthenticated()"
-               th:if="${question.author != null and #authentication.getPrincipal().getUsername() == question.author.username}"
-               th:text="수정"></a>
-
-            <!--질문삭제-->
-            <a href="javascript:void(0);" th:data-uri="@{|/question/delete/${question.id}|}"
-               class="delete" sec:authorize="isAuthenticated()"
-               th:if="${question.author != null and #authentication.getPrincipal().getUsername() == question.author.username}"
-               th:text="삭제"></a>
-        </div>
+    <div class="detail-category KOTRA-fontsize-120 color-blue" th:text="${question.category}"></div>
+    <!--질문-->
+    <div class="detail-subject Tmoney-fontsize-150">
+        <h2 th:text="${question.subject}"></h2>
     </div>
 
+    <div class="detail-info">
+        <!--본문 글쓴닉네임-->
+        <div class="detail-item KOTRA-fontsize-100" style="font-weight: bolder">
+            <span th:if="${question.author != null}" th:text="${question.author.nickname}"></span>
+        </div>
+        <!--질문 생성날짜-->
+        <div class="detail-item  KOTRA-fontsize-100 ">
+            <span th:if="${question.modifyDate == null}" th:text="${#dates.format(question.createDate, 'yyyy-MM-dd HH:mm')}"></span>
+        </div>
+        <!--질문 수정일시표시-->
+        <div class="detail-modifyDate detail-item KOTRA-fontsize-100" th:if="${question.modifyDate != null}">
+            <span th:text="${#dates.format(question.modifyDate, 'yyyy-MM-dd HH:mm')}"></span>
+            <span class="">(modify)</span>
+        </div>
+        <!--조회수-->
+        <div th:text="|조회수 : ${question.countview}|" class="KOTRA-fontsize-100"></div>
+    </div>
+
+    <!--마크다운 적용-->
+    <div class="detail-question" th:utext="${@commonUtil.markdown(question.content)}"></div>
+
+    <!--파일업로드-->
+    <div class="detail-img">
+        <img onerror="this.style.visibility='hidden'" th:src="@{|/photo/${question.filename}|}"/>
+    </div>
+
+    <div class="detail-menu">
+        <!--질문추천-->
+        <a href="javascript:void(0);"
+           class="recommend detail-btn" th:data-uri="@{|/question/vote/${question.id}|}">추천
+            <span th:text="${#lists.size(question.voter)}"></span></a>
+
+        <!--질문수정-->
+        <a th:href="@{|/question/modify/${question.id}|}"
+           class="detail-btn" sec:authorize="isAuthenticated()"
+           th:if="${question.author != null and #authentication.getPrincipal().getUsername() == question.author.username}"
+           th:text="수정"></a>
+
+        <!--질문삭제-->
+        <a href="javascript:void(0);" th:data-uri="@{|/question/delete/${question.id}|}"
+           class="delete detail-btn" sec:authorize="isAuthenticated()"
+           th:if="${question.author != null and #authentication.getPrincipal().getUsername() == question.author.username}"
+           th:text="삭제"></a>
+    </div>
 
     <!--------------------------답변의 갯수표시-------------------------------->
-    <h5 th:text="|${#lists.size(question.answerList)}개의 답변이 있습니다.|"></h5>
+    <h5 class="answer-check Tmoney-fontsize-100 color-blue" th:text="|${#lists.size(question.answerList)}개의 댓글이 있습니다.|"></h5>
     <!--#list.size(이터러블객체)-타임리프가 제공하는 유틸리티로 객체의 길이를 반환-->
     <!--답변 반복 시작-->
-    <div th:each="answer, loop : ${paging}">
+    <div class="answer-card" th:each="answer, loop : ${paging}">
         <a th:id="|answer_${answer.id}|"></a> <!--앵커태그-->
 
-        <!--마크다운 적용-->
-        <div th:utext="${@commonUtil.markdown(answer.content)}"></div>
-
-        <div>
-            <!--답변 수정일시표시-->
-            <div th:if="${answer.modifyDate != null}">
-                <span>modified at</span>
-                <div th:text="${#dates.format(answer.modifyDate, 'yyyy-MM-dd HH:mm')}"></div>
+        <div class="answer-info">
+            <!--답변 닉네임-->
+            <div th:if="${answer.author != null}" th:text="${answer.author.nickname}" class="KOTRA-fontsize-100" style="font-weight: bolder"></div>
+            <!--답변 생성일시표시-->
+            <div th:if="${answer.modifyDate == null}" class="detail-modifyDate KOTRA-fontsize-100">
+                <span th:text="${#dates.format(answer.createDate, 'yyyy-MM-dd HH:mm')}"></span>
             </div>
-
-            <div>
-                <!--답변 닉네임-->
-                <span th:if="${answer.author != null}" th:text="${answer.author.nickname}"></span>
-                <!--답변 생성일시표시-->
-                <div th:text="${#dates.format(answer.createDate, 'yyyy-MM-dd HH:mm')}"></div>
+            <!--답변 수정일시표시-->
+            <div th:if="${answer.modifyDate != null}" class="detail-modifyDate KOTRA-fontsize-100">
+                <span th:text="${#dates.format(answer.modifyDate, 'yyyy-MM-dd HH:mm')}"></span>
+                <span class="">(modify)</span>
             </div>
         </div>
 
-        <div>
+        <!--마크다운 적용-->
+        <div class="detail-answer" th:utext="${@commonUtil.markdown(answer.content)}"></div>
+
+        <div class="detail-menu">
             <!--답변추천버튼-->
-            <a href="javascript:void(0);" class="recommend"
+            <a class="recommend detail-btn" href="javascript:void(0);"
                th:data-uri="@{|/answer/vote/${answer.id}|}">추천
                 <span th:text="${#lists.size(answer.voter)}"></span>
             </a>
 
             <!--답변수정버튼-->
-            <a th:href="@{|/answer/modify/${answer.id}|}"
+            <a class="detail-btn" th:href="@{|/answer/modify/${answer.id}|}"
                sec:authorize="isAuthenticated()"
                th:if="${answer.author != null and #authentication.getPrincipal().getUsername() == answer.author.username}"
                th:text="수정"></a>
 
             <!--답변삭제버튼-->
-            <a href="javascript:void(0);" th:data-uri="@{|/answer/delete/${answer.id}|}"
-               class="delete" sec:authorize="isAuthenticated()"
+            <a class="delete detail-btn" href="javascript:void(0);" th:data-uri="@{|/answer/delete/${answer.id}|}"
+               sec:authorize="isAuthenticated()"
                th:if="${answer.author != null and #authentication.getPrincipal().getUsername() == answer.author.username}"
                th:text="삭제"></a>
         </div>
     </div>
 
-
     <!--------------------------답변 페이징-------------------------------->
-    <div th:if="${!paging.isEmpty()}">
-        <ul>
-            <li th:classappend="${!paging.hasPrevious} ? 'disabled'">
-                <a th:href="@{|?page=${paging.number-1}|}">
-                    <span>이전답변</span>
+    <div class="marginTop-3 marginBottom-3" th:if="${!paging.isEmpty()}">
+        <div class="pagenationQ">
+            <div class="page-item" th:classappend="${!paging.hasPrevious} ? 'disabled'">
+                <a class="page-link" th:href="@{|?page=${paging.number-1}|}">
+                    <span>이전댓글</span>
                 </a>
-            </li>
+            </div>
 
-            <li th:each="page: ${#numbers.sequence(0, paging.totalPages-1)}"
+            <div class="" th:each="page: ${#numbers.sequence(0, paging.totalPages-1)}"
                 th:if="${page >= paging.number-5 and page <= paging.number+5}"
                 th:classappend="${page == paging.number} ? 'active'">
-                <a th:text="${page}" th:href="@{|?page=${page}|}"></a>
-            </li>
+                <a class="page-link" th:text="${page}" th:href="@{|?page=${page}|}"></a>
+            </div>
 
-            <li th:classappend="${!paging.hasNext} ? 'disabled'">
-                <a th:href="@{|?page=${paging.number+1}|}">
-                    <span>다음답변</span>
+            <div class="" th:classappend="${!paging.hasNext} ? 'disabled'">
+                <a class="page-link" th:href="@{|?page=${paging.number+1}|}">
+                    <span>다음댓글</span>
                 </a>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
-
 
     <!--------------------------답변 작성-------------------------------->
     <form th:action="@{|/answer/create/${question.id}|}"
@@ -138,47 +134,54 @@
 
         <!--로그인시에만 답변작성가능-->
         <textarea sec:authorize="isAnonymous()" disabled th:field="*{content}"
-                  class="form-control" rows="10"></textarea>
+                  class="answer-form" rows="10"></textarea>
         <textarea sec:authorize="isAuthenticated()" th:field="*{content}"
-                  class="form-control" rows="10"></textarea>
+                  class="answer-form" rows="10"></textarea>
 
-        <input type="submit" value="답변등록">
+<!--        <div th:if="*{content} == null" class="error">-->
+<!--            댓글을 입력해주세요-->
+<!--        </div>-->
+
+        <input type="submit" value="댓글작성하기" class="btn-1 custom-btn btn-primary">
     </form>
 
     <!------------------------질문 이전글 다음글------------------------------>
-    <span>이전글</span>
-    <span><a th:href="@{|/question/detail/${prevID}|}"
-             th:text="*{prevSub}"></a></span>
-    <hr>
-    <span>다음글</span>
-    <span><a th:href="@{|/question/detail/${nextID}|}"
-             th:text="*{nextSub}"></a></span>
+    <table class="table-PreNext">
+        <tr>
+            <td width="50px" style="font-weight: bolder" class="KOTRA-fontsize-100">이전글</td>
+            <td><a th:href="@{|/question/detail/${prevID}|}"
+                   th:text="*{prevSub}" class="KOTRA-fontsize-100"></a></td>
+        </tr>
+        <tr>
+            <td width="50px"  style="font-weight: bolder" class="KOTRA-fontsize-100">다음글</td>
+            <td><a th:href="@{|/question/detail/${nextID}|}"
+                   th:text="*{nextSub}" class="KOTRA-fontsize-100"></a></td>
+        </tr>
+    </table>
 
-</div>
-
-
-<script layout:fragment="script" type="text/javascript">
-
-    //질문삭제
-    const delete_elements = document.getElementsByClassName("delete");
-    Array.from(delete_elements).forEach(function (element) {
-        element.addEventListener('click', function () {
-            if (confirm("정말로 삭제하시겠습니까?")) {
-                location.href = this.dataset.uri;
-            }
+    <script layout:fragment="script" type="text/javascript">
+        //질문삭제
+        const delete_elements = document.getElementsByClassName("delete");
+        Array.from(delete_elements).forEach(function (element) {
+            element.addEventListener('click', function () {
+                if (confirm("정말로 삭제하시겠습니까?")) {
+                    location.href = this.dataset.uri;
+                }
+            });
         });
-    });
-    //추천
-    const recommend_elements = document.getElementsByClassName("recommend");
-    Array.from(recommend_elements).forEach(function (element) {
-        element.addEventListener('click', function () {
-            if (confirm("정말로 추천하시겠습니까?")) {
-                location.href = this.dataset.uri;
-            }
+        //추천
+        const recommend_elements = document.getElementsByClassName("recommend");
+        Array.from(recommend_elements).forEach(function (element) {
+            element.addEventListener('click', function () {
+                if (confirm("정말로 추천하시겠습니까?")) {
+                    location.href = this.dataset.uri;
+                }
+            })
         })
-    })
+    </script>
 
-
-</script>
-
+    <script layout:fragment="script">
+        var simplemde = new SimpleMDE({ element: document.getElementById("markdownid") });
+    </script>
+</div>
 </html>

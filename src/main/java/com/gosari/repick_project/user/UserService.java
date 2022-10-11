@@ -1,6 +1,7 @@
 package com.gosari.repick_project.user;
 
 import com.gosari.repick_project.exception.DataNotFoundException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
@@ -14,12 +15,18 @@ import java.util.UUID;
 @Service
 public class UserService {
 
+    @Value("${ImgLocation}")
+    private String imgLocation;
+
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
 
     public SiteUser create(String username, String email, String password, String nickname, MultipartFile file)throws Exception {
-        String profileImage = System.getProperty("user.dir") + "\\\\src\\\\main\\\\resources\\\\static\\\\photo";
+        //String profileImage = System.getProperty("user.dir") + "\\\\src\\\\main\\\\resources\\\\static\\\\photo";
+
+        String profileImage = imgLocation;
+
         UUID uuid = UUID.randomUUID();
         String ImageName = uuid + "_" + file.getOriginalFilename();
         File saveFile = new File(profileImage, ImageName);

@@ -2,6 +2,7 @@ package com.gosari.repick_project.question;
 import com.gosari.repick_project.answer.Answer;
 import com.gosari.repick_project.user.SiteUser;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -24,6 +25,9 @@ import org.springframework.web.multipart.MultipartFile;
 @RequiredArgsConstructor //QuestionRepository 생성자 생성해줌
 @Service
 public class QuestionService {
+    @Value("${ImgLocation}")
+    private String imgLocation;
+
     private final QuestionRepository questionRepository;
     private final QuestionPageRepository questionPageRepository;
 
@@ -63,7 +67,9 @@ public class QuestionService {
     public void create(String subject, String content, SiteUser user, String category,
                        MultipartFile file) throws Exception{
 
-        String projectPath = System.getProperty("user.dir") + "\\\\src\\\\main\\\\resources\\\\static\\\\files";
+//        String projectPath = System.getProperty("user.dir") + "\\\\src\\\\main\\\\resources\\\\static\\\\files";
+        String projectPath = imgLocation;
+
         UUID uuid = UUID.randomUUID();
         String fileName = uuid + "_" + file.getOriginalFilename();
         File saveFile = new File(projectPath, fileName);
@@ -77,7 +83,7 @@ public class QuestionService {
         q.setCategory(category);
 
         q.setFilename(fileName);
-        q.setFilepath("/files/" + fileName);
+        q.setFilepath(projectPath + fileName);
 
         this.questionRepository.save(q);
     }
