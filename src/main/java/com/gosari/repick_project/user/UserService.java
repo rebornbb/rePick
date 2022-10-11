@@ -15,6 +15,7 @@ import java.util.UUID;
 @Service
 public class UserService {
 
+
     @Value("${ImgLocation}")
     private String imgLocation;
 
@@ -41,7 +42,7 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(password));
 
         user.setImageName(ImageName);
-        user.setProfileImage("/photo/"+ ImageName);
+        user.setProfileImage(profileImage + ImageName);
 
         this.userRepository.save(user);
         return user;

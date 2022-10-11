@@ -18,6 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 
 import javax.validation.Valid;
+import java.io.File;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -118,7 +119,8 @@ public class QuestionController {
     @PreAuthorize("isAuthenticated()")
     @PostMapping("/modify/{id}")
     public String questionModify(@Valid QuestionForm questionForm, BindingResult bindingResult,
-                                 Principal principal, @PathVariable("id") Integer id) {
+                                 Principal principal, @PathVariable("id") Integer id,
+                                 MultipartFile file)throws Exception{
         if (bindingResult.hasErrors()) {
             return "question_form";
         }
@@ -126,7 +128,7 @@ public class QuestionController {
         if (!question.getAuthor().getUsername().equals(principal.getName())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "수정권한이 없습니다.");
         }
-        this.questionService.modify(question, questionForm.getSubject(), questionForm.getContent(), questionForm.getCategory()); //카테고리추가
+        this.questionService.modify(question, questionForm.getSubject(), questionForm.getContent(), questionForm.getCategory(),file); //카테고리추가
         return String.format("redirect:/question/detail/%s", id);
     }
 
