@@ -136,13 +136,13 @@
         <textarea sec:authorize="isAnonymous()" disabled th:field="*{content}"
                   class="answer-form" rows="10"></textarea>
         <textarea sec:authorize="isAuthenticated()" th:field="*{content}"
-                  class="answer-form" rows="10"></textarea>
+                  class="answer-form" rows="10" required></textarea>
 
 <!--        <div th:if="*{content} == null" class="error">-->
 <!--            댓글을 입력해주세요-->
 <!--        </div>-->
 
-        <input type="submit" value="댓글작성하기" class="btn-1 custom-btn btn-primary">
+        <input type="submit" value="댓글작성하기" class="btn-1 custom-btn btn-primary" >
     </form>
 
     <!------------------------질문 이전글 다음글------------------------------>
@@ -182,6 +182,20 @@
 
     <script layout:fragment="script">
         var simplemde = new SimpleMDE({ element: document.getElementById("markdownid") });
+
+        // function MustwriteAnswer() {
+        //     let AnswerBtn = document.getElementById("answerBTN");
+        //     let AnswerForm = document.getElementById("AnswerForm");
+        //
+        //     if(AnswerForm.value.length != 0){
+        //         return true;
+        //     }else if (AnswerForm.value.length == 0){
+        //         alert("내용을입력해주세요");
+        //         return false;
+        //     }
+        //
+        // }
+
     </script>
 </div>
 </html>
