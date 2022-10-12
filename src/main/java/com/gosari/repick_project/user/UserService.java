@@ -60,28 +60,35 @@ public class UserService {
 
     //회원수정
     public SiteUser modify(SiteUser siteUser,String nickname, String email, MultipartFile file) throws Exception {
-
-        File f = new File(siteUser.getProfileImage());
-
-        if (f.exists()) { // 파일이 존재하면
-            f.delete(); // 파일 삭제
-        }
-
-        //String profileImage = System.getProperty("user.dir") + "\\\\src\\\\main\\\\resources\\\\static\\\\photo";
         String projectPath = imgLocation;
 
-        UUID uuid = UUID.randomUUID();
-        String ImageName = uuid + "_" + file.getOriginalFilename();
-        File saveFile = new File(projectPath, ImageName);
-        file.transferTo(saveFile);
+        if (file.getOriginalFilename().equals("")){
+            //새 파일이 없을 때
+            siteUser.setImageName(siteUser.getImageName());
+            siteUser.setProfileImage(siteUser.getProfileImage());
 
-        siteUser.setImageName(ImageName);
-        siteUser.setProfileImage(projectPath+ImageName);
+        } else if (file.getOriginalFilename() != null){
+            //새 파일이 있을 때
+            File f = new File(siteUser.getProfileImage());
+
+            if (f.exists()) { // 파일이 존재하면
+                f.delete(); // 파일 삭제
+            }
+
+            UUID uuid = UUID.randomUUID();
+            String ImageName = uuid + "_" + file.getOriginalFilename();
+            File saveFile = new File(projectPath, ImageName);
+            file.transferTo(saveFile);
+
+            siteUser.setImageName(ImageName);
+            siteUser.setProfileImage(projectPath + ImageName);
+        }
 
         siteUser.setNickname(nickname);
         siteUser.setEmail(email);
 
         this.userRepository.save(siteUser);
+
         return siteUser;
     }
 }
