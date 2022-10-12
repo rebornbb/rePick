@@ -1254,7 +1254,7 @@ hr {
     font-family: KOTRA_GOTHIC;
     margin: auto;
     text-align: center;
-    width: 65%;
+    width: 70%;
     margin-top: 5%;
     border: black solid;
     border-width: 1px 0 0 0;
@@ -1701,6 +1701,58 @@ textarea {
     padding-left: 10px;
     background: transparent;
 }
+
+.fileboxS .upload-name {
+    font-family: KOTRA_GOTHIC;
+    display: flex;
+    padding: 5px;
+    /* width: 100%; */
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.fileboxS .upload-name:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.fileboxS label {
+    display: flex;
+    font-family: 'TmoneyRoundWindExtraBold';
+    cursor: pointer;
+    color: black;
+    border: black 2px solid;
+    margin-left: 20px;
+    text-align: center;
+    width: 100px;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 10px;}
+
+.fileboxS label {
+    display: flex;
+    font-family: 'TmoneyRoundWindExtraBold';
+    cursor: pointer;
+    color: black;
+    border: black 2px solid;
+    margin-left: 20px;
+    text-align: center;
+    width: 100px;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+.fileboxS label:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.fileboxS input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
 /* 회원가입 버튼1---------------------------------- */
 
 .custom-btn {
@@ -2881,9 +2933,9 @@ border: 0;
 }
 
 .answer-form {
-
     display: block;
-    width: 100%;
+    /* padding: 10px; */
+    width: 95%;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
@@ -2899,7 +2951,6 @@ border: 0;
     border-radius: 0.8rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     height: 100px;
-    width: -webkit-fill-available;
 }
 
 .answer-check {

@@ -30,10 +30,17 @@
                 <label for="email" class="form-label KOTRA-fontsize-100">이메일</label><br>
                 <input type="email" th:field="*{email}">
             </div>
-            <div class='singup_image'>
-                <label for="profileImage" class="form-label KOTRA-fontsize-80">프로필 이미지</label>
-                <input type="file" th:filed="*{profileImage}" name="file">
+
+
+            <!--파일업로드버튼-->
+            <div class="marginBottom-3">
+                <div class="fileboxS align-Center-row">
+                    <input class="upload-name" value="첨부파일" placeholder="첨부파일">
+                    <label for="file">프로필이미지</label>
+                    <input type="file" name="file" id="file">
+                </div>
             </div>
+
             <div class='singup_form'>
                 <button type="submit" class="btn-1 custom-btn btn-primary">회원가입</button>
             </div>

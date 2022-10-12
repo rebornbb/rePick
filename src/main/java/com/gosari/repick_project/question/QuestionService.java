@@ -90,28 +90,34 @@ public class QuestionService {
 
     /*질문데이터 수정*/
     public Question modify(Question question, String subject, String content, String category, MultipartFile file) throws Exception {
-
-        File f = new File(question.getFilepath());
-
-        if (f.exists()) { // 파일이 존재하면
-            f.delete(); // 파일 삭제
-        }
-
-        //String projectPath = System.getProperty("user.dir") + "\\\\src\\\\main\\\\resources\\\\static\\\\files";
         String projectPath = imgLocation;
 
-        UUID uuid = UUID.randomUUID();
-        String fileName = uuid + "_" + file.getOriginalFilename();
-        File saveFile = new File(projectPath, fileName);
-        file.transferTo(saveFile);
+        if (file.getOriginalFilename().equals("")){
+            //새 파일이 없을 때
+            question.setFilename(question.getFilename());
+            question.setFilepath(question.getFilepath());
+
+        } else if (file.getOriginalFilename() != null){
+            //새 파일이 있을 때
+            File f = new File(question.getFilepath());
+
+            if (f.exists()) { // 파일이 존재하면
+                f.delete(); // 파일 삭제
+            }
+
+            UUID uuid = UUID.randomUUID();
+            String fileName = uuid + "_" + file.getOriginalFilename();
+            File saveFile = new File(projectPath, fileName);
+            file.transferTo(saveFile);
+
+            question.setFilename(fileName);
+            question.setFilepath(projectPath + fileName);
+        }
 
         question.setSubject(subject);
         question.setContent(content);
         question.setModifyDate(new Date());
         question.setCategory(category);
-
-        question.setFilename(fileName);
-        question.setFilepath(projectPath + fileName);
 
         this.questionRepository.save(question);
 
