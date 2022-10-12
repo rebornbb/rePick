@@ -52,7 +52,7 @@ public class QuestionService {
             throw new DataNotFoundException("question not found");
         }
     }
-
+;
     /*페이징*/
     public Page<Question> getList(int page, String kw){  //검색어:kw
         List<Sort.Order> sorts = new ArrayList<>();

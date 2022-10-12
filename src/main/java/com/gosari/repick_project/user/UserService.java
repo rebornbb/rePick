@@ -35,7 +35,6 @@ public class UserService {
 
         SiteUser user = new SiteUser();
 
-//        user.getId();
         user.setUsername(username);
         user.setNickname(nickname);
         user.setEmail(email);
@@ -61,14 +60,23 @@ public class UserService {
 
     //회원수정
     public SiteUser modify(SiteUser siteUser,String nickname, String email, MultipartFile file) throws Exception {
-        String profileImage = System.getProperty("user.dir") + "\\\\src\\\\main\\\\resources\\\\static\\\\photo";
+
+        File f = new File(siteUser.getProfileImage());
+
+        if (f.exists()) { // 파일이 존재하면
+            f.delete(); // 파일 삭제
+        }
+
+        //String profileImage = System.getProperty("user.dir") + "\\\\src\\\\main\\\\resources\\\\static\\\\photo";
+        String projectPath = imgLocation;
+
         UUID uuid = UUID.randomUUID();
         String ImageName = uuid + "_" + file.getOriginalFilename();
-        File saveFile = new File(profileImage, ImageName);
+        File saveFile = new File(projectPath, ImageName);
         file.transferTo(saveFile);
 
         siteUser.setImageName(ImageName);
-        siteUser.setProfileImage("/photo/"+ImageName);
+        siteUser.setProfileImage(projectPath+ImageName);
 
         siteUser.setNickname(nickname);
         siteUser.setEmail(email);
