@@ -14,18 +14,33 @@ import javax.servlet.http.HttpServletRequest;
 public class ErrorHandler implements ErrorController {
 
 
+//    @GetMapping("/error")
+//    public String handleError(HttpServletRequest request){
+//        Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
+//        if(null != status){
+//            int statusCode = Integer.valueOf(status.toString());
+//            if(statusCode == HttpStatus.FORBIDDEN.value()){
+//                return "403";
+//            }else if(statusCode == HttpStatus.NOT_FOUND.value()){
+//                return "404";
+//            }
+//        }
+//        return "error";
+//    }
     @GetMapping("/error")
-    public String handleError(HttpServletRequest request){
+    public String handleError(HttpServletRequest request) {
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
-        if(null != status){
+
+        if(status != null){
             int statusCode = Integer.valueOf(status.toString());
-            if(statusCode == HttpStatus.FORBIDDEN.value()){
-                return "403";
-            }else if(statusCode == HttpStatus.NOT_FOUND.value()){
+
+            if(statusCode == HttpStatus.NOT_FOUND.value()) {
                 return "404";
+            } else {
+                return "error";
             }
         }
+
         return "error";
     }
-
 }
