@@ -150,12 +150,15 @@
         <tr>
             <td width="50px" style="font-weight: bolder" class="KOTRA-fontsize-100">이전글</td>
             <td><a th:href="@{|/question/detail/${prevID}|}"
+                   th:classappend="${prevID == '0'} ? 'disabled'"
                    th:text="*{prevSub}" class="KOTRA-fontsize-100"></a></td>
         </tr>
         <tr>
             <td width="50px"  style="font-weight: bolder" class="KOTRA-fontsize-100">다음글</td>
             <td><a th:href="@{|/question/detail/${nextID}|}"
-                   th:text="*{nextSub}" class="KOTRA-fontsize-100"></a></td>
+                   th:classappend="${nextID == '0'} ? 'disabled'"
+                   th:text="*{nextSub}" id="nextSUB"
+                   class="KOTRA-fontsize-100"></a></td>
         </tr>
     </table>
 
@@ -182,20 +185,6 @@
 
     <script layout:fragment="script">
         var simplemde = new SimpleMDE({ element: document.getElementById("markdownid") });
-
-        // function MustwriteAnswer() {
-        //     let AnswerBtn = document.getElementById("answerBTN");
-        //     let AnswerForm = document.getElementById("AnswerForm");
-        //
-        //     if(AnswerForm.value.length != 0){
-        //         return true;
-        //     }else if (AnswerForm.value.length == 0){
-        //         alert("내용을입력해주세요");
-        //         return false;
-        //     }
-        //
-        // }
-
     </script>
 </div>
 </html>

@@ -300,8 +300,11 @@ hr {
     color: white;
 }
 
-
-
+/*------------------------------------*/
+.disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+}
 /*-----------------------------------네비게이션-------------------------------------------*/
 #join,#login,#logout{
     color: #5B86EF;
@@ -3031,31 +3034,6 @@ textarea {
     padding: 10px;
 }
 
-.detail-pagination ul{
-    display: flex;
-    justify-content: center;
-    list-style: none;
-
-    padding: 10px;
-}
-
-.detail-pagination a.page-link {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-}
-
-.detail-pagination a.page-item {
-    background-color: dodgerblue;
-    color: white;
-}
-
-.detail-active {
-    background-color: #d1d4d9;
-}
-
 .answer-card {
     border: 1px solid #d1d4d9;
     margin: 10px;
@@ -3095,4 +3073,65 @@ textarea {
 
 .detail-answer {
     padding: 10px;
+}
+
+/*---------------에러--------------------*/
+.errorBox{
+    width: 100vw;
+    height: 100vw;
+}
+.errorSymbol{
+    width: 20vw;
+    animation: SymRotate 3s infinite linear;
+}
+@keyframes SymRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.errorNum{
+    font-family: TmoneyRoundWindExtraBold;
+    font-size: 25vw;
+}
+.shadow{
+    z-index: -1;
+    content: "";
+    width: 13vw;
+    height: 1.5vw;
+    border-radius: 50%;
+    background: #d1d4d9;
+    position: absolute;
+    /* top: 35vw; */
+    margin-top: 20vw;
+}
+
+.speech-bubble {
+    position: relative;
+    background:#5B86EF;
+    border-radius: .4em;
+    width: 30vw;
+    height: 10vw;
+}
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 25px solid transparent;
+    border-top-color: #5B86EF;
+    border-bottom: 0;
+    margin-left: -25px;
+    margin-bottom: -25px;
+}
+.speech-bubble > div{
+    font-family: KOTRA_GOTHIC;
+    color: white;
+    font-size: 150%;
+    font-weight: bolder;
 }

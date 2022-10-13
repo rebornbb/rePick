@@ -7,7 +7,7 @@ public interface QuestionPageRepository extends JpaRepository<QuestionPage, Inte
 
     @Query(value = "SELECT * FROM(SELECT ID, " +
             "LAG(ID, 1, 0) OVER(ORDER BY ID ASC) AS PREVID, " +
-            "LAG(subject, 1, '이전글이 없습니다.') OVER (ORDER BY ID ASC) AS PREV_SUB," +
+            "LAG(subject, 1, '이전글이 없습니다') OVER (ORDER BY ID ASC) AS PREV_SUB," +
             "LEAD(ID, 1, 0) OVER(ORDER BY ID ASC) AS NEXTID, "+
             "LEAD(subject, 1, '다음글이 없습니다') OVER (ORDER BY ID ASC) AS NEXT_SUB " +
             "FROM QUESTION) WHERE id = :id",
