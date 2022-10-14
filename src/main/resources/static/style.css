@@ -1200,9 +1200,11 @@ hr {
     .rwd-table th:first-child,
     .rwd-table td:first-child {
         font-weight : bold;
+        color: black;
     }
     .rwd-table td a {
         text-decoration: none;
+        color: black;
     }
 }
 @media screen and (min-width: 600px) {
@@ -1215,6 +1217,7 @@ hr {
     }
     .rwd-table td a {
         text-decoration: none;
+        color: black;
     }
     .rwd-table th,
     .rwd-table td {
