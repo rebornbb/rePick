@@ -1197,6 +1197,13 @@ hr {
     .rwd-table tr:nth-child(2) {
         border-top: none;
     }
+    .rwd-table th:first-child,
+    .rwd-table td:first-child {
+        font-weight : bold;
+    }
+    .rwd-table td a {
+        text-decoration: none;
+    }
 }
 @media screen and (min-width: 600px) {
     .rwd-table tr:hover:not(:first-child) {
@@ -1205,6 +1212,9 @@ hr {
     }
     .rwd-table td:before {
         display: none;
+    }
+    .rwd-table td a {
+        text-decoration: none;
     }
     .rwd-table th,
     .rwd-table td {
