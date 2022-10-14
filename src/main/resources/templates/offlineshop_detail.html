@@ -38,7 +38,7 @@
             <span >작성 일시:</span>
             <span th:text="${#dates.format(offlineShop.createDate, 'yyyy-MM-dd HH:mm')}"></span>
         </div>
-        <div style="white-space: nowrap;"  class="marginBottom-3">
+        <div style="white-space: nowrap;" >
             <span >수정 일시:</span>
             <span th:if="${offlineShop.modifyDate != null}" th:text="${#dates.format(offlineShop.modifyDate, 'yyyy-MM-dd HH:mm')}">
             </span>
