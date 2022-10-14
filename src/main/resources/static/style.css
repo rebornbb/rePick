@@ -1252,22 +1252,49 @@ hr {
     width: 20px;
     margin-right: 10px;
 }
-.Offlineshop-Detail-WriteInfo{
-    padding: 10px;
-    font-family: KOTRA_GOTHIC;
-    margin: auto;
-    text-align: center;
-    width: 70%;
-    margin-top: 5%;
-    border: black solid;
-    border-width: 1px 0 0 0;
-    align-items: center;
+@media screen and (min-width:830px) {
+    .Offlineshop-Detail-WriteInfo {
+        padding: 10px;
+        font-family: KOTRA_GOTHIC;
+        margin: auto;
+        text-align: center;
+        width: 70%;
+        margin-top: 5%;
+        border: black solid;
+        border-width: 1px 0 0 0;
+        align-items: center;
+    }
+
+    .Offlineshop-Detail-WriteInfo div {
+        margin-right: 3%;
+    }
+
+    .Offlineshop-Detail-WriteInfo div > span:first-child {
+        font-weight: bold;
+    }
 }
-.Offlineshop-Detail-WriteInfo div{
-    margin-right: 3%;
-}
-.Offlineshop-Detail-WriteInfo div>span:first-child{
-    font-weight: bold;
+@media screen and (max-width:830px) {
+    .Offlineshop-Detail-WriteInfo {
+        display: flex;
+        padding: 10px;
+        font-family: KOTRA_GOTHIC;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+        margin-top: 5%;
+        border: black solid;
+        border-width: 1px 0 0 0;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .Offlineshop-Detail-WriteInfo div {
+        margin-right: 3%;
+    }
+
+    .Offlineshop-Detail-WriteInfo div > span:first-child {
+        font-weight: bold;
+    }
 }
 /*---오프라인추천매장버튼----*/
 .Green-button-Offline-update {

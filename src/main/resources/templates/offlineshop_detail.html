@@ -30,36 +30,34 @@
     </div>
 
     <div  sec:authorize="hasRole('ADMIN')" class="Offlineshop-Detail-WriteInfo align-Center-row">
-        <div>
-            <span>작성 담당자 :</span>
+        <div style="white-space: nowrap;">
+            <span>작성 담당자:</span>
             <span th:if="${offlineShop.author != null}" th:text="${offlineShop.author.nickname}"></span>
         </div>
-        <div>
-            <span>작성 일시:</span>
+        <div style="white-space: nowrap;">
+            <span >작성 일시:</span>
             <span th:text="${#dates.format(offlineShop.createDate, 'yyyy-MM-dd HH:mm')}"></span>
         </div>
-        <div>
-            <span>수정 일시:</span>
+        <div style="white-space: nowrap;"  class="marginBottom-3">
+            <span >수정 일시:</span>
             <span th:if="${offlineShop.modifyDate != null}" th:text="${#dates.format(offlineShop.modifyDate, 'yyyy-MM-dd HH:mm')}">
             </span>
         </div>
 
+            <div class="align-Center-row">
             <a th:href="@{|/offlineshop/modify/${offlineShop.id}|}"
-               sec:authorize="isAuthenticated()" class="Green-button-Offline-update"
-               th:if="${offlineShop.author != null and #authentication.getPrincipal().getUsername() == offlineShop.author.username}"
+               sec:authorize="hasRole('ADMIN')" class="Green-button-Offline-update"
                th:text="수정"></a>
 
 
             <a href="javascript:void(0);" th:data-uri="@{|/offlineshop/delete/${offlineShop.id}|}"
-               sec:authorize="isAuthenticated()" class="delete Green-button-Offline-delete"
-               th:if="${offlineShop.author != null and #authentication.getPrincipal().getUsername() == offlineShop.author.username}"
+               sec:authorize="hasRole('ADMIN')" class="delete Green-button-Offline-delete"
                th:text="삭제"></a>
 
             <a th:href="@{/offlineshop/create}"
-               sec:authorize="isAuthenticated()" class="Green-button-Offline-create"
-               th:if="${offlineShop.author != null and #authentication.getPrincipal().getUsername() == offlineShop.author.username}"
+               sec:authorize="hasRole('ADMIN')" class="Green-button-Offline-create"
                th:text="추가작성"></a>
-
+            </div>
     </div>
 
 
