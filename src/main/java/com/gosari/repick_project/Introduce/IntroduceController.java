@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IntroduceController {
     @RequestMapping("/introduce")
-    public String introduce(){
+    public String introduce() {
         return "introduce";
     }
 }

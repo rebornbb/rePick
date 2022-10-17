@@ -28,7 +28,7 @@ public class SiteUser {
     private String role;
 
     @PrePersist
-    public void setting(){
+    public void setting() {
         this.role = "ROLE_USER";
     }
 

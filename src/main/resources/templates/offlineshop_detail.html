@@ -5,7 +5,8 @@
 
     <p style="margin-top:-12px">
         <em class="link">
-            <a href="javascript:void(0);" onclick="window.open('http://fiy.daum.net/fiy/map/CsGeneral.daum', '_blank', 'width=981, height=650')">
+            <a href="javascript:void(0);"
+               onclick="window.open('http://fiy.daum.net/fiy/map/CsGeneral.daum', '_blank', 'width=981, height=650')">
             </a>
         </em>
     </p>
@@ -29,22 +30,23 @@
         <span class="Offlineshop-Detail-shopDetail" th:text="${offlineShop.shopContents}"></span>
     </div>
 
-    <div  sec:authorize="hasRole('ADMIN')" class="Offlineshop-Detail-WriteInfo align-Center-row">
+    <div sec:authorize="hasRole('ADMIN')" class="Offlineshop-Detail-WriteInfo align-Center-row">
         <div style="white-space: nowrap;">
             <span>작성 담당자:</span>
             <span th:if="${offlineShop.author != null}" th:text="${offlineShop.author.nickname}"></span>
         </div>
         <div style="white-space: nowrap;">
-            <span >작성 일시:</span>
+            <span>작성 일시:</span>
             <span th:text="${#dates.format(offlineShop.createDate, 'yyyy-MM-dd HH:mm')}"></span>
         </div>
-        <div style="white-space: nowrap;" >
-            <span >수정 일시:</span>
-            <span th:if="${offlineShop.modifyDate != null}" th:text="${#dates.format(offlineShop.modifyDate, 'yyyy-MM-dd HH:mm')}">
+        <div style="white-space: nowrap;">
+            <span>수정 일시:</span>
+            <span th:if="${offlineShop.modifyDate != null}"
+                  th:text="${#dates.format(offlineShop.modifyDate, 'yyyy-MM-dd HH:mm')}">
             </span>
         </div>
 
-            <div class="align-Center-row">
+        <div class="align-Center-row">
             <a th:href="@{|/offlineshop/modify/${offlineShop.id}|}"
                sec:authorize="hasRole('ADMIN')" class="Green-button-Offline-update"
                th:text="수정"></a>
@@ -57,7 +59,7 @@
             <a th:href="@{/offlineshop/create}"
                sec:authorize="hasRole('ADMIN')" class="Green-button-Offline-create"
                th:text="추가작성"></a>
-            </div>
+        </div>
     </div>
 
 
@@ -90,8 +92,7 @@
     let address = document.getElementById('shopAddress').innerText;
 
     // 주소로 좌표를 검색합니다
-    geocoder.addressSearch(address, function(result, status) {
-
+    geocoder.addressSearch(address, function (result, status) {
 
 
         // 정상적으로 검색이 완료됐으면
@@ -111,7 +112,6 @@
                 content: '<div id="shopmarker" style="width:150px;text-align:center;padding:6px 0;' +
                     'border-radius: 5px; font-family: TmoneyRoundWindExtraBold ">YOUR PICK!</div>'
             });
-
 
 
             infowindow.open(map, marker);

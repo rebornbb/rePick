@@ -6,20 +6,21 @@
         <div class="profileBox">
             <form th:action='@{/user/info}' th:object='${userUpdateForm}' method='post' enctype='multipart/form-data'>
                 <div>
-                    <div class="profile_name Tmoney-fontsize-130 marginTop-3 marginBottom-3"  th:text='${siteUser.nickname}' ></div>
+                    <div class="profile_name Tmoney-fontsize-130 marginTop-3 marginBottom-3"
+                         th:text='${siteUser.nickname}'></div>
                     <div class="progileimg-box">
-                    <img onerror="this.style.visibility='hidden'" class="profileimg" th:src="@{|/photo/${siteUser.ImageName}|}"/>
+                        <img onerror="this.style.visibility='hidden'" class="profileimg"
+                             th:src="@{|/photo/${siteUser.ImageName}|}"/>
                     </div>
-<!--                    <input class="profile_file" type='file' name='file'>-->
 
-                        <div class="fileboxP align-Center-row marginTop-3">
-                            <input class="upload-name" value="첨부파일" placeholder="첨부파일">
-                            <label for="file">파일찾기</label>
-                            <input type="file" name="file" id="file">
-                        </div>
+                    <div class="fileboxP align-Center-row marginTop-3">
+                        <input class="upload-name" value="첨부파일" placeholder="첨부파일">
+                        <label for="file">파일찾기</label>
+                        <input type="file" name="file" id="file">
+                    </div>
 
                 </div>
-                <br />
+                <br/>
                 <div class="pofile_user">
                     <label for="username" class="form-label KOTRA-fontsize-100">사용자ID</label><br>
                     <input type="text" th:field="${siteUser.username}" readonly>
@@ -41,7 +42,7 @@
 </div>
 
 <script layout:fragment="script">
-    $("#file").on('change',function(){
+    $("#file").on('change', function () {
         var fileName = $("#file").val();
         $(".upload-name").val(fileName);
     });

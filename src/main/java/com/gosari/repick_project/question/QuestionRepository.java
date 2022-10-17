@@ -12,9 +12,13 @@ import java.util.List;
 public interface QuestionRepository extends JpaRepository<Question, Integer> {
 
     Question findBySubject(String subject);
+
     Question findBySubjectAndContent(String subject, String content);
+
     List<Question> findBySubjectLike(String subject);
+
     Page<Question> findAll(Pageable pageable);
+
     Page<Question> findAll(Specification<Question> spec, Pageable pageable);
 
     /*service에 작성했던 Specification 대신 직접 쿼리를 작성하여 수행*/

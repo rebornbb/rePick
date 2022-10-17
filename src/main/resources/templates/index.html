@@ -13,7 +13,7 @@
             <h1 id="h1three">우리들의 REPICK</h1>
             <div class="Index-LogoSymbol" id="symbol">
                 <img src="/images/rePick_logo-white.svg" alt="리픽로고">
-                <img src="/images/rePick_symbol_blue.svg" alt="리픽심볼" >
+                <img src="/images/rePick_symbol_blue.svg" alt="리픽심볼">
             </div>
         </div>
         <div class="Index-3Icon">
@@ -24,7 +24,7 @@
 
     </div>
 
-    <div class="Index-introduce-box" >
+    <div class="Index-introduce-box">
         <h1>깨끗한 지구를 위한 활동 더 이상 어렵지 않아요!</h1>
         <h1>다양한 환경 정보를 편리하게 얻고 공유할 수 있는</h1>
         <h1>리픽과 함께 우리 다 같이 친환경 실천해 볼까요?</h1>
@@ -65,25 +65,11 @@
         <p>우리의 작은 행동 하나하나가 지구의 미래를 결정합니다</p>
     </div>
 
-<!--    -->
-<!--    <div th:each="news : ${news}">-->
-<!--        <div class="grid-item align-Colum-center">-->
-<!--            <a th:href="${news.url}" target="_blank">-->
-<!--                <img th:src="${news.image}" class="newsImage"onerror=this.src="./images/newslogo.png">-->
-<!--            </a>-->
-
-<!--            <a th:href="${news.url}" class="newsText" target="_blank">-->
-<!--                    <span th:text="${news.subject}" >-->
-<!--                    </span>-->
-<!--            </a>-->
-<!--        </div>-->
-<!--    </div>-->
-
-    <div class="Index-News-box" >
+    <div class="Index-News-box">
         <div class="align-Colum">
             <div class="align-Newsbox-h1">
-            <h1 >리픽이 전해드리는</h1>
-            <h1 >새로운 소식을 만나보세요</h1>
+                <h1>리픽이 전해드리는</h1>
+                <h1>새로운 소식을 만나보세요</h1>
             </div>
         </div>
 
@@ -96,15 +82,15 @@
             </div>
 
             <div class="align-Colum-center">
-                <div  class="Index-News-img2">
-                    <a th:href="@{/news}"  class="Index-NewsTEXT">환경 뉴스 페이지</a>
+                <div class="Index-News-img2">
+                    <a th:href="@{/news}" class="Index-NewsTEXT">환경 뉴스 페이지</a>
                 </div>
                 <a th:href="@{/news}" class="Index-Newstext">리픽에서 환경에 관련된 뉴스를 확인해 보세요! </a>
             </div>
 
             <div class="align-Colum-center">
-                <div  class="Index-News-img3">
-                    <a th:href="@{/question/list}"  class="Index-NewsTEXT">커뮤니티 페이지</a>
+                <div class="Index-News-img3">
+                    <a th:href="@{/question/list}" class="Index-NewsTEXT">커뮤니티 페이지</a>
                 </div>
                 <a th:href="@{/question/list}" class="Index-Newstext">다른 리픽회원들과 필요한 정보를 공유하세요!</a>
             </div>
@@ -116,14 +102,14 @@
 
 <script layout:fragment="script">
 
-    //------------최상단 이미지 애니메이션 효과-----------
-    $(document).ready(function(){
-        $("#earth").animate({right: '0px',opacity: '100%'},1500);
-        $("#recycle").animate({right: '0px',opacity: '100%'},2000);
-        $("#social").animate({right: '0px',opacity: '100%'},2500);
+    /*------------최상단 이미지 애니메이션 효과-----------*/
+    $(document).ready(function () {
+        $("#earth").animate({right: '0px', opacity: '100%'}, 1500);
+        $("#recycle").animate({right: '0px', opacity: '100%'}, 2000);
+        $("#social").animate({right: '0px', opacity: '100%'}, 2500);
     });
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         $("#h1one").fadeIn(2500);
         $("#h1two").fadeIn(2500);
         $("#h1three").fadeIn(2500);

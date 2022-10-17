@@ -18,10 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 
 import javax.validation.Valid;
-import java.io.File;
 import java.security.Principal;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @RequestMapping("/question") //URL프리픽스(prefix)
@@ -146,7 +143,7 @@ public class QuestionController {
         }
 
         this.questionService.delete(question);
-        return "redirect:/";
+        return "redirect:/question/list";
     }
     /*질문추천*/
     @PreAuthorize("isAuthenticated()")

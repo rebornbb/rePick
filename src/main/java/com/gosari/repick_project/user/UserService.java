@@ -6,6 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.io.File;
 import java.util.Optional;
 import java.util.UUID;
@@ -23,8 +24,7 @@ public class UserService {
     private final PasswordEncoder passwordEncoder;
 
 
-    public SiteUser create(String username, String email, String password, String nickname, MultipartFile file)throws Exception {
-        //String profileImage = System.getProperty("user.dir") + "\\\\src\\\\main\\\\resources\\\\static\\\\photo";
+    public SiteUser create(String username, String email, String password, String nickname, MultipartFile file) throws Exception {
 
         String profileImage = imgLocation;
 
@@ -48,26 +48,26 @@ public class UserService {
     }
 
     /*SiteUser를 조회할수있는 getUser메서드*/
-    public SiteUser getUser(String username){
+    public SiteUser getUser(String username) {
         Optional<SiteUser> siteUser = this.userRepository.findByUsername(username);
-        if(siteUser.isPresent()){
+        if (siteUser.isPresent()) {
             return siteUser.get();
-        }else{
+        } else {
             throw new DataNotFoundException("siteuser not found");
         }
     }
 
 
     //회원수정
-    public SiteUser modify(SiteUser siteUser,String nickname, String email, MultipartFile file) throws Exception {
+    public SiteUser modify(SiteUser siteUser, String nickname, String email, MultipartFile file) throws Exception {
         String projectPath = imgLocation;
 
-        if (file.getOriginalFilename().equals("")){
+        if (file.getOriginalFilename().equals("")) {
             //새 파일이 없을 때
             siteUser.setImageName(siteUser.getImageName());
             siteUser.setProfileImage(siteUser.getProfileImage());
 
-        } else if (file.getOriginalFilename() != null){
+        } else if (file.getOriginalFilename() != null) {
             //새 파일이 있을 때
             File f = new File(siteUser.getProfileImage());
 

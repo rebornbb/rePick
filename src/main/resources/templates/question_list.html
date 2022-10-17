@@ -1,28 +1,26 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}">
-<!--layout:decorate 속성 : 템플릿의 레이아웃(부모템플릿)으로 사용할 템플릿을 설정-->
 
 
 <div layout:fragment="content">
 
     <div class="align-Center-row-Q">
 
-    <a th:href="@{/question/create}" class="btn-1-Q custom-btn-Q">글등록하기</a>
+        <a th:href="@{/question/create}" class="btn-1-Q custom-btn-Q">글등록하기</a>
 
-    <!--------------------검색창--------------------->
-    <div class="search-bar">
-        <form class="search-container">
-            <input  type="text" id="search_kw" th:value="${kw}" placeholder="Let's enjoy Repick together!">
-            <a href="#"><img class="search-icon" id="btn_search" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
-        </form>
-    </div>
+        <!--------------------검색창--------------------->
+        <div class="search-bar">
+            <form class="search-container">
+                <input type="text" id="search_kw" th:value="${kw}" placeholder="Let's enjoy Repick together!">
+                <a href="#"><img class="search-icon" id="btn_search"
+                                 src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+            </form>
+        </div>
 
     </div>
-<!--    <input type="text" id="search_kw" th:value="${kw}">-->
-<!--    <button type="button" id="btn_search">찾기</button>-->
 
     <!--------------------질문리스트--------------------->
-    <table  class="que-table" >
+    <table class="que-table">
         <tr class="Tmoney-fontsize-90">
             <th>번호</th>
             <th>제목</th>
@@ -32,7 +30,7 @@
             <th>조회수</th>
         </tr>
 
-        <tr scope="row" th:each="question, loop : ${paging}"  class="KOTRA-fontsize-80">
+        <tr scope="row" th:each="question, loop : ${paging}" class="KOTRA-fontsize-80">
 
             <td th:text="${paging.getTotalElements - (paging.number * paging.size) - loop.index}"></td>
 
@@ -40,9 +38,9 @@
                 <a th:href="@{|/question/detail/${question.id}|}" th:text="${question.subject}"></a>
 
                 <!--해당질문에 달린답변개수 표시-->
-                
-                <span class="A-color"  th:if="${#lists.size(question.answerList) > 0}"
-                        th:text="${#lists.size(question.answerList)}">
+
+                <span class="A-color" th:if="${#lists.size(question.answerList) > 0}"
+                      th:text="${#lists.size(question.answerList)}">
                 </span>
             </td>
 
@@ -62,7 +60,7 @@
 
     <!--------------------페이징처리--------------------->
     <div th:if="${!paging.isEmpty()}"><!--paging.isEmpty:페이지존재여부(게시물있으면 false,없으면 true)-->
-        <div  class="pagenationQ marginBottom-5">
+        <div class="pagenationQ marginBottom-5">
             <div th:classappend="${!paging.hasPrevious} ? 'disabled'">
                 <!-- !paging.hasPrevious - disabled : 이전페이지가 없으면 비활성화-->
 
@@ -75,12 +73,12 @@
             <!--th:each :페이지 리스트 루프--> <!--#numbers.sequence(시작, 끝)-->
             <div th:each="page: ${#numbers.sequence(0, paging.totalPages-1)}"
 
-                th:if="${page >= paging.number-5 and page <= paging.number+5}"
+                 th:if="${page >= paging.number-5 and page <= paging.number+5}"
 
-                th:classappend="${page == paging.number} ? 'active'" >
+                 th:classappend="${page == paging.number} ? 'active'">
                 <!--page == paging.number : 현재페이지와 같으면 active 적용-->
 
-                <a th:text="${page}" class="page-link" href="javascript:void(0)" th:data-page="${page}" ></a>
+                <a th:text="${page}" class="page-link" href="javascript:void(0)" th:data-page="${page}"></a>
             </div>
 
             <div th:classappend="${!paging.hasNext} ? 'disabled'">
@@ -102,7 +100,6 @@
         <input type="hidden" id="page" name="page" th:value="${paging.number}">
     </form>
 </div>
-
 
 
 <script layout:fragment="script" type='text/javascript'>

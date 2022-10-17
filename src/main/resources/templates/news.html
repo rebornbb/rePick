@@ -1,7 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}">
-<!--layout:decorate 속성 : 템플릿의 레이아웃(부모템플릿)으로 사용할 템플릿을 설정-->
-
 
 <div layout:fragment="content">
 
@@ -433,10 +431,9 @@
         }, 2000);
     }
 
-    //<!---------------------------날씨작을때---------------------------------->
+    // ---------------------------날씨카드 작을때----------------------------------
 
     const Show = document.getElementById('Showweather');
-    // const ShowBtn = document.getElementById('WeatherBtn');
 
     function WeatherShowToggle() {
 
@@ -447,20 +444,7 @@
         }
 
     }
-    // if(ShowBtn.style.visibility == 'hidden') {
-    //     Show.style.visibility = 'visible';
-    //     Show.style.display = 'flex';
-    // }else {
-    //     Show.style.visibility = 'hidden';
-    //     Show.style.display = 'none';
-    // }
 
-
-    if( window.innerWidth >= 830) {
-        Show.style.visibility = 'visible';
-    }else {
-        Show.style.visibility = 'hidden';
-    }
 </script>
 
 </html>

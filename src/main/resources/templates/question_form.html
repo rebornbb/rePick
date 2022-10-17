@@ -25,13 +25,13 @@
             </div>
             <!--내용입력-->
             <div>
-            <label for="content" class="Tmoney-fontsize-150">내용</label>
-            <div class="marginBottom-3 Qcontent">
-                <div>
+                <label for="content" class="Tmoney-fontsize-150">내용</label>
+                <div class="marginBottom-3 Qcontent">
+                    <div>
                 <textarea th:field="*{content}" rows="10" class="marginBottom-3"
-                id="markdown"></textarea>
+                          id="markdown"></textarea>
+                    </div>
                 </div>
-            </div>
             </div>
 
             <!--카테고리선택-->
@@ -46,21 +46,20 @@
                     <option value="자유게시판">자유게시판</option>
                 </select>
 
-            <!--파일업로드버튼-->
-            <div class="marginBottom-3">
-            <div class="filebox align-Center-row">
-                <input class="upload-name" value="첨부파일" placeholder="첨부파일" onchange="">
-                <label for="file">파일찾기</label>
-                <input type="file" name="file" id="file">
-            </div>
-            </div>
+                <!--파일업로드버튼-->
+                <div class="marginBottom-3">
+                    <div class="filebox align-Center-row">
+                        <input class="upload-name" value="첨부파일" placeholder="첨부파일" onchange="">
+                        <label for="file">파일찾기</label>
+                        <input type="file" name="file" id="file">
+                    </div>
+                </div>
 
             </div>
 
             <div class="marginBottom-5 marginTop-3">
-            <button type="submit" class="btn-1 custom-btn btn-primary ">저장하기</button>
+                <button type="submit" class="btn-1 custom-btn btn-primary ">저장하기</button>
             </div>
-
 
 
         </div>
@@ -70,12 +69,13 @@
 
 <script layout:fragment="script">
 
-    var simplemde = new SimpleMDE({ element: document.getElementById("markdown") });
+    var simplemde = new SimpleMDE({element: document.getElementById("markdown")});
 
-    $("#file").on('change',function(){
+    $("#file").on('change', function () {
         var fileName = $("#file").val();
         $(".upload-name").val(fileName);
     });
+
 </script>
 
 </html>

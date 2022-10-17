@@ -39,23 +39,21 @@ public class NaverShopSearch {
         naverShopSearch.search();
     }
 
-    public List<OnlineshopItemDto> fromJSONtoItems(String result)  {
+    public List<OnlineshopItemDto> fromJSONtoItems(String result) {
+
         // 문자열 정보를 JSONObject로 바꾸기
         JSONObject rjson = new JSONObject(result);
+
         System.out.println(rjson);
         // JSONObject에서 items 배열 꺼내기
         // JSON 배열이기 때문에 보통 배열이랑 다르게 활용해야한다.
+
         JSONArray items = rjson.getJSONArray("items");
         List<OnlineshopItemDto> itemDtoList = new ArrayList<>();
         for (int i = 0; i < items.length(); i++) {
             JSONObject itemJson = (JSONObject) items.get(i);
             OnlineshopItemDto itemDto = new OnlineshopItemDto(itemJson);
             itemDtoList.add(itemDto);
-            // item 중에서 필요한 항목만 꺼내기
-            //String title = itemJson.getString("title");
-            //String image = itemJson.getString("image");
-            //String link = itemJson.getString("link");
-            //int lprice = itemJson.getInt("lprice");
         }
         return itemDtoList;
     }

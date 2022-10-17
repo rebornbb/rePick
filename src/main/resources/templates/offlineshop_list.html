@@ -34,7 +34,7 @@
 
     <span class="Tmoney-fontsize-180 align-Center paddingAll-4 linear-wipe">REPICK이 선정한 착한 PICK </span>
     <!--  오프라인 매장 추천  -->
-    <table  class="rwd-table">
+    <table class="rwd-table">
         <tbody>
         <tr class="Tmoney-fontsize-90">
             <th>Shop Name</th>
@@ -57,10 +57,10 @@
     </table>
     <!--페이징-->
     <div class="align-Center-row marginTop-3 marginBottom-5">
-    <th:div  class="pagenation" th:each= "page : ${#numbers.sequence(startPage, endPage)}">
-        <a th:if="${page != nowPage}" th:href="@{/offlineshop/list(page = ${page -1})}" th:text="${page}"></a>
-        <a th:if="${page == nowPage}" th:text="${page}" class="active"></a>
-    </th:div>
+        <th:div class="pagenation" th:each="page : ${#numbers.sequence(startPage, endPage)}">
+            <a th:if="${page != nowPage}" th:href="@{/offlineshop/list(page = ${page -1})}" th:text="${page}"></a>
+            <a th:if="${page == nowPage}" th:text="${page}" class="active"></a>
+        </th:div>
     </div>
 
 </div>

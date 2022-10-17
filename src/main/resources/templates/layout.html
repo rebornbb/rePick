@@ -12,12 +12,11 @@
     <!--마크다운에디터-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"/>
 
     <title>re:)Pick</title>
 </head>
-
 
 
 <body>
@@ -28,7 +27,7 @@
     const menu = document.querySelector('.navbar_menu');
     const icons = document.querySelector('.navbar_icons');
 
-    toggleBtn.addEventListener('click' , ()=>{
+    toggleBtn.addEventListener('click', () => {
         menu.classList.toggle('menuActive');
         icons.classList.toggle('menuActive');
     });
@@ -43,7 +42,8 @@
 <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=809a0a893dd1c539e481dcd3fc03f1c0&libraries=services"></script>
 
 <!--제이쿼리-->
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
 </script>
 
 <!--마크다운에디터-->
@@ -52,7 +52,7 @@
 <!--자바스크립트 start-->
 <th:block layout:fragment="script"></th:block>
 
-
+<!--footer아이콘과 footer-->
 <script src="https://kit.fontawesome.com/8fc17ecae3.js" crossorigin="anonymous"></script>
 <footer th:replace="footer :: footerFragment"></footer>
 

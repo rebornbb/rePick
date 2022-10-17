@@ -53,18 +53,18 @@ public class AnswerService {
     }
 
     /*답변삭제*/
-    public void delete(Answer answer){
+    public void delete(Answer answer) {
         this.answerRepository.delete(answer);
     }
 
     /*추천인저장*/
-    public void vote(Answer answer, SiteUser siteUser){
+    public void vote(Answer answer, SiteUser siteUser) {
         answer.getVoter().add(siteUser);
         this.answerRepository.save(answer);
     }
 
     /*답변페이징*/
-    public Page<Answer> getList(Question question, int page){
+    public Page<Answer> getList(Question question, int page) {
         List<Sort.Order> sorts = new ArrayList<>();
         sorts.add(Sort.Order.desc("createDate"));
 
