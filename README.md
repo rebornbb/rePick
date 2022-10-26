@@ -17,10 +17,11 @@
 <h1 align="center">지구를 지키는 REPICK</h1>
 
 <p align="center">
-작업 기간 : 2022.08.26 ~ 2022.10.14
-투입 인원 : 6명
-개발 환경 : JAVA, JavaScript, HTML5, CSS3, jQuery, OracleDB, SpringBoot, DBeaver, IntelliJ IDEA
-
+ <ul>
+<li> 작업 기간 : 2022.08.26 ~ 2022.10.14 </li> 
+<li> 투입 인원 : 6명 </li> 
+<li> 개발 환경 : JAVA, JavaScript, HTML5, CSS3, jQuery, OracleDB, SpringBoot, DBeaver, IntelliJ IDEA </li> 
+ </ul>
 담당 역할:
 - 아이디어를 통해 프로젝트 기획
 - 인덱스 페이지, 소개 페이지, 뉴스 페이지의 레이아웃과 현재 날씨,
