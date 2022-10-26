@@ -7,7 +7,7 @@
 <li> 투입 인원 : 6명 </li> 
 <li> 개발 환경 : JAVA, JavaScript, HTML5, CSS3, jQuery, OracleDB, SpringBoot, DBeaver, IntelliJ IDEA </li> 
    </ul>
- <br>
+
 **담당 역할:**
 - 아이디어를 통해 프로젝트 기획
 - 인덱스 페이지, 소개 페이지, 뉴스 페이지의 레이아웃과 현재 날씨,
@@ -60,7 +60,6 @@
 
  </p>
  
- <br>
 작성자 봉나례  
  ---
 <p align="center">
