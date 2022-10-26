@@ -1,5 +1,4 @@
 <h1 align="center">지구를 지키는 REPICK</h1>
- <hr>
 <p align="center">
  
  <ul>
