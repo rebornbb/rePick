@@ -67,7 +67,7 @@
 <strong>🖌작성자 : 봉나례</strong>
 </p>
 <p align="center">
-<a href="https://rebornbb.tistory.com">
+<a href="https://rebornbb.tistory.com](https://rebornbb.tistory.com/category/PROJECT/RePick">
  <img src="https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white"></a>
  
  <a href="https://open.kakao.com/o/ssfMykIe">
