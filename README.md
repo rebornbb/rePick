@@ -1,7 +1,7 @@
-<h1 align="center" style="color:green">🌏지구를 지키는 REPICK🌏</h1>
+<h1 style="color:blue">🌏지구를 지키는 REPICK🌏</h1>
 <p align="center">
  
- <ul style="color:green">
+ <ul>
 <li> 작업 기간 : 2022.08.26 ~ 2022.10.14 </li> 
 <li> 투입 인원 : 6명 </li> 
 <li> 개발 환경 : JAVA, JavaScript, HTML5, CSS3, jQuery, OracleDB, SpringBoot, DBeaver, IntelliJ IDEA </li> 
