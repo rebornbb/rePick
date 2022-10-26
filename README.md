@@ -1,4 +1,4 @@
-<h1 style="color:blue">🌏지구를 지키는 REPICK🌏</h1>
+<h1 align="center">🌏지구를 지키는 REPICK🌏</h1>
 <p align="center">
  
  <ul>
