@@ -1,5 +1,6 @@
 <h1 align="center">🌏지구를 지키는 REPICK🌏</h1>
-<p align="center">
+
+<div align="center">
  
  <ul>
 <li> 작업 기간 : 2022.08.26 ~ 2022.10.14 </li> 
@@ -66,7 +67,7 @@
 팀원들과 더욱 끈끈한 협동심도 기를 수 있었던 점이 기억에 남습니다.    
 <br>
 
- </p>
+ </div>
  
  
  <hr>
