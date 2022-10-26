@@ -64,8 +64,9 @@
  
  <hr>
  <p align="center">
+ <U>
 <strong>작성자 : 봉나례</strong>
- <U></U> 
+ </U> 
 </p>
 <p align="center">
 <a href="https://rebornbb.tistory.com">
