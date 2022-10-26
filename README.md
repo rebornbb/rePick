@@ -25,7 +25,7 @@
 선도해가는 웹사이트를 만들면 어떨까? 라는 생각으로 프로젝트를 구상했습니다
 
 **프로젝트 소개:**
-**친환경 정보들을 공유하는 웹사이트 제작**
+- 친환경 정보들을 공유하는 웹사이트 제작
 1. 인덱스 · 소개 페이지 - 사이트와 제작 팀에 대한 소개와 정보를 한눈에 보여주며 다른 페이지로 쉽게 이동할 수 있게 만들었습니다.
 1. 뉴스 페이지 - openweathermap API를 통해 현재 지역별 날씨 출력하고, 환경 뉴스 사이트를 Jsoup을 이용해 크롤링해 작업했습니다.
 1. 오프라인 추천 매장 페이지 - 카카오 지도 API를 불러와 검색과 위치 확인이 가능하며
@@ -57,7 +57,10 @@
 팀원들과 더욱 끈끈한 협동심도 기를 수 있었던 점이 기억에 남습니다.
  </p>
  
-작성자 봉나례  <a href="https://rebornbb.tistory.com">
+작성자 봉나례  
+ ---
+<p align="center">
+<a href="https://rebornbb.tistory.com">
  <img src="https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white"></a>
  
  <a href="https://open.kakao.com/o/ssfMykIe">
@@ -65,9 +68,6 @@
   
  <a href="mailto:bongnarye@gmail.com">
  <img src="https://img.shields.io/badge/Gmail-d14836?style=for-the-badge&logo=Gmail&logoColor=white&link=bongnarye7110@gmail.com"/></a>
- ---
-<p align="center">
-
 </p>
 
 <h1 align="center"></h1>
