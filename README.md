@@ -57,9 +57,7 @@
 팀원들과 더욱 끈끈한 협동심도 기를 수 있었던 점이 기억에 남습니다.
  </p>
  
- 
- <h1 align="center"> BONGNARYE </h1>
-
+#작성자 : 봉나례#
 <p align="center">
  <a href="https://rebornbb.tistory.com">
  <img src="https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white"></a>
