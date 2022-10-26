@@ -1,12 +1,13 @@
 <h1 align="center">지구를 지키는 REPICK</h1>
 
 <p align="center">
+ 
  <ul>
 <li> 작업 기간 : 2022.08.26 ~ 2022.10.14 </li> 
 <li> 투입 인원 : 6명 </li> 
 <li> 개발 환경 : JAVA, JavaScript, HTML5, CSS3, jQuery, OracleDB, SpringBoot, DBeaver, IntelliJ IDEA </li> 
    </ul>
- 
+ <br>
 **담당 역할:**
 - 아이디어를 통해 프로젝트 기획
 - 인덱스 페이지, 소개 페이지, 뉴스 페이지의 레이아웃과 현재 날씨,
@@ -56,8 +57,10 @@
 사기를 북돋기 위해 팀원들과 WWF(세계자연기금)에 참여금이 기부되는 뜻깊은 봉사 마라톤을
 참가한 적이 있습니다. 친환경 프로젝트에 진심으로 임하는 진솔한 마음가짐과 함께,
 팀원들과 더욱 끈끈한 협동심도 기를 수 있었던 점이 기억에 남습니다.
+
  </p>
  
+ <br>
 작성자 봉나례  
  ---
 <p align="center">
