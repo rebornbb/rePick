@@ -64,7 +64,7 @@
  </p>
  
  <hr>
-<h3>작성자 : 봉나례</h3>
+<span>작성자 : 봉나례</span>
 
 <a href="https://rebornbb.tistory.com">
  <img src="https://img.shields.io/badge/Tistory-000000?style=for-the-badge&logo=Tistory&logoColor=white"></a>
